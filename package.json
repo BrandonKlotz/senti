@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1"
+  },
+  "name": "final-project",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/BrandonKlotz/final-project.git",
+  "author": "Brandon Klotz <brandonklotz@icloud.com>",
+  "license": "MIT"
+}
