@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.16.2",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "watson-developer-cloud": "^2.42.0"
   },
   "name": "final-project",
   "version": "1.0.0",
