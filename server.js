@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const errorCallback = console.error.bind(console);
 const bodyParser = require('body-parser');
+
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
 require('dotenv').config()
@@ -16,14 +17,6 @@ var tone_analyzer = new ToneAnalyzerV3({
   version_date: '2017-11-28'
 });
 
-tone_analyzer.tone({ text: 'Greetings from Watson' },
-  function(err, tone) {
-    if (err)
-      console.log(err);
-    else
-      console.log(JSON.stringify(tone, null));
-});
-
 app.post('/api/tone', function(req, res) {
   tone_analyzer.tone(req.body, function(err, data) {
     if (err) {
@@ -32,7 +25,6 @@ app.post('/api/tone', function(req, res) {
     return res.json(data);
   });
 });
-
 
 var port = process.env.PORT || 5001;
 app.listen(port, function () {
