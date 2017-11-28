@@ -16,20 +16,26 @@ form {
 }
 
 header {
-  border-bottom: 1px #ccc solid;
-  color: #F5B23E;
+  border-bottom: 1px #eee solid;
+  color: #000;
   padding: 1em;
   padding-bottom: 0;
   padding-top: 0;
 }
 
 textarea {
-  width: 500px;
+  min-width: 310px;
   min-height: 400px;
-	border: 1px solid #eee;
-  border-radius: 8px;
+	border: 1px solid #ccc;
+  border-radius: 0;
 	padding: 5px;
   margin-bottom: 1em;
+}
+
+header h1 {
+  background: linear-gradient(45deg, orange, yellow, cyan, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 button {
@@ -39,10 +45,19 @@ button {
   color: #fff;
   font-size: 1.25em;
   border: none;
+  border-radius: 25px;
+}
+
+button:hover {
+  background-color: #CCC;
 }
 
 .HeaderBar {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+i {
+  color: #ccc;
 }

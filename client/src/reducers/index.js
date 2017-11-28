@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    loading: true,
+    isloading: true,
     dataResults: {},
 		document_tone: ""
 };
