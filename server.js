@@ -16,8 +16,12 @@ var tone_analyzer = new ToneAnalyzerV3({
   version_date: '2017-11-28'
 });
 
-app.post('/api/tone', function(req, res) {
-  tone_analyzer.tone(req.body, function(err, data) {
+app.get('api/tone', function(req, res) {
+  res.json({text: "This is a thing!"});
+});
+
+app.post('/api/tone/', function(req, res, next) {
+  tone_analyzer.tone({text: "This is a new thing!"}, function(err, data) {
     if (err) {
       return next(err);
     }
