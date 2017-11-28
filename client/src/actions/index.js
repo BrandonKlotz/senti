@@ -10,19 +10,20 @@ export function fetchResults() {
   };
 }
 
-function receiveResults(){
+function receiveResults(displayResults){
   console.log('recieve results was called.');
   return {
-    type: "RECEIVE_RESULTS"
-  }
+    type: "RECEIVE_RESULTS",
+    displayResults
+
+  };
 }
 
-function requestResults(displayResults){
-  console.log('recieve results was called.');
+function requestResults(){
+  console.log('Receive results was called.');
   return {
     type: "REQUEST_RESULTS"
-    displayResults
-  }
+  };
 }
 
 export function addResults(dataResult) {

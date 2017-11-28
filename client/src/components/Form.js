@@ -4,7 +4,7 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: "",
+			text: "This is some cool text that I like!",
 		};
 	}
 
