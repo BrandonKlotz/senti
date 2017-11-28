@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-//import Header from './Header.js';
+import Header from './Header.js';
 import TextAnalyzer from './TextAnalyzer.js';
 
 class App extends Component {
@@ -8,9 +8,11 @@ class App extends Component {
   render() {
 
     return(
-      //<Header />
-      <TextAnalyzer />
-    )
+      <div>
+        <Header />
+        <TextAnalyzer />
+      </div>
+    );
   }
 }
 

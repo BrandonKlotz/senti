@@ -11,7 +11,7 @@ class TextAnalyzer extends Component {
 
   render() {
 
-    if (this.props.isLoading != true && isEmpty(this.props.analysisResults) ) {
+    if (this.props.isLoading != true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
           <Form />
@@ -27,7 +27,7 @@ class TextAnalyzer extends Component {
       return (
         <div className="App">
           <DocumentResults />
-          //Sentence analysis component will go here.
+          
         </div>
       );
     }
@@ -37,7 +37,7 @@ class TextAnalyzer extends Component {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
-    analysisResults: state.analysisResults
+    displayResults: state.displayResults
   }
 }
 

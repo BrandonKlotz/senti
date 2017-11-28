@@ -6,7 +6,6 @@ class DocumentResults extends Component {
     return (
       <div className="DocumentResults">
         <p> Here is a test listing of a detected document theme: </p>
-        //<p> {this.props.analysisResults.document_tone.tones[0].tone_name} </p>
       </div>
     );
   }
