@@ -11,13 +11,13 @@ class TextAnalyzer extends Component {
 
   render() {
 
-    if (this.props.isLoading != true && isEmpty(this.props.displayResults) ) {
+    if (this.props.isLoading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
           <Form />
         </div>
       );
-    } else if (this.props.isLoading == true) {
+    } else if (this.props.isLoading === true) {
       return (
         <div className="App">
           <p>Loading...</p>
@@ -27,7 +27,7 @@ class TextAnalyzer extends Component {
       return (
         <div className="App">
           <DocumentResults />
-          
+
         </div>
       );
     }
