@@ -1,5 +1,48 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
+}
+
+form {
+  margin: 0 auto;
+  padding: 2em;
+  min-width: 320px;
+  max-width: 600px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  border-bottom: 1px #ccc solid;
+  color: #F5B23E;
+  padding: 1em;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+textarea {
+  width: 500px;
+  min-height: 400px;
+	border: 1px solid #eee;
+  border-radius: 8px;
+	padding: 5px;
+  margin-bottom: 1em;
+}
+
+button {
+  height: 40px;
+  max-width: 600px;
+  background-color: #F5B23E;
+  color: #fff;
+  font-size: 1.25em;
+  border: none;
+}
+
+.HeaderBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
