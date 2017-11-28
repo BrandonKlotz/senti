@@ -26,6 +26,8 @@ class Form extends Component {
             type="submit"
             value="Analyze!"/>
         </div>
+				
+				<span>{this.props.dataResults}</span>
       </form>
 		);
 	}
