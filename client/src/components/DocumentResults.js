@@ -14,7 +14,7 @@ class DocumentResults extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		analysisResults = state.analysisResults
+		analysisResults: state.analysisResults
 	}
 }
 
