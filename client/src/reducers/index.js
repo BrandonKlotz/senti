@@ -11,7 +11,6 @@ export default function(state = INITIAL_STATE, action) {
                 loading: true
             });
         case "RECEIVE_RESULTS":
-                    debugger;
             return Object.assign({}, state, {
                 loading: false,
                 displayResults: action.displayResults

@@ -21,7 +21,7 @@ app.get('api/tone', function(req, res) {
 });
 
 app.post('/api/tone/', function(req, res, next) {
-  tone_analyzer.tone({text: "This is a new thing!"}, function(err, data) {
+  tone_analyzer.tone({text: "This is a new thing"}, function(err, data) {
     if (err) {
       return next(err);
     }

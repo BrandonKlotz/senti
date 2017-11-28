@@ -3,9 +3,8 @@ import $ from 'jquery-ajax';
 export function fetchResults() {
   return function(dispatch) {
     dispatch(requestResults());
-    debugger;
 
-    $.get("/api/tone/").done(function(data){
+    $.post("/api/tone/").done(function(data){
       dispatch(receiveResults(data));
     });
   };
