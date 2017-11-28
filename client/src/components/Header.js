@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import "font-awesome/css/font-awesome.css";
+
 
 class Header extends Component {
 
   render() {
 
     return(
-   		<div className="HeaderBar">
-   			<h1>This is the header!</h1>
-   		</div>
+   		<header className="HeaderBar">
+   			<h1>Senti</h1>
+        <i className="fa fa-bars fa-lg"></i>
+   		</header>
     );
   }
 }

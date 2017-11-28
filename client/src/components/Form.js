@@ -11,7 +11,7 @@ class Form extends Component {
 	render() {
 		return (
       <form onSubmit={this.handleSubmit.bind(this)} className="new-blurb-form">
-        <h1>New Document</h1>
+        <h1>The Profesional Email Checker.</h1>
         <div className="new-blurb-input-area">
           <textarea
             className='f-input-2'
@@ -22,9 +22,7 @@ class Form extends Component {
         </div>
         <div className="form-submit-2"
              onClick={this.handleSubmit.bind(this)}>
-          <input
-            type="submit"
-            value="Analyze!"/>
+					<button onClick={this.handleSubmit.bind(this)} type="submit">Analyze</button>
         </div>
       </form>
 		);

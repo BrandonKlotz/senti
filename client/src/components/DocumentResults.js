@@ -5,8 +5,6 @@ class DocumentResults extends Component {
 
   render() {
 
-    //The map below will save all the document themes into an accorian element.
-
     const detectedDocThemes = this.props.displayResults.document_tone.tones.map(function(tone) {
 
       if(tone.tone_name == "Joy" || tone.tone_name == "Analytical") {
@@ -30,8 +28,6 @@ class DocumentResults extends Component {
         )
       }
     });
-
-    //Returns the accordian to the component with a Results Header.
 
     return (
       <div className="DocumentResults">
