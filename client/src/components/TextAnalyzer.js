@@ -34,6 +34,7 @@ class TextAnalyzer extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    isLoading: state.isLoading,
     analysisResults: state.analysisResults
   }
 }
