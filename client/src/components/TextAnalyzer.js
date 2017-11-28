@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { isEmpty } from 'lodash';
+
 import Form from './Form.js';
 import DocumentResults from './DocumentResults.js';
 //import SentenceAnalysis from './SentenceAnalysis.js';
@@ -9,7 +11,7 @@ class TextAnalyzer extends Component {
 
   render() {
 
-    if (this.props.isLoading != true && this.props.analysisResults != {}) {
+    if (this.props.isLoading != true && isEmpty(this.props.analysisResults) ) {
       return (
         <div className="App">
           <Form />

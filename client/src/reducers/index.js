@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
 	analysisResults: {},
-	isLoading: true
+	isLoading: false
 };
 
 export default function (state = INITIAL_STATE, action) {
