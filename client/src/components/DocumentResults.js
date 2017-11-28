@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class DocumentResults extends Component {
   render() {
 
-    const detectedThemes = this.props.displayResults.document_tone.tones.map(tone => 
+    const detectedThemes = this.props.displayResults.document_tone.tones.map(tone =>
       <p>{tone.tone_name}</p>
       );
 

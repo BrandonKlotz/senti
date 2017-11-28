@@ -5,7 +5,7 @@ export function fetchSentimentData() {
 		dispatch(requestShoppingList());
 		// When working with a full-stack app, we can reach out APIs by just
 		// using the URL path. Since it's the same domain, we can leave that off.
-		$.get("/api/items/").done(function(data) {
+		$.get("/api/v3/tone/").done(function(data) {
 			dispatch(receiveShoppingList(data));
 		});
 	};
