@@ -1,5 +1,4 @@
 const INITIAL_STATE = {
-<<<<<<< HEAD
 	displayResults: {
 	    "document_tone": {
 		    "tones": [
