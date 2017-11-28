@@ -3,9 +3,15 @@ import { connect } from 'react-redux';
 
 class DocumentResults extends Component {
   render() {
+
+    const detectedThemes = this.props.displayResults.document_tone.tones.map(tone => 
+      <p>{tone.tone_name}</p>
+      );
+
     return (
       <div className="DocumentResults">
-        <p> Here is a test listing of a detected document theme: </p>
+        <h2>Results</h2>
+        {detectedThemes}
       </div>
     );
   }
@@ -13,7 +19,7 @@ class DocumentResults extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		analysisResults: state.analysisResults
+		displayResults: state.displayResults
 	}
 }
 
