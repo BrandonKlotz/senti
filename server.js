@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
-require('dotenv').config()
+require('dotenv').config();
 
 
 app.use(bodyParser.json());
