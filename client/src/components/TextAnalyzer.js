@@ -1,0 +1,44 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { isEmpty } from 'lodash';
+
+import Form from './Form.js';
+import DocumentResults from './DocumentResults.js';
+//import SentenceAnalysis from './SentenceAnalysis.js';
+
+class TextAnalyzer extends Component {
+
+  render() {
+
+    if (this.props.isLoading !== true && isEmpty(this.props.displayResults) ) {
+      return (
+        <div className="App">
+          <Form />
+        </div>
+      );
+    } else if (this.props.isLoading === true) {
+      return (
+        <div className="App">
+          <p>Loading...</p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
+          <DocumentResults />
+
+        </div>
+      );
+    }
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    isLoading: state.isLoading,
+    displayResults: state.displayResults
+  }
+}
+
+export default connect(mapStateToProps, null)(TextAnalyzer);
