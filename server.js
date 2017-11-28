@@ -1,5 +1,7 @@
-var server = require('./tone.js');
-var port = process.env.PORT || process.env.VCAP_APP_PORT || 5001;
+const express = require("express");
+const app = express();
+const errorCallback = console.error.bind(console);
+const bodyParser = require('body-parser');
 
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
