@@ -15,6 +15,7 @@ function requestResults(){
 
 function receiveResults(displayResults){
   console.log('Receive results was called.');
+  console.log(displayResults);
   return {
     type: "RECEIVE_RESULTS",
     displayResults
@@ -22,6 +23,7 @@ function receiveResults(displayResults){
 }
 
 export function addResults(inputData) {
+  console.log("This is the addResults Function");
   return function(dispatch) {
     $.ajax({
       url:"/api/tone",
