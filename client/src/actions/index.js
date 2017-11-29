@@ -1,29 +1,15 @@
 import $ from 'jquery-ajax';
 
-export function fetchResults() {
-  return function(dispatch) {
-    dispatch(requestResults());
-  };
-}
-
-function requestResults(){
-  console.log('Request results was called.');
-  return {
-    type: "REQUEST_RESULTS"
-  };
-}
-
+//  Action handles receiving analysis from Watson and maps the results to props in reducer 
 function receiveResults(displayResults){
-  console.log('Receive results was called.');
-  console.log(displayResults);
   return {
     type: "RECEIVE_RESULTS",
     displayResults
   };
 }
 
+//  Function called by submit button. Handles submission of information on UI to backend for analysis
 export function addResults(inputData) {
-  console.log("This is the addResults Function");
   return function(dispatch) {
     $.ajax({
       url:"/api/tone",
