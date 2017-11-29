@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 
 router.post('/info', function(req, res) {
     var text = req.body.text;
-    console.log(text)
+    console.log(text);
     var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
     var tone_analyzer = new ToneAnalyzerV3({

@@ -16,7 +16,7 @@ var tone_analyzer = new ToneAnalyzerV3({
   version_date: '2017-11-28'
 });
 
-app.get('api/tone', function(req, res) {
+app.get('/api/tone', function(req, res) {
   var newText = req.query.text;
 });
 

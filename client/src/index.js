@@ -8,7 +8,6 @@ import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from "redux-thunk";
 import reducer from './reducers';
-import { fetchResults } from "./actions";
 
 const store = createStore(
     reducer,
@@ -16,8 +15,6 @@ const store = createStore(
     thunkMiddleware, 
     createLogger() ) // Enable Redux logging which is handy for developers.
 );
-
-store.dispatch(fetchResults());
 
 ReactDOM.render(
     <Provider store={store}>
