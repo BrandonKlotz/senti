@@ -6,12 +6,15 @@ body {
 
 .App {
   margin: 0 auto;
-  /*padding: 2em;*/
   width: 90%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.form {
+  text-align: center;
 }
 
 header {
@@ -35,7 +38,7 @@ textarea {
 
 .Button {
   height: 40px;
-  max-width: 600px;
+  width: 50%;
   background-color: #F5B23E;
   color: #fff;
   font-size: 1.25em;
