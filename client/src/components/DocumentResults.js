@@ -3,27 +3,38 @@ import { connect } from 'react-redux';
 
 class DocumentResults extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: "Joy"
+    };
+  }
+
   render() {
 
-    const detectedDocThemes = this.props.displayResults.document_tone.tones.map(function(tone) {
+    //if active state = add open class to element
+
+    const detectedDocThemes = this.props.displayResults.document_tone.tones.map(tone => {
 
       if(tone.tone_name == "Joy" || tone.tone_name == "Analytical") {
         return (
           <div>
-            <button class="accordion">{tone.tone_name}</button>
-              <div class="panel">
-                <p>This is a positive one.</p>
-              </div>
+            <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open ? "open" : "collapsed" }`}
+                  onClick={this.toggleAccordion}>
+                    {tone.tone_name}
+                    <p>This is a positive one.</p>
+            </div>
           </div>
         )
       }
       else {
         return (
           <div>
-            <button class="accordion">{tone.tone_name}</button>
-              <div class="panel">
-                <p>This is a negative one.</p>
-              </div>
+            <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open ? "open" : "collapsed" }`}
+                  onClick={this.toggleAccordion}>
+                    {tone.tone_name}
+                    <p>This is a negative one.</p>
+            </div>
           </div>
         )
       }
@@ -32,11 +43,20 @@ class DocumentResults extends Component {
     return (
       <div className="DocumentResults">
         <h2>Results</h2>
-        {detectedDocThemes}
+        <div className="AccordianContainer">
+          {detectedDocThemes}
+        </div>
       </div>
     );
   }
+
+  toggleAccordion = (event) => {
+    return
+  }
 }
+
+
+
 
 const mapStateToProps = (state) => {
 	return {
