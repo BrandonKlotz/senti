@@ -22,7 +22,7 @@ class SentenceResults extends Component {
 
     return (
       <div className="SentenceResults">
-        <p>{sentences}</p>
+        {sentences}
       </div>
     );
   }
