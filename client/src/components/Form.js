@@ -20,8 +20,7 @@ class Form extends Component {
             placeholder="Document Body...">
           </textarea>
         </div>
-        <div className="form-submit-2"
-             onClick={this.handleSubmit.bind(this)}>
+        <div className="form-submit-2">
 					<button onClick={this.handleSubmit.bind(this)} type="submit">Analyze</button>
         </div>
       </form>
