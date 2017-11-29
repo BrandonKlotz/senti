@@ -3,10 +3,6 @@ import $ from 'jquery-ajax';
 export function fetchResults() {
   return function(dispatch) {
     dispatch(requestResults());
-
-    $.post("/api/tone/").done(function(data){
-      dispatch(receiveResults(data));
-    });
   };
 }
 
@@ -22,19 +18,18 @@ function receiveResults(displayResults){
   return {
     type: "RECEIVE_RESULTS",
     displayResults
-
   };
 }
 
-export function addResults(dataResult) {
+export function addResults(input) {
   return function(dispatch) {
     $.ajax({
       url:"/api/tone/",
       method: "POST",
       contentType:"application/json",
-      data: JSON.stringify(dataResult)
+      data: JSON.stringify(input)
     }).done(function(){
-      dispatch(fetchResults());
+      dispatch(receiveResults());
     });
   };
 }
