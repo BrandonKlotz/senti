@@ -5,7 +5,7 @@ import { isEmpty } from 'lodash';
 
 import Form from './Form.js';
 import DocumentResults from './DocumentResults.js';
-//import SentenceAnalysis from './SentenceAnalysis.js';
+import SentenceResults from './SentenceResults.js';
 
 class TextAnalyzer extends Component {
 
@@ -27,7 +27,7 @@ class TextAnalyzer extends Component {
       return (
         <div className="App">
           <DocumentResults />
-
+          <SentenceResults />
         </div>
       );
     }
