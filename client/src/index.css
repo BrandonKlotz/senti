@@ -61,3 +61,40 @@ button:hover {
 i {
   color: #ccc;
 }
+
+
+
+/* -- Document Results Styling -- */
+
+.AccordianContainer {
+  width: 75%;
+  min-width: 300px;
+  max-width: 700px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  background-color: #EDEDED; 
+}
+
+.accordion {
+  width: 100%;
+  background-color: #EDEDED;
+  border-radius: 0px;
+
+  color: black;
+}
+
+.accordion:hover {
+  background-color: #DDDDDD;
+}
+
+.accordion.collapsed {
+  height: 1.5em;
+  overflow: hidden;
+}
+
+div.panel {
+  display: none;
+}
+
