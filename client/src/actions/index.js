@@ -3,37 +3,35 @@ import $ from 'jquery-ajax';
 export function fetchResults() {
   return function(dispatch) {
     dispatch(requestResults());
-
-    $.get("api/tone").done(function(data){
-      dispatch(receiveResults(data));
-    });
   };
 }
 
-function receiveResults(){
-  console.log('recieve results was called.');
-  return {
-    type: "RECEIVE_RESULTS"
-  }
-}
-
-function requestResults(displayResults){
-  console.log('recieve results was called.');
+function requestResults(){
+  console.log('Request results was called.');
   return {
     type: "REQUEST_RESULTS"
-    displayResults
-  }
+  };
 }
 
-export function addResults(dataResult) {
+function receiveResults(displayResults){
+  console.log('Receive results was called.');
+  console.log(displayResults);
+  return {
+    type: "RECEIVE_RESULTS",
+    displayResults
+  };
+}
+
+export function addResults(inputData) {
+  console.log("This is the addResults Function");
   return function(dispatch) {
     $.ajax({
-      url:"api/tone",
+      url:"/api/tone",
       method: "POST",
       contentType:"application/json",
-      data: JSON.stringify(dataResult)
-    }).done(function(){
-      dispatch(fetchResults());
+      data: JSON.stringify(inputData)
+    }).done(function(dataResult){
+      dispatch(receiveResults(dataResult));
     });
   };
 }

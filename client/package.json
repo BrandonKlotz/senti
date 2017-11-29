@@ -5,6 +5,7 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "font-awesome": "^4.7.0",
+    "jquery-ajax": "^2.1.4",
     "lodash": "^4.17.4",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",

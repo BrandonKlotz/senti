@@ -3687,6 +3687,10 @@ jest@20.0.4:
   dependencies:
     jest-cli "^20.0.4"
 
+jquery-ajax@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/jquery-ajax/-/jquery-ajax-2.1.4.tgz#eb7bcc07b3d0f021b75e6029e886ac78ced67a36"
+
 js-base64@^2.1.9:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"

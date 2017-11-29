@@ -1,4 +1,10 @@
 const INITIAL_STATE = {
+<<<<<<< HEAD
+    loading: false,
+	  displayResults: {},
+	};
+=======
+ 
 	displayResults: {
 	    "document_tone": {
 		    "tones": [
@@ -124,8 +130,9 @@ const INITIAL_STATE = {
 		    }
 		  ]
 	},
-	isLoading: false
+	loading: false
 };
+>>>>>>> DocumentResultsAcc
 
 
 export default function(state = INITIAL_STATE, action) {
@@ -137,7 +144,7 @@ export default function(state = INITIAL_STATE, action) {
         case "RECEIVE_RESULTS":
             return Object.assign({}, state, {
                 loading: false,
-                dataResults: action.dataResults
+                displayResults: action.displayResults
             });
         default:
             return state;
