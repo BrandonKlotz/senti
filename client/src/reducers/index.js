@@ -125,7 +125,7 @@ const INITIAL_STATE = {
 		    }
 		  ]
 	},
-	isLoading: false
+	loading: false
 };
 
 
