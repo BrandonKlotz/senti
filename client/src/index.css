@@ -4,11 +4,10 @@ body {
   font-family: sans-serif;
 }
 
-form {
+.App {
   margin: 0 auto;
-  padding: 2em;
-  min-width: 320px;
-  max-width: 600px;
+  /*padding: 2em;*/
+  width: 90%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -19,26 +18,22 @@ header {
   border-bottom: 1px #eee solid;
   color: #000;
   padding: 1em;
+  margin: 0;
   padding-bottom: 0;
   padding-top: 0;
 }
 
 textarea {
-  min-width: 310px;
+  min-width: 90%;
   min-height: 400px;
-	border: 1px solid #ccc;
+	border: none;
+  background-color: #eee;
   border-radius: 0;
 	padding: 5px;
   margin-bottom: 1em;
 }
 
-header h1 {
-  background: linear-gradient(45deg, orange, yellow, cyan, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-button {
+.Button {
   height: 40px;
   max-width: 600px;
   background-color: #F5B23E;
@@ -48,7 +43,7 @@ button {
   border-radius: 25px;
 }
 
-button:hover {
+.Button:hover {
   background-color: #CCC;
 }
 
@@ -74,7 +69,7 @@ i {
   border-radius: 10px;
   overflow: hidden;
 
-  background-color: #EDEDED; 
+  background-color: #EDEDED;
 }
 
 .accordion {
@@ -93,4 +88,3 @@ i {
   height: 1.5em;
   overflow: hidden;
 }
-

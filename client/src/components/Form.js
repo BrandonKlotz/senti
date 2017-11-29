@@ -21,7 +21,7 @@ class Form extends Component {
           </textarea>
         </div>
         <div className="form-submit-2">
-					<button onClick={this.handleSubmit.bind(this)} type="submit">Analyze</button>
+					<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
         </div>
       </form>
 		);
@@ -35,7 +35,7 @@ class Form extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		
+
 		this.props.onSubmit({
 			text: this.state.text
 		});
