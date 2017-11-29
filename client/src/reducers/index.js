@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
-	displayResults: {},
-	isLoading: false
-};
+    loading: false,
+	  displayResults: {}
+	};
 
 
 export default function(state = INITIAL_STATE, action) {
@@ -13,7 +13,7 @@ export default function(state = INITIAL_STATE, action) {
         case "RECEIVE_RESULTS":
             return Object.assign({}, state, {
                 loading: false,
-                dataResults: action.dataResults
+                displayResults: action.displayResults
             });
         default:
             return state;

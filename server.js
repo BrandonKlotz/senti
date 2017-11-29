@@ -16,8 +16,17 @@ var tone_analyzer = new ToneAnalyzerV3({
   version_date: '2017-11-28'
 });
 
-app.post('/api/tone', function(req, res) {
-  tone_analyzer.tone(req.body, function(err, data) {
+app.get('api/tone', function(req, res) {
+  var newText = req.query.text;
+});
+
+app.post('/api/tone/', function(req, res, next) {
+  var text = req.body;
+  var stringText = text.text;
+  console.log(text);
+  console.log(stringText);
+  tone_analyzer.tone({text: stringText}, function(err, data) {
+  // tone_analyzer.tone({text: "This is a pain in the butt! But I think that we'll get there in the end. "}, function(err, data) {
     if (err) {
       return next(err);
     }

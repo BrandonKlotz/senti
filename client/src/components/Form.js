@@ -4,7 +4,7 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: "",
+			text: ""
 		};
 	}
 
@@ -36,6 +36,7 @@ class Form extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
+		
 		this.props.onSubmit({
 			text: this.state.text
 		});

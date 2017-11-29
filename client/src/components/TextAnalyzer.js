@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { addResults } from '../actions';
 import { isEmpty } from 'lodash';
 
 import Form from './Form.js';
@@ -14,7 +14,7 @@ class TextAnalyzer extends Component {
     if (this.props.isLoading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
-          <Form />
+          <Form onSubmit={this.props.addResults}/>
         </div>
       );
     } else if (this.props.isLoading === true) {
@@ -33,12 +33,15 @@ class TextAnalyzer extends Component {
     }
   }
 }
+const mapActionsToProps = {
+  addResults
+};
 
 const mapStateToProps = (state) => {
   return {
     isLoading: state.isLoading,
     displayResults: state.displayResults
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, null)(TextAnalyzer);
+export default connect(mapStateToProps, mapActionsToProps)(TextAnalyzer);
