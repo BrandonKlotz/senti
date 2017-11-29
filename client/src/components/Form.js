@@ -32,6 +32,11 @@ class Form extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 
+		if(this.state.text === "") {
+			alert('Hey please enter at least 2 senteces for me to analyze! :D');
+			return
+		}
+
 		this.props.onSubmit({
 			text: this.state.text
 		});
