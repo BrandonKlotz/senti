@@ -66,7 +66,7 @@ i {
 
 /* -- Document Results Styling -- */
 
-.AccordianContainer {
+.AccordionContainer {
   width: 75%;
   min-width: 300px;
   max-width: 700px;
@@ -92,9 +92,5 @@ i {
 .accordion.collapsed {
   height: 1.5em;
   overflow: hidden;
-}
-
-div.panel {
-  display: none;
 }
 

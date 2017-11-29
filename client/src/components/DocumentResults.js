@@ -43,7 +43,7 @@ class DocumentResults extends Component {
     return (
       <div className="DocumentResults">
         <h2>Results</h2>
-        <div className="AccordianContainer">
+        <div className="AccordionContainer">
           {detectedDocThemes}
         </div>
       </div>
