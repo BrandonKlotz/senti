@@ -7,7 +7,7 @@ class DocumentResults extends Component {
 
     const detectedDocThemes = this.props.displayResults.document_tone.tones.map(function(tone) {
 
-      if(tone.tone_name == "Joy" || tone.tone_name == "Analytical") {
+      if(tone.tone_name === "Joy" || tone.tone_name === "Analytical") {
         return (
           <div>
             <button class="accordion">{tone.tone_name}</button>
