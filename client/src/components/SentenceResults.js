@@ -8,8 +8,15 @@ class SentenceResults extends Component {
   render() {
 
     const sentences = this.props.displayResults.sentences_tone.map(function(sentence) {
-      console.log(sentence.tones);
-      return (<div key={sentence.sentence_id} className={join(sentence.tones.map(tone => { return( tone.tone_id)}), " ")}>{sentence.text}</div>)
+
+      return (
+          <div
+            key={sentence.sentence_id}
+            className={join(sentence.tones.map(tone => {
+              return(tone.tone_id)
+            }), " ")}>
+              {sentence.text}
+          </div>)
     });
 
 
