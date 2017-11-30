@@ -112,15 +112,6 @@ i {
   border-radius: 0px;
 }
 
-div.toggleButton {
-  background-color: darkgrey;
-  border-radius: 20px;
-}
-
-div.toggleButton:hover {
-  background-color: lightgrey;
-}
-
 textarea, .DocumentResults {
   display: flex;
   flex-direction: column;
@@ -200,4 +191,18 @@ hr {
     width: 600px;
   }
 
+}
+
+.toggleButton {
+  width: 100px;
+  height: 100px;
+  border: 1px solid teal;
+}
+
+.PositiveButton {
+  background-color: green;
+}
+
+.NegativeButton {
+  background-color: red;
 }
