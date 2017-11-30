@@ -2,7 +2,7 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
-  background-color: #E8F7F6;
+  background-color: #fefefe;
   background-image: url("/public/img/scatter.png");
 }
 
@@ -87,15 +87,15 @@ i {
 }
 
 .accordion {
-  background-color: #ADD6CD;
+  background-color: #dedede;
   border-radius: 0px;
-  border-bottom: 1px solid #E8F7F6;
+  border-bottom: 1px solid #fefefe;
   padding: 1em;
   color: #000;
 }
 
 .accordion:hover {
-  background-color: #8EBDB2;
+  background-color: #777;
 }
 
 .accordion.collapsed {
@@ -104,7 +104,7 @@ i {
 }
 
 .accordion.open {
-  background-color: #efefef;
+  background-color: #fafafa;
 }
 
 .accordion p {
@@ -149,7 +149,7 @@ textarea, .DocumentResults {
     display: none;
     position: fixed;
     right: 0;
-    background-color: #EAF5F3;
+    background-color: #fefefe;
     width: 200px;
     border: 1px solid #70E0D3;
     margin-top: 28px;
@@ -185,7 +185,7 @@ textarea, .DocumentResults {
 }
 
 .fa-check {
-  color: #C2E691;
+  color: #7ED321;
   margin-right: 1em;
 }
 
