@@ -77,7 +77,6 @@ i {
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  width: 100%;
   border-radius: 4px;
   overflow: hidden;
   background-color: #eee;
@@ -85,7 +84,6 @@ i {
 }
 
 .accordion {
-  width: 100%;
   background-color: #ddd;
   border-radius: 0px;
   border-bottom: 1px solid #fff;
@@ -95,6 +93,11 @@ i {
 
 .accordion:hover {
   background-color: #ccc;
+}
+
+.AccordionHeader {
+  display: flex;
+  justify-content: space-between;
 }
 
 .accordion.collapsed {
@@ -110,9 +113,14 @@ i {
   width: 90%;
 }
 
+i.fa-plus, i.fa-minus {
+  color: black;
+}
+
 i.hide {
   display: none;
 }
+
 /* -- Sentence Results Styling -- */
 
 .SentenceResults {

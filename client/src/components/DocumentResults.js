@@ -31,12 +31,18 @@ class DocumentResults extends Component {
             <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
-                  <i className="fa fa-check" aria-hidden="true"></i>
-                    {tone.tone_name}
-                    <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
-                    <i className={`fa fa-minus ${tone.tone_name === this.state.open?"show":"hide"}`} aria-hidden="true"></i>
-                    <hr />
-                    <p>{selectedTone.text}</p>
+                  <div className="AccordionHeader">
+                    <span>
+                      <i className="fa fa-check" aria-hidden="true"></i>
+                      {tone.tone_name}
+                    </span>
+                    <span>
+                      <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
+                      <i className={`fa fa-minus ${tone.tone_name === this.state.open?"show":"hide"}`} aria-hidden="true"></i>
+                      <hr />
+                    </span>
+                  </div>
+                  <p>{selectedTone.text}</p>
             </div>
         )
       }
@@ -47,12 +53,18 @@ class DocumentResults extends Component {
             <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
-                  <i className="fa fa-flag" aria-hidden="true"></i>
-                    {tone.tone_name}
-                    <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
-                    <i className={`fa fa-minus ${tone.tone_name === this.state.open?"show":"hide"}`} aria-hidden="true"></i>
-                    <hr />
-                    <p>{selectedTone.text}</p>
+                  <div className="AccordionHeader">
+                    <span>
+                      <i className="fa fa-flag" aria-hidden="true"></i>
+                      {tone.tone_name}
+                    </span>
+                    <span>
+                      <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
+                      <i className={`fa fa-minus ${tone.tone_name === this.state.open?"show":"hide"}`} aria-hidden="true"></i>
+                      <hr />
+                    </span>
+                  </div>
+                  <p>{selectedTone.text}</p>
             </div>
         )
       }
