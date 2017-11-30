@@ -10,19 +10,15 @@ class Form extends Component {
 
 	render() {
 		return (
-      <form onSubmit={this.handleSubmit.bind(this)} className="new-blurb-form">
+      <form onSubmit={this.handleSubmit.bind(this)} className="form">
         <h1>The Profesional Email Checker.</h1>
-        <div className="new-blurb-input-area">
           <textarea
             className='f-input-2'
             onChange={this.handleText.bind(this)}
             value={this.state.text}
             placeholder="Document Body...">
           </textarea>
-        </div>
-        <div className="form-submit-2">
-					<button onClick={this.handleSubmit.bind(this)} type="submit">Analyze</button>
-        </div>
+					<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
       </form>
 		);
 	}
@@ -35,7 +31,12 @@ class Form extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		
+
+		if(this.state.text === "") {
+			alert('Hey please enter at least 2 senteces for me to analyze! :D');
+			return
+		}
+
 		this.props.onSubmit({
 			text: this.state.text
 		});

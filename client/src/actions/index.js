@@ -2,6 +2,8 @@ import $ from 'jquery-ajax';
 
 //  Action handles receiving analysis from Watson and maps the results to props in reducer 
 function receiveResults(displayResults){
+  console.log('This is the output that was returned from Watson.');
+  console.log(displayResults);
   return {
     type: "RECEIVE_RESULTS",
     displayResults

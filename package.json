@@ -2,8 +2,10 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "jquery": "^3.2.1",
     "nodemon": "^1.12.1",
-    "watson-developer-cloud": "^2.42.0"
+    "watson-developer-cloud": "^2.42.0",
+    "watson-react-components": "^0.6.12"
   },
   "name": "final-project",
   "version": "1.0.0",

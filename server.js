@@ -17,13 +17,12 @@ var tone_analyzer = new ToneAnalyzerV3({
 });
 
 //  API POST utilizes tone analyzer methods to send data and receive JSON output
+//  Concatenation of variable required due to limitations of tone argument type
+//  Call tone analyzer method to analze data and return JSON output
 app.post('/api/tone/', function(req, res, next) {
-
-  //  Concatenation of variable required due to limitations of tone argument type
   var text = req.body;
   var stringText = '"' + text.text + '"';
 
-//  Call tone analyzer method to analze data and return JSON output
   tone_analyzer.tone({text: stringText}, function(err, data) {
     if (err) {
       return next(err);

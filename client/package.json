@@ -5,6 +5,7 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
     "jquery-ajax": "^2.1.4",
     "lodash": "^4.17.4",
     "react": "^16.1.1",
@@ -13,7 +14,8 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "watson-react-components": "^0.6.12"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -65,9 +65,9 @@ class DocumentResults extends Component {
 
 
 const mapStateToProps = (state) => {
-	return {
-		displayResults: state.displayResults
-	}
+  return {
+    displayResults: state.displayResults
+  }
 }
 
 export default connect(mapStateToProps, null)(DocumentResults);
