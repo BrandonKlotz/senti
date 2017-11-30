@@ -31,9 +31,10 @@ class DocumentResults extends Component {
             <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
-                  <i class="fa fa-check" aria-hidden="true"></i>
+                  <i className="fa fa-check" aria-hidden="true"></i>
                     {tone.tone_name}
-                    <p>{tone.tone_name}: {selectedTone.text}</p>
+                    <hr />
+                    <p>{selectedTone.text}</p>
             </div>
         )
       }
@@ -44,9 +45,10 @@ class DocumentResults extends Component {
             <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
-                  <i class="fa fa-flag" aria-hidden="true"></i>
+                  <i className="fa fa-flag" aria-hidden="true"></i>
                     {tone.tone_name}
-                    <p>{tone.tone_name}: {selectedTone.text}</p>
+                    <hr />
+                    <p>{selectedTone.text}</p>
             </div>
         )
       }

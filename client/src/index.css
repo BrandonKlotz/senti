@@ -77,27 +77,24 @@ i {
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  width: 90%;
+  width: 100%;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #efefef;
+  background-color: #eee;
   margin-bottom: 2em;
-  padding: 1em;
 }
 
 .accordion {
-  min-width: 90%;
-  background-color: #efefef;
+  width: 100%;
+  background-color: #ddd;
   border-radius: 0px;
-  border-bottom: 1px solid #ccc;
-  padding: .5em;
+  border-bottom: 1px solid #fff;
+  padding: 1em;
   color: #000;
 }
 
 .accordion:hover {
-  border-radius: 8px;
-  border: none;
-  background-color: #ddd;
+  background-color: #ccc;
 }
 
 .accordion.collapsed {
@@ -106,9 +103,11 @@ i {
 }
 
 .accordion.open {
-  border: none;
-  border-radius: 8px;
-  background-color: #fdfdfd;
+  background-color: #f0f0f0;
+}
+
+.accordion p {
+  width: 90%;
 }
 
 /* -- Sentence Results Styling -- */
@@ -118,15 +117,6 @@ i {
   width: 90%;
   background-color: #fafafa;
   border-radius: 0px;
-}
-
-div.toggleButton {
-  background-color: darkgrey;
-  border-radius: 20px;
-}
-
-div.toggleButton:hover {
-  background-color: lightgrey;
 }
 
 textarea, .DocumentResults {
@@ -182,7 +172,9 @@ textarea, .DocumentResults {
   display:block;
 }
 
-.joy span {
+.show {display:block;}
+
+.joy {
   background-color:  yellow;
   opacity: .7;
 }
@@ -190,11 +182,19 @@ textarea, .DocumentResults {
 
 .fa-flag {
   color: red;
+  margin-right: 1em;
 }
 
 .fa-check {
   color: green;
+  margin-right: 1em;
 }
+
+hr {
+  border: none;
+}
+
+
 
 @media only screen and (min-width: 770px) {
 
@@ -202,4 +202,18 @@ textarea, .DocumentResults {
     width: 600px;
   }
 
+}
+
+.toggleButton {
+  width: 100px;
+  height: 100px;
+  border: 1px solid teal;
+}
+
+.PositiveButton {
+  background-color: green;
+}
+
+.NegativeButton {
+  background-color: red;
 }
