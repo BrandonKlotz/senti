@@ -18,7 +18,6 @@ class Form extends Component {
 	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
 	        <h1>The Profesional Email Checker.</h1>
 	          <textarea
-	            className='f-input-2'
 	            onChange={this.handleText.bind(this)}
 	            value={this.state.text}
 	            placeholder="Enter a few sentences here to analyze.">

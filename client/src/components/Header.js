@@ -10,10 +10,10 @@ class Header extends Component {
    		<header className="HeaderBar">
    			<h1>Senti</h1>
 
-				<div class="dropdown">
-					<button onClick={this.myFunction.bind(this)} class="dropbtn fa fa-bars fa-lg"></button>
+				<div className="dropdown">
+					<button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
 
-					  <div id="myDropdown" class="dropdown-content">
+					  <div id="myDropdown" className="dropdown-content">
 					    <a href="#">Home</a>
 					    <a href="#">About</a>
 					    <a href="#">Contact</a>
