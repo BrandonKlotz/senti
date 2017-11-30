@@ -42,7 +42,6 @@ class Form extends Component {
 			this.setState({
 				toggleModal: !this.state.toggleModal,
 			});
-
 			return
 		}
 

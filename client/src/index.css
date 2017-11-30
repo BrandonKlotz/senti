@@ -2,6 +2,7 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
+  background-color: #fff;
 }
 
 .App {
@@ -11,7 +12,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: red;
 }
 
 .form {
@@ -25,16 +25,17 @@ header {
   margin: 0;
   padding-bottom: 0;
   padding-top: 0;
+  margin-bottom: 2em;
 }
 
 textarea {
   min-width: 90%;
   min-height: 400px;
 	border: none;
-  font-size: 1.5em;
-  background-color: #efefef;
+  font-size: 1.25em;
+  background-color: #fafafa;
   border-radius: 0;
-	padding: 5px;
+	padding: .5em;
   margin-bottom: 1em;
 }
 
@@ -66,25 +67,24 @@ i {
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  width: 70%;
+  width: 90%;
   border-radius: 4px;
   overflow: hidden;
   background-color: #efefef;
   margin-bottom: 2em;
+  padding: 1em;
 }
 
 .accordion {
-  width: 90%;
+  min-width: 90%;
   background-color: #efefef;
   border-radius: 0px;
   border-bottom: 1px solid #ccc;
   padding: .5em;
-  margin: 1em;
-  color: black;
+  color: #000;
 }
 
 .accordion:hover {
-  width: auto;
   border-radius: 8px;
   border: none;
   background-color: #ddd;
@@ -97,15 +97,20 @@ i {
 
 .accordion.open {
   border: none;
+  border-radius: 8px;
+  background-color: #fdfdfd;
 }
 
 .SentenceResults {
-
+  padding: 1em;
+  width: 90%;
+  background-color: #fafafa;
+  border-radius: 0px;
 }
 
-.DocumentResults {
+textarea, .DocumentResults {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70%;
+  min-width: 100%;
 }
