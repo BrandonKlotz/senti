@@ -33,7 +33,8 @@ class DocumentResults extends Component {
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
                   <i class="fa fa-check" aria-hidden="true"></i>
                     {tone.tone_name}
-                    <p>{tone.tone_name}: {selectedTone.text}</p>
+                    <hr />
+                    <p>{selectedTone.text}</p>
             </div>
         )
       }
@@ -45,7 +46,8 @@ class DocumentResults extends Component {
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
                   <i class="fa fa-flag" aria-hidden="true"></i>
                     {tone.tone_name}
-                    <p>{tone.tone_name}: {selectedTone.text}</p>
+                    <hr />
+                    <p>{selectedTone.text}</p>
             </div>
         )
       }
