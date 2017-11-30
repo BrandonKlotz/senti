@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { join, chunk, uniq } from 'lodash';
+import { join, uniq, flatten } from 'lodash';
 
 class SentenceResults extends Component {
 
@@ -27,34 +27,33 @@ class SentenceResults extends Component {
       )
     });
 
-    const buttons = this.props.displayResults.sentences_tone.map(function(sentence) {
-    
+    const toneArray = mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone);
+
+    const buttons = toneArray.map(function(tone) {
       return (
-        sentence.tones.map(tone => {
-          return(tone.tone_name)
-        })
+        <div key={tone}>{tone}</div>
       )
-    });
-
-    var buttonsText = buttons.map(function(item) { 
-      return join(item); 
-    });
-
-    var uniqueButtons = uniq(buttonsText);
-
-    var displayButtons = uniqueButtons.map(button => {
-      return (<div className={button+"toggle"}>{button}</div>)
     })
 
-    console.log(displayButtons);
 
     return (
       <div className="SentenceResults">
         {sentences}
-        {displayButtons}
+        {buttons}
       </div>
     );
   }
+}
+
+function mapSentencesAndReturnEmotionsArray(sentences) {
+  var detectedEmotionsArray = sentences.map(sentence => {return mapIndividualSentenceTones(sentence)});
+  var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
+  return uniqueDetectedEmotions;
+}
+
+function mapIndividualSentenceTones(sentence){
+  var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
+  return indidivualEmotionsArry;
 }
 
 const mapStateToProps = (state) => {
