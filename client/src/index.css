@@ -110,6 +110,9 @@ i {
   width: 90%;
 }
 
+i.hide {
+  display: none;
+}
 /* -- Sentence Results Styling -- */
 
 .SentenceResults {
