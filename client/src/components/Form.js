@@ -4,22 +4,28 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: ""
+			text: "",
+			toggleModal: false
+
 		};
 	}
 
 	render() {
+
 		return (
-      <form onSubmit={this.handleSubmit.bind(this)} className="form">
-        <h1>The Profesional Email Checker.</h1>
-          <textarea
-            className='f-input-2'
-            onChange={this.handleText.bind(this)}
-            value={this.state.text}
-            placeholder="Document Body...">
-          </textarea>
-					<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
-      </form>
+			<div>
+
+	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
+	        <h1>The Profesional Email Checker.</h1>
+	          <textarea
+	            className='f-input-2'
+	            onChange={this.handleText.bind(this)}
+	            value={this.state.text}
+	            placeholder="Enter a few sentences here to analyze.">
+	          </textarea>
+						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
+	      </form>
+			</div>
 		);
 	}
 
@@ -33,7 +39,10 @@ class Form extends Component {
 		event.preventDefault();
 
 		if(this.state.text === "") {
-			alert('Hey please enter at least 2 senteces for me to analyze! :D');
+			this.setState({
+				toggleModal: !this.state.toggleModal,
+			});
+
 			return
 		}
 

@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: red;
 }
 
 .form {
@@ -37,6 +38,7 @@ textarea {
   margin-bottom: 1em;
 }
 
+
 .Button {
   height: 40px;
   width: 50%;
@@ -48,7 +50,7 @@ textarea {
 }
 
 .Button:hover {
-  background-color: #CCC;
+  background-color: #ccc;
 }
 
 .HeaderBar {
@@ -61,34 +63,49 @@ i {
   color: #ccc;
 }
 
-
-
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  width: 75%;
-  min-width: 300px;
-  max-width: 700px;
-
-  border-radius: 10px;
+  width: 70%;
+  border-radius: 4px;
   overflow: hidden;
-
-  background-color: #EDEDED;
+  background-color: #efefef;
+  margin-bottom: 2em;
 }
 
 .accordion {
-  width: 100%;
-  background-color: #EDEDED;
+  width: 90%;
+  background-color: #efefef;
   border-radius: 0px;
-
+  border-bottom: 1px solid #ccc;
+  padding: .5em;
+  margin: 1em;
   color: black;
 }
 
 .accordion:hover {
-  background-color: #DDDDDD;
+  width: auto;
+  border-radius: 8px;
+  border: none;
+  background-color: #ddd;
 }
 
 .accordion.collapsed {
   height: 1.5em;
   overflow: hidden;
+}
+
+.accordion.open {
+  border: none;
+}
+
+.SentenceResults {
+
+}
+
+.DocumentResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70%;
 }
