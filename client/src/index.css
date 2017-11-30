@@ -37,7 +37,7 @@ textarea {
   border-radius: 0;
 	padding: .5em;
   margin-bottom: 1em;
-  border: 2px inset #ccc;
+  border: 1px solid #ccc;
   border-radius: 10px;
   resize: none;
 }
@@ -151,9 +151,7 @@ textarea, .DocumentResults {
     right: 0;
     background-color: #fff;
     width: 200px;
-    height: 100vh;
     border: 1px solid #eee;
-    overflow: auto;
     z-index: 1;
 }
 

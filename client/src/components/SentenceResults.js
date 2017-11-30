@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { join, uniq, flatten } from 'lodash';
-import toneData from '../ToneData';
 
 
 class SentenceResults extends Component {
@@ -24,40 +24,24 @@ class SentenceResults extends Component {
     const toneArray = mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone);
 
     const buttons = toneArray.map(function(tone) {
-
-      var ButtonClass;
-
-      function checkIfButtonPositive(tone) {
-        for (var i = 0; i < toneData.length; i++) {
-          var selectedTone = toneData[i];
-          if (tone === selectedTone.tone) {
-            if (selectedTone.positive) {
-              ButtonClass = "PositiveButton";
-            } else {
-              ButtonClass = "NegativeButton";
-            }
-            return ButtonClass
-          }
-        }
-      }
-
       return (
-        <div key={tone} className={`toggleButton ${checkIfButtonPositive(tone)}`}>{tone}</div>
-      )
+            <div key={tone} className="toggleButton"><button onClick={() => toneToggle()}>{tone}</button></div>
+      );
     });
 
+
     return (
-      <div>
-        <div className="SentenceResults">
-          {sentences}
-        </div>
-        <div className="">
-          {buttons}
-        </div>
+      <div className="SentenceResults">
+        {sentences}
+        {buttons}
       </div>
     );
   }
 }
+
+ function toneToggle(event) {
+  alert("You clicked a button!");
+};
 
 function mapSentencesAndReturnEmotionsArray(sentences) {
   var detectedEmotionsArray = sentences.map(sentence => {return mapIndividualSentenceTones(sentence)});
