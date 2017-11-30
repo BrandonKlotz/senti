@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { join } from 'lodash';
+import { join, indexOf } from 'lodash';
 
 class SentenceResults extends Component {
 
