@@ -8,7 +8,7 @@ body {
 
 .App {
   margin: 0 auto;
-  width: 90%;
+  width: auto;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,10 @@ body {
 
 .form {
   text-align: center;
+}
+
+h1, h2, p {
+  color: #333;
 }
 
 header {
@@ -74,7 +78,8 @@ i {
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  width: 100%;
+  width: 90%;
+  max-width: 600px;
   border-radius: 4px;
   overflow: hidden;
   background-color: #eee;
@@ -99,7 +104,7 @@ i {
 }
 
 .accordion.open {
-  background-color: #CCEEE1;
+  background-color: #efefef;
 }
 
 .accordion p {
@@ -108,18 +113,18 @@ i {
 
 /* -- Sentence Results Styling -- */
 
-.SentenceResults {
+.container {
   padding: 1em;
-  width: 100%;
   background-color: #fafafa;
   border-radius: 0px;
+  margin-bottom: 2em;
 }
 
 textarea, .DocumentResults {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 90%;
+  min-width: 80%;
 }
 
 .dropbtn {
@@ -191,11 +196,9 @@ hr {
 
 
 @media only screen and (min-width: 770px) {
-
-  .App {
+  .accordion, .container {
     width: 600px;
   }
-
 }
 
 .toggleButton {
@@ -216,4 +219,8 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.spash {
+  min-width: 90%;
 }

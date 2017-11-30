@@ -13,8 +13,14 @@ class Form extends Component {
 		return (
 			<div>
 
+				<div className="container">
+					<div className="splash">
+						<h2>The Professional Email Checker.</h2>
+						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
+					</div>
+				</div>
+
 	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
-	        <h1>The Professional Email Checker.</h1>
 	          <textarea
 	            onChange={this.handleText.bind(this)}
 	            value={this.state.text}

@@ -31,7 +31,7 @@ class SentenceResults extends Component {
 
 
     return (
-      <div className="SentenceResults">
+      <div className="container">
         {sentences}
         {buttons}
       </div>
