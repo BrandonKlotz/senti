@@ -82,9 +82,13 @@ i {
   min-width: 90%;
   background-color: #efefef;
   border-radius: 0px;
+<<<<<<< HEAD
   border-bottom: 1px solid #ccc;
   padding: .5em;
   color: #000;
+=======
+  color: black;
+>>>>>>> origin/server-clean
 }
 
 .accordion:hover {
@@ -166,10 +170,11 @@ textarea, .DocumentResults {
   opacity: .7;
 }
 
-@media only screen and (min-width: 770px) {
 
-  .App {
-    width: 600px;
-  }
+.fa-flag {
+  color: red;
+}
 
+.fa-check {
+  color: green;
 }

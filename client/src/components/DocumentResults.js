@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import "font-awesome/css/font-awesome.css";
+import toneData from '../ToneData';
+
 
 class DocumentResults extends Component {
 
@@ -9,57 +12,58 @@ class DocumentResults extends Component {
       open: "open"
     };
   }
-
+//  Hello world! I am having an awesome day! I hate you.
   render() {
 
     //if active state = add open class to element
 
     const detectedDocThemes = this.props.displayResults.document_tone.tones.map(tone => {
+      debugger;
 
-      if (tone.tone_name === "Joy") {
+       for(var i=0; i<toneData.length; i++) {
+          var selectedTone = toneData[i];
+
+      console.log(selectedTone.tone);
+
+      if(tone.tone_name === selectedTone.tone) {
+
+        if (selectedTone.positive) {
         return (
             <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
+                  <i class="fa fa-check" aria-hidden="true"></i>
                     {tone.tone_name}
-                    <p>This is a positive one.</p>
+                    <p>{tone.tone_name}: {selectedTone.text}</p>
             </div>
         )
       }
+
       else {
         return (
             <div  className={`accordion accordion_negative ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
+                  <i class="fa fa-flag" aria-hidden="true"></i>
                     {tone.tone_name}
-                    <p>This is a negative one.</p>
+                    <p>{tone.tone_name}: {selectedTone.text}</p>
             </div>
-        )
-      }
-
-      });
-
-      console.log(detectedDocThemes);
-
-      var toneArray = detectedDocThemes.length;
-
-      if (toneArray === 0) {
-        function reloader() {
-          window.location.reload();
-        }
-        alert('No Emotions were analyzed please try again.');
-        return reloader();
-      } else {
-        return (
-          <div className="DocumentResults">
-            <h2>Results</h2>
-            <div className="AccordionContainer">
-              {detectedDocThemes}
-            </div>
-          </div>
         )
       }
     }
+  }
+    });
+
+
+    return (
+      <div className="DocumentResults">
+        <h2>Results</h2>
+        <div className="AccordionContainer">
+          {detectedDocThemes}
+        </div>
+      </div>
+    );
+  }
 
   toggleAccordion = (tone_name) => {
     if (tone_name === this.state.open) {
