@@ -103,11 +103,22 @@ i {
   width: 90%;
 }
 
+/* -- Sentence Results Styling -- */
+
 .SentenceResults {
   padding: 1em;
   width: 90%;
   background-color: #fafafa;
   border-radius: 0px;
+}
+
+div.toggleButton {
+  background-color: darkgrey;
+  border-radius: 20px;
+}
+
+div.toggleButton:hover {
+  background-color: lightgrey;
 }
 
 textarea, .DocumentResults {

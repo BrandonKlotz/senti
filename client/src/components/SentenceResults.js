@@ -24,7 +24,7 @@ class SentenceResults extends Component {
 
     const buttons = toneArray.map(function(tone) {
       return (
-        <div key={tone}>{tone}</div>
+        <div key={tone} className="toggleButton">{tone}</div>
       )
     })
 
