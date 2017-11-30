@@ -2,45 +2,50 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
+  background-color: #fff;
 }
 
-form {
+.App {
   margin: 0 auto;
-  padding: 2em;
-  min-width: 320px;
-  max-width: 600px;
+  width: 90%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.form {
+  text-align: center;
+}
+
 header {
   border-bottom: 1px #eee solid;
   color: #000;
   padding: 1em;
+  margin: 0;
   padding-bottom: 0;
   padding-top: 0;
+  margin-bottom: 2em;
 }
 
 textarea {
-  min-width: 310px;
+  min-width: 90%;
   min-height: 400px;
-	border: 1px solid #ccc;
+	border: none;
+  font-size: 1.25em;
+  background-color: #fafafa;
   border-radius: 0;
-	padding: 5px;
+	padding: .5em;
   margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
 }
 
-header h1 {
-  background: linear-gradient(45deg, orange, yellow, cyan, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-button {
+.Button {
   height: 40px;
-  max-width: 600px;
+  width: 50%;
   background-color: #F5B23E;
   color: #fff;
   font-size: 1.25em;
@@ -48,8 +53,8 @@ button {
   border-radius: 25px;
 }
 
-button:hover {
-  background-color: #CCC;
+.Button:hover {
+  background-color: #ccc;
 }
 
 .HeaderBar {
@@ -62,31 +67,30 @@ i {
   color: #ccc;
 }
 
-
-
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  width: 75%;
-  min-width: 300px;
-  max-width: 700px;
-
-  border-radius: 10px;
+  width: 90%;
+  border-radius: 4px;
   overflow: hidden;
-
-  background-color: #EDEDED; 
+  background-color: #efefef;
+  margin-bottom: 2em;
+  padding: 1em;
 }
 
 .accordion {
-  width: 100%;
-  background-color: #EDEDED;
+  min-width: 90%;
+  background-color: #efefef;
   border-radius: 0px;
-
-  color: black;
+  border-bottom: 1px solid #ccc;
+  padding: .5em;
+  color: #000;
 }
 
 .accordion:hover {
-  background-color: #DDDDDD;
+  border-radius: 8px;
+  border: none;
+  background-color: #ddd;
 }
 
 .accordion.collapsed {
@@ -94,3 +98,87 @@ i {
   overflow: hidden;
 }
 
+.accordion.open {
+  border: none;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+}
+
+.SentenceResults {
+  padding: 1em;
+  width: 90%;
+  background-color: #fafafa;
+  border-radius: 0px;
+}
+
+textarea, .DocumentResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+}
+
+.dropbtn {
+    background-color: #F5B23E;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 14px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #F5B23E;
+    transform: rotate(90deg);
+    transition: .5s;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: #fff;
+    width: 200px;
+    height: 100vh;
+    border: 1px solid #eee;
+    overflow: auto;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 16px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+.joy {
+  background-color:  yellow;
+  opacity: .7;
+}
+
+
+.fa-flag {
+  color: red;
+}
+
+.fa-check {
+  color: green;
+}
+
+@media only screen and (min-width: 770px) {
+
+  .App {
+    width: 600px;
+  }
+
+}

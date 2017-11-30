@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { join } from 'lodash';
+import { join, indexOf } from 'lodash';
 
 class SentenceResults extends Component {
 
   render() {
-
     const sentences = this.props.displayResults.sentences_tone.map(function(sentence) {
 
       return (
@@ -18,7 +17,6 @@ class SentenceResults extends Component {
               {sentence.text}
           </div>)
     });
-
 
     return (
       <div className="SentenceResults">

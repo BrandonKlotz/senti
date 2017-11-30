@@ -4,26 +4,25 @@ class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: ""
+			text: "",
 		};
 	}
 
 	render() {
+
 		return (
-      <form onSubmit={this.handleSubmit.bind(this)} className="new-blurb-form">
-        <h1>The Profesional Email Checker.</h1>
-        <div className="new-blurb-input-area">
-          <textarea
-            className='f-input-2'
-            onChange={this.handleText.bind(this)}
-            value={this.state.text}
-            placeholder="Document Body...">
-          </textarea>
-        </div>
-        <div className="form-submit-2">
-					<button onClick={this.handleSubmit.bind(this)} type="submit">Analyze</button>
-        </div>
-      </form>
+			<div>
+
+	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
+	        <h1>The Professional Email Checker.</h1>
+	          <textarea
+	            onChange={this.handleText.bind(this)}
+	            value={this.state.text}
+	            placeholder="Enter a few sentences here to analyze.">
+	          </textarea>
+						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
+	      </form>
+			</div>
 		);
 	}
 
@@ -35,7 +34,11 @@ class Form extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		
+
+		if(this.state.text === "") {
+			return
+		}
+
 		this.props.onSubmit({
 			text: this.state.text
 		});

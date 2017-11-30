@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addResults } from '../actions';
 import { isEmpty } from 'lodash';
+import Icon from 'watson-react-components';
 
 import Form from './Form.js';
 import DocumentResults from './DocumentResults.js';
@@ -20,7 +21,7 @@ class TextAnalyzer extends Component {
     } else if (this.props.isLoading === true) {
       return (
         <div className="App">
-          <p>Loading...</p>
+          <Icon type="loader" />
         </div>
       );
     } else {
