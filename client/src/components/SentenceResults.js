@@ -6,16 +6,17 @@ import { join, indexOf } from 'lodash';
 class SentenceResults extends Component {
 
   render() {
-    const sentences = this.props.displayResults.sentences_tone.map(function(sentence) {
+    const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
 
       return (
           <div
             key={sentence.sentence_id}
             className={join(sentence.tones.map(tone => {
-              return(tone.tone_id)
+              return(tone.tone_id);
             }), " ")}>
-              {sentence.text}
-          </div>)
+             <span> {sentence.text}</span>
+          </div>
+          );
     });
 
     return (
@@ -29,7 +30,7 @@ class SentenceResults extends Component {
 const mapStateToProps = (state) => {
 	return {
 		displayResults: state.displayResults
-	}
-}
+	};
+};
 
 export default connect(mapStateToProps, null)(SentenceResults);

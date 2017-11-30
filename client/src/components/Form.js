@@ -36,7 +36,7 @@ class Form extends Component {
 		event.preventDefault();
 
 		if(this.state.text === "") {
-			return
+			return;
 		}
 
 		this.props.onSubmit({

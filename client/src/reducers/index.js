@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
 	};
 
-export default function(state = INITIAL_STATE, action) {
+export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case "RECEIVE_RESULTS":
             return Object.assign({}, state, {
@@ -14,4 +14,4 @@ export default function(state = INITIAL_STATE, action) {
         default:
             return state;
     }
-}
+};

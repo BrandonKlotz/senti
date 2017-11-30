@@ -37,9 +37,12 @@ textarea {
   border-radius: 0;
 	padding: .5em;
   margin-bottom: 1em;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 2px inset #ccc;
+  border-radius: 10px;
   resize: none;
+}
+textarea:focus {
+  outline:none;
 }
 
 
@@ -51,6 +54,10 @@ textarea {
   font-size: 1.25em;
   border: none;
   border-radius: 25px;
+}
+
+.Button:focus {
+  outline:none;
 }
 
 .Button:hover {
@@ -130,8 +137,6 @@ textarea, .DocumentResults {
 
 .dropbtn:hover, .dropbtn:focus {
     background-color: #F5B23E;
-    transform: rotate(90deg);
-    transition: .5s;
 }
 
 .dropdown {
@@ -158,10 +163,15 @@ textarea, .DocumentResults {
     display: block;
 }
 
-.dropdown a:hover {background-color: #f1f1f1}
+.dropdown a:hover {
+  background-color: #f1f1f1;
+}
 
-.show {display:block;}
-.joy {
+.show {
+  display:block;
+}
+
+.joy span {
   background-color:  yellow;
   opacity: .7;
 }
