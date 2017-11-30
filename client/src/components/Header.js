@@ -7,9 +7,9 @@ class Header extends Component {
   render() {
 
     return(
-   		<header className="HeaderBar">
-   			<h1>Senti</h1>
+   		<header>
 
+   			<img src='./img/logo.png' alt="Logo" />
 				<div className="dropdown">
 					<button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
 
@@ -20,7 +20,8 @@ class Header extends Component {
 
 					  </div>
 				</div>
-	   		</header>
+
+	   	</header>
     );
   }
 
