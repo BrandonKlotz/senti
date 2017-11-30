@@ -9,7 +9,7 @@ class DocumentResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: "open"
+      open: ""
     };
   }
 //  Hello world! I am having an awesome day! I hate you.
@@ -38,10 +38,11 @@ class DocumentResults extends Component {
             </div>
         )
       }
-
+    
       else {
         return (
-            <div  className={`accordion accordion_negative ${tone.tone_name === this.state.open?"open":"collapsed"}`}
+
+            <div  className={`accordion accordion_positive ${tone.tone_name === this.state.open?"open":"collapsed"}`}
                   key={tone.tone_name}
                   onClick={() => this.toggleAccordion(tone.tone_name)}>
                   <i className="fa fa-flag" aria-hidden="true"></i>
