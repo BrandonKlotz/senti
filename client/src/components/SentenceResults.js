@@ -30,9 +30,13 @@ class SentenceResults extends Component {
 
 
     return (
-      <div className="SentenceResults">
-        {sentences}
-        {buttons}
+      <div>
+        <div className="SentenceResults">
+          {sentences}
+        </div>
+        <div className="accordion">
+          {buttons}
+        </div>
       </div>
     );
   }
