@@ -18,7 +18,6 @@ class DocumentResults extends Component {
     //if active state = add open class to element
 
     const detectedDocThemes = this.props.displayResults.document_tone.tones.map(tone => {
-      debugger;
 
        for(var i=0; i<toneData.length; i++) {
           var selectedTone = toneData[i];

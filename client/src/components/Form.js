@@ -5,8 +5,6 @@ class Form extends Component {
 		super(props);
 		this.state = {
 			text: "",
-			toggleModal: false
-
 		};
 	}
 
@@ -16,7 +14,7 @@ class Form extends Component {
 			<div>
 
 	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
-	        <h1>The Profesional Email Checker.</h1>
+	        <h1>The Professional Email Checker.</h1>
 	          <textarea
 	            onChange={this.handleText.bind(this)}
 	            value={this.state.text}
@@ -38,9 +36,6 @@ class Form extends Component {
 		event.preventDefault();
 
 		if(this.state.text === "") {
-			this.setState({
-				toggleModal: !this.state.toggleModal,
-			});
 			return
 		}
 
