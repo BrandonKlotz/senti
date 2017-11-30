@@ -81,7 +81,6 @@ i {
   width: 100%;
   background-color: #EDEDED;
   border-radius: 0px;
-
   color: black;
 }
 
@@ -148,4 +147,13 @@ i {
 .joy {
   background-color:  yellow;
   opacity: .7;
+}
+
+
+.fa-flag {
+  color: red;
+}
+
+.fa-check {
+  color: green;
 }
