@@ -12,5 +12,8 @@
   "main": "server.js",
   "repository": "https://github.com/BrandonKlotz/final-project.git",
   "author": "Brandon Klotz <brandonklotz@icloud.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "heroku-postbuild": "cd client && yarn install && yarn build"
+  }
 }
