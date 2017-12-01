@@ -2,12 +2,13 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
-  background-color: #fff;
+  background-color: #fefefe;
+  background: url('/img/scatter.png') repeat;
 }
 
 .App {
   margin: 0 auto;
-  width: 90%;
+  width: auto;
   min-height: 400px;
   display: flex;
   flex-direction: column;
@@ -18,18 +19,24 @@ body {
   text-align: center;
 }
 
+h1, h2, p {
+  color: #333;
+}
+
 header {
-  border-bottom: 1px #eee solid;
-  color: #000;
-  padding: 1em;
-  margin: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-  margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #70E0D3 solid;
+  align-items: center;
+  padding: 1.5em;
+}
+
+header img {
+  width: 50px;
 }
 
 textarea {
-  min-width: 90%;
+  min-width: 310px;
   min-height: 400px;
 	border: none;
   font-size: 1.25em;
@@ -37,8 +44,8 @@ textarea {
   border-radius: 0;
 	padding: .5em;
   margin-bottom: 1em;
-  border: 2px inset #ccc;
-  border-radius: 10px;
+  border: 1px solid #70E0D3;
+  border-radius: 4px;
   resize: none;
 }
 textarea:focus {
@@ -49,7 +56,7 @@ textarea:focus {
 .Button {
   height: 40px;
   width: 50%;
-  background-color: #F5B23E;
+  background-color: #70E0D3;
   color: #fff;
   font-size: 1.25em;
   border: none;
@@ -61,22 +68,18 @@ textarea:focus {
 }
 
 .Button:hover {
-  background-color: #ccc;
-}
-
-.HeaderBar {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  background-color: #8EBDB2;
 }
 
 i {
-  color: #ccc;
+  color: #8DB0A8;
 }
 
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
+  width: 90%;
+  max-width: 600px;
   border-radius: 4px;
   overflow: hidden;
   background-color: #eee;
@@ -84,15 +87,15 @@ i {
 }
 
 .accordion {
-  background-color: #ddd;
+  background-color: #dedede;
   border-radius: 0px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fefefe;
   padding: 1em;
   color: #000;
 }
 
 .accordion:hover {
-  background-color: #ccc;
+  background-color: #777;
 }
 
 .AccordionHeader {
@@ -106,7 +109,7 @@ i {
 }
 
 .accordion.open {
-  background-color: #f0f0f0;
+  background-color: #fafafa;
 }
 
 .accordion p {
@@ -123,32 +126,31 @@ i.hide {
 
 /* -- Sentence Results Styling -- */
 
-.SentenceResults {
+.container {
   padding: 1em;
-  width: 90%;
   background-color: #fafafa;
   border-radius: 0px;
+  margin-bottom: 2em;
 }
 
 textarea, .DocumentResults {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 100%;
+  min-width: 80%;
 }
 
 .dropbtn {
-    background-color: #F5B23E;
+    background-color: #70E0D3;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    margin-bottom: 14px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #F5B23E;
+    background-color: #8EBDB2;
 }
 
 .dropdown {
@@ -160,11 +162,10 @@ textarea, .DocumentResults {
     display: none;
     position: fixed;
     right: 0;
-    background-color: #fff;
+    background-color: #fefefe;
     width: 200px;
-    height: 100vh;
-    border: 1px solid #eee;
-    overflow: auto;
+    border: 1px solid #70E0D3;
+    margin-top: 28px;
     z-index: 1;
 }
 
@@ -176,7 +177,7 @@ textarea, .DocumentResults {
 }
 
 .dropdown a:hover {
-  background-color: #f1f1f1;
+  background-color: #70E0D3;
 }
 
 .show {
@@ -192,12 +193,12 @@ textarea, .DocumentResults {
 
 
 .fa-flag {
-  color: red;
+  color: tomato;
   margin-right: 1em;
 }
 
 .fa-check {
-  color: green;
+  color: #7ED321;
   margin-right: 1em;
 }
 
@@ -208,23 +209,31 @@ hr {
 
 
 @media only screen and (min-width: 770px) {
-
-  .App {
+  .accordion, .container {
     width: 600px;
   }
-
 }
 
 .toggleButton {
   width: 100px;
   height: 100px;
-  border: 1px solid teal;
+  border: 1px solid #70E0D3;
 }
 
 .PositiveButton {
-  background-color: green;
+  background-color: #C2E691;
 }
 
 .NegativeButton {
-  background-color: red;
+  background-color: tomato;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spash {
+  min-width: 90%;
 }
