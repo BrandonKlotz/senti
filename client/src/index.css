@@ -29,6 +29,7 @@ header {
   border-bottom: 1px #70E0D3 solid;
   align-items: center;
   padding: 1.5em;
+  background-color: #fefefe;
 }
 
 header img {
@@ -205,12 +206,12 @@ textarea, .DocumentResults {
 }*/
 
 .Analytical, .Confident, .Joy {
-  background-color: green;
+  background-color: #7ED321;
   border-radius: 5px;
 }
 
 .Fear, .Anger, .Sadness {
-  background-color: red;
+  background-color: tomato;
   border-radius: 5px;
 }
 
@@ -218,7 +219,6 @@ textarea, .DocumentResults {
 .SentenceResults {
   max-width: 600px;
   padding: 5px;
-  border: 3px inset #fbfbfb;
   border-radius: 10px;
   line-height: 1.5em;
   display: flex;
@@ -248,9 +248,14 @@ hr {
 }
 
 .toggleButton {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #70E0D3;
+  width: 20%;
+  height: 20px;
+  /*margin: .5em;*/
+  text-align: center;
+  padding: .5em;
+  border-radius: 20px;
+  margin-top: 1em;
+  /*border: 1px solid #70E0D3;*/
 }
 
 .PositiveButton {

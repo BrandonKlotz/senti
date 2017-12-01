@@ -36,7 +36,8 @@ class SentenceResults extends Component {
            });
 
            return (
-            <div>
+            <div className="container">
+                <h2>Sentence-By-Sentence Tones</h2>
                 <div className="SentenceResults">
                   {sentences}
                 </div>
@@ -59,7 +60,6 @@ class SentenceResults extends Component {
     };
 
     toneToggle = (tone) => {
-      debugger;
         if  (tone === this.state.highlighted) {
         this.setState({
           highlighted: ""
