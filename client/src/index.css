@@ -1,3 +1,5 @@
+/* -- OVERALL APP STYLING -- */
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -23,6 +25,8 @@ h1, h2, p {
   color: #333;
 }
 
+/* -- HEADER STYLING -- */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -35,6 +39,56 @@ header {
 header img {
   width: 50px;
 }
+
+.dropbtn {
+    background-color: #70E0D3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #8EBDB2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: #fefefe;
+    width: 200px;
+    border: 1px solid #70E0D3;
+    margin-top: 28px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 16px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+  background-color: #70E0D3;
+}
+
+.show {
+  display:block;
+}
+
+.ExpandedNavigation {
+  display: none;
+}
+
+/* -- Submission Form Styling -- */
 
 textarea {
   min-width: 310px;
@@ -123,6 +177,16 @@ i.hide {
   display: none;
 }
 
+.fa-flag {
+  color: tomato;
+  margin-right: 1em;
+}
+
+.fa-check {
+  color: #7ED321;
+  margin-right: 1em;
+}
+
 /* -- Sentence Results Styling -- */
 
 .container {
@@ -139,51 +203,6 @@ textarea, .DocumentResults {
   min-width: 80%;
 }
 
-.dropbtn {
-    background-color: #70E0D3;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #8EBDB2;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: fixed;
-    right: 0;
-    background-color: #fefefe;
-    width: 200px;
-    border: 1px solid #70E0D3;
-    margin-top: 28px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 16px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-  background-color: #70E0D3;
-}
-
-.show {
-  display:block;
-}
-
-.show {display:block;}
 
 /* Begin styling for sentence results buttons */
 
@@ -191,6 +210,7 @@ textarea, .DocumentResults {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /*.joy, .analytical, .confident {
@@ -225,28 +245,50 @@ textarea, .DocumentResults {
 }
 
 
-.fa-flag {
-  color: tomato;
-  margin-right: 1em;
-}
-
-.fa-check {
-  color: #7ED321;
-  margin-right: 1em;
-}
-
 hr {
   border: none;
 }
 
-@media only screen and (min-width: 770px) {
+/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
+
+/* At tablet or bugger */
+@media only screen and (min-width: 768px) {
   .accordion, .container {
     width: 600px;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .ExpandedNavigation {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ExpandedNavigation a {
+    text-decoration: none;
+    color: #70E0D3;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 460px) and (min-width:360px) {
+  
+  .toggleButton {
+    margin: 0 15px;
+  }
+
+  .toneToggleButtons {
+    display: flex;
+    justify-content: flex-start;
   }
 }
 
 .toggleButton {
-  width: 20%;
+  width: 120px;
   height: 20px;
   /*margin: .5em;*/
   text-align: center;
