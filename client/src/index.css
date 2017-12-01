@@ -29,6 +29,7 @@ header {
   border-bottom: 1px #70E0D3 solid;
   align-items: center;
   padding: 1.5em;
+  background-color: #fefefe;
 }
 
 header img {
