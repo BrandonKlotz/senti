@@ -12,7 +12,9 @@ function receiveResults(displayResults){
 
 //  Function called by submit button. Handles submission of information on UI to backend for analysis
 export function addResults(inputData) {
-  return function(dispatch) {
+  return function(dispatch) { 
+  // we need to call an action here that will tell the reducer to set loading state to be true
+  // and we should rename this function fetchResults
     $.ajax({
       url:"/api/tone",
       method: "POST",

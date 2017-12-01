@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addResults } from '../actions';
 import { isEmpty } from 'lodash';
-import Icon from 'watson-react-components';
 
 import Form from './Form.js';
 import DocumentResults from './DocumentResults.js';
 import SentenceResults from './SentenceResults.js';
 
 class TextAnalyzer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isLoading: false };
-  }
 
   render() {
 
