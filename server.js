@@ -2,6 +2,12 @@ const express = require("express");
 const app = express();
 const errorCallback = console.error.bind(console);
 const bodyParser = require('body-parser');
+var delay = require('express-delay');
+
+// Delay all responses for 1 second
+app.use(delay(1000));
+
+
 //  IBM BlueMix credentials
 require('dotenv').config();
 

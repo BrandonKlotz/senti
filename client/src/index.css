@@ -38,11 +38,11 @@ header img {
 textarea {
   min-width: 310px;
   min-height: 400px;
-	border: none;
+  border: none;
   font-size: 1.25em;
   background-color: #fafafa;
   border-radius: 0;
-	padding: .5em;
+  padding: .5em;
   margin-bottom: 1em;
   border: 1px solid #70E0D3;
   border-radius: 4px;
@@ -186,9 +186,44 @@ textarea, .DocumentResults {
 
 .show {display:block;}
 
-.joy {
-  background-color:  yellow;
-  opacity: .7;
+/* Begin styling for sentence results buttons */
+
+.toneToggleButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*.joy, .analytical, .confident {
+  background-color:  green;
+  border-radius: 5px;
+}
+
+.sadness, .fear, .anger {
+    background-color: red;
+      border-radius: 5px;
+}*/
+
+.Analytical, .Confident, .Joy {
+  background-color: green;
+  border-radius: 5px;
+}
+
+.Fear, .Anger, .Sadness {
+  background-color: red;
+  border-radius: 5px;
+}
+
+
+.SentenceResults {
+  max-width: 600px;
+  padding: 5px;
+  border: 3px inset #fbfbfb;
+  border-radius: 10px;
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 
@@ -205,8 +240,6 @@ textarea, .DocumentResults {
 hr {
   border: none;
 }
-
-
 
 @media only screen and (min-width: 770px) {
   .accordion, .container {
