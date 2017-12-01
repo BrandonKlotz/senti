@@ -14,21 +14,19 @@ class SentenceResults extends Component {
 
       render() {
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
+            debugger;
             return (
                   <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
                       return(tone.tone_id);
-                      }), " ")}>
-
-                      <span>{sentence.text}</span>
+                    }), " ")}>
+                      <span className={`${sentence.tone_name === this.state.highlighted?`${sentence.tone_name}`:""}`}>{sentence.text}</span>
                   </div>
                 );
           });
 
            const toneArray = without(this.mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
-
            const buttons = toneArray.map((tone) => {
               var ButtonClass;
-
 
              return (  <div key={tone}
                                     className={`toggleButton ${tone}`}
@@ -60,15 +58,35 @@ class SentenceResults extends Component {
     };
 
     toneToggle = (tone) => {
-      console.log(tone);
+      // console.log(tone);
 
         this.setState({
           highlighted: tone
           });
 
-      
+
       console.log(this.state.highlighted);
     };
+
+
+
+    checkIfHighlighted = (tone) => {
+      var highlightedClass;
+         for (var i = 0; i < toneData.length; i++) {
+            var selectedTone = toneData[i];
+              if (tone === selectedTone.tone) {
+                   if (selectedTone.positive) {
+                      highlightedClass = "PositiveButton";
+                   } else {
+                      highlightedClass = "NegativeButton";
+                   }
+                  return highlightedClass;
+              }
+         }
+      };
+
+
+
 }
 
 const mapStateToProps = (state) => {
@@ -79,8 +97,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(SentenceResults);
-
-
 
 // const checkIfButtonPositive = (tone) => {
 //                  for (var i = 0; i < toneData.length; i++) {
