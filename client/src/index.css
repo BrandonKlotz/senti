@@ -84,7 +84,7 @@ header img {
   display:block;
 }
 
-.ExpandedHeader {
+.ExpandedNavigation {
   display: none;
 }
 
@@ -210,6 +210,7 @@ textarea, .DocumentResults {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 /*.joy, .analytical, .confident {
@@ -260,22 +261,29 @@ hr {
     display: none;
   }
 
-  .ExpandedHeader {
-    width: 250px;
+  .ExpandedNavigation {
+    width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
-  .ExpandedHeader a {
+  .ExpandedNavigation a {
     text-decoration: none;
     color: #70E0D3;
     font-weight: bold;
   }
 }
 
+@media only screen and (max-width: 460px) and (min-width:360px) {
+  .toneToggleButtons {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 .toggleButton {
-  width: 20%;
+  width: 120px;
   height: 20px;
   /*margin: .5em;*/
   text-align: center;

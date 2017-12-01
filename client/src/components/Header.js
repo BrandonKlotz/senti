@@ -13,7 +13,7 @@ class Header extends Component {
 
    			<img src='./img/logo.png' alt="Logo" />
 
-   				<div className="ExpandedHeader">
+   				<div className="ExpandedNavigation">
    					<a href="#">Home</a>
 					<a href="#">About</a>
 					<a href="#">Contact</a>
