@@ -1,5 +1,7 @@
 Senti is a sentiment analysis app to assist you in writing professional emails.
 
+https://senti-gc.herokuapp.com
+
 Paste or type your text into the free web app and hit the ANALYZE button.
 
 Senti uses the IBM Watson Tone Analyzer API to detect language and emotional tones in your email or text message. 
@@ -13,6 +15,7 @@ Tone is an important component of business communication that is easily overlook
 People are much more likely to perceive negative emotions with greater intensity than they do positive emotions.
 
 To ensure the tone of your message is positive and professional, Senti does both an overall document analysis and a sentence-by-sentence review.
+
 
 ----
 Senti is the React/Redux final group project for the Grand Circus Facebook* Bootcamp in Grand Rapids.
