@@ -8,23 +8,35 @@ class SentenceResults extends Component {
         constructor(props) {
           super(props);
           this.state = {
-            highlighted: ""
+            highlighted: "anger"
            };
        }
 
       render() {
+        let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
             debugger;
+
+            const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
+                if(tone.tone_name=== this.state.highlighted) {
+                  isHighlighted = " highlighted";
+                  return isHighlighted;
+                };
+            })
+
+            const classnames = join(sentence.tones.map(tone => { return (tone.tone_id); })," ") + isHighlighted;
+            console.log(classnames);
+
+
             return (
-                  <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
-                      return(tone.tone_id);
-                    }), " ")}>
-                      <span className={`${sentence.tone_name === this.state.highlighted?`${sentence.tone_name}`:""}`}>{sentence.text}</span>
+                  <div key={sentence.sentence_id} className={classnames}>
+                      <span>{sentence.text}</span>
                   </div>
                 );
           });
 
            const toneArray = without(this.mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
+
            const buttons = toneArray.map((tone) => {
               var ButtonClass;
 

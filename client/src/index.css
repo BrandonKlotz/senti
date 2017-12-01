@@ -273,3 +273,7 @@ hr {
 .spash {
   min-width: 90%;
 }
+
+.highlighted {
+  color: pink;
+}
