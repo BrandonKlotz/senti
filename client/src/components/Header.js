@@ -24,18 +24,20 @@ class Header extends Component {
 
    			<img src='./img/logo.png' alt="Logo" />
 				<div className="dropdown">
-          <button onClick={this.toggleModal}>Open Modal</button>
 					<button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
 
 					  <div id="myDropdown" className="dropdown-content">
-					    <a href="#">Home</a>
-					    <a href="#">About</a>
-					    <a href="#">Contact</a>
+					    <a>Home</a>
+					    <a onClick={this.toggleModal}>About</a>
+					    <a>Contact</a>
+
 
 					  </div>
-            <Modal show={this.state.isOpen}
+            <Modal 
+              className={"modalWindow"}
+              show={this.state.isOpen}
               onClose={this.toggleModal}>
-            Here's some content for the Modal
+              Senti is a sentiment analysis app to assist you in writing professional emails.
             </Modal>
 				</div>
 

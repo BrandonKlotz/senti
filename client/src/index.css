@@ -182,8 +182,9 @@ textarea, .DocumentResults {
 .show {
   display:block;
 }
-
-.show {display:block;}
+.modalWindow{
+  z-index: 100;
+}
 
 /* Begin styling for sentence results buttons */
 

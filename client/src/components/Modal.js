@@ -29,6 +29,7 @@ class Modal extends React.Component {
       padding: 30
     };
 
+
     return (
       <div className="backdrop" style={backdropStyle}>
         <div className="modal" style={modalStyle}>
