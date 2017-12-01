@@ -60,15 +60,14 @@ class SentenceResults extends Component {
     };
 
     toneToggle = (tone) => {
-        if  (tone === this.state.highlighted) {
+      console.log(tone);
+
         this.setState({
-          highlighted: ""
-        })
-      } else {
-        this.setState({
-          highlighted: this.state.tone
-        })
-      }
+          highlighted: tone
+          });
+
+      
+      console.log(this.state.highlighted);
     };
 }
 
