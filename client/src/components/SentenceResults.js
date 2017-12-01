@@ -8,7 +8,7 @@ class SentenceResults extends Component {
         constructor(props) {
           super(props);
           this.state = {
-            highlighted: "anger"
+            highlighted: ""
            };
        }
 
@@ -16,21 +16,23 @@ class SentenceResults extends Component {
         let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
             debugger;
-
             const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
-                if(tone.tone_name=== this.state.highlighted) {
-                  isHighlighted = " highlighted";
+                if(tone.tone_name === this.state.highlighted) {
+                  isHighlighted = "highlighted ";
+                  return isHighlighted;
+                } else {
+                  isHighlighted = "";
                   return isHighlighted;
                 };
             })
 
-            const classnames = join(sentence.tones.map(tone => { return (tone.tone_id); })," ") + isHighlighted;
+            const classnames = isHighlighted + join(sentence.tones.map(tone => { return (tone.tone_id); })," ");
             console.log(classnames);
-
+            const space = "&nbsp;";
 
             return (
                   <div key={sentence.sentence_id} className={classnames}>
-                      <span>{sentence.text}</span>
+                      <span>{sentence.text}&nbsp;</span>
                   </div>
                 );
           });
@@ -65,8 +67,8 @@ class SentenceResults extends Component {
     };
 
     mapIndividualSentenceTones = (sentence) => {
-        var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
-        return indidivualEmotionsArry;
+        var individualEmotionsArray = sentence.tones.map(tone => {return(tone.tone_name)});
+        return individualEmotionsArray;
     };
 
     toneToggle = (tone) => {
