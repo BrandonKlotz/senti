@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { join, uniq, flatten } from 'lodash';
+import { join, uniq, flatten, without } from 'lodash';
 import toneData from '../ToneData';
 
 
@@ -21,7 +21,7 @@ class SentenceResults extends Component {
 
     });
 
-    const toneArray = mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone);
+    const toneArray = without(mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
 
     const buttons = toneArray.map(function(tone) {
 
@@ -31,6 +31,7 @@ class SentenceResults extends Component {
         for (var i = 0; i < toneData.length; i++) {
           var selectedTone = toneData[i];
           if (tone === selectedTone.tone) {
+
             if (selectedTone.positive) {
               ButtonClass = "PositiveButton";
             } else {
