@@ -6,75 +6,94 @@ import toneData from '../ToneData';
 
 class SentenceResults extends Component {
 
-  render() {
-    const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
+        constructor(props) {
+          super(props);
+          this.state = {
+            highlighted: ""
+           };
+       }
 
-      return (
-          <div
-            key={sentence.sentence_id}
-            className={join(sentence.tones.map(tone => {
-              return(tone.tone_id);
-            }), " ")}>
-             <span> {sentence.text}</span>
-          </div>
-          );
+      render() {
+          const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
+            return (
+                  <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
+                      return(tone.tone_id);
+                      }), " ")}>
 
-    });
+                      <span>{sentence.text}</span>
+                  </div>
+                );
+          });
 
-    const toneArray = without(mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
+           const toneArray = without(this.mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
+           
+           const buttons = toneArray.map((tone) => {
+              var ButtonClass;
+              
 
-    const buttons = toneArray.map(function(tone) {
+             return (  <div key={tone} 
+                                    className={`toggleButton ${tone}`} 
+                                    onClick={() => this.toneToggle(tone)}>{tone}</div>  );
+           });
 
-      var ButtonClass;
+           return (
+            <div>
+                <div className="SentenceResults">
+                  {sentences}
+                </div>
+                <div className="toneToggleButtons">
+                  {buttons}
+                </div>
+             </div>
+             );
+       }
 
-      function checkIfButtonPositive(tone) {
-        for (var i = 0; i < toneData.length; i++) {
-          var selectedTone = toneData[i];
-          if (tone === selectedTone.tone) {
+  mapSentencesAndReturnEmotionsArray = (sentences) => {
+        var detectedEmotionsArray = sentences.map(sentence => {return this.mapIndividualSentenceTones(sentence)});
+        var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
+        return uniqueDetectedEmotions;
+    };
 
-            if (selectedTone.positive) {
-              ButtonClass = "PositiveButton";
-            } else {
-              ButtonClass = "NegativeButton";
-            }
-            return ButtonClass
-          }
-        }
+    mapIndividualSentenceTones = (sentence) => {
+        var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
+        return indidivualEmotionsArry;
+    };
+
+    toneToggle = (tone) => {
+      debugger;
+        if  (tone === this.state.highlighted) {
+        this.setState({
+          highlighted: ""
+        })
+      } else {
+        this.setState({
+          highlighted: this.state.tone
+        })
       }
-
-      return (
-        <div key={tone} className={`toggleButton ${checkIfButtonPositive(tone)}`}>{tone}</div>
-      )
-    });
-
-    return (
-      <div>
-        <div className="SentenceResults">
-          {sentences}
-        </div>
-        <div className="">
-          {buttons}
-        </div>
-      </div>
-    );
-  }
-}
-
-function mapSentencesAndReturnEmotionsArray(sentences) {
-  var detectedEmotionsArray = sentences.map(sentence => {return mapIndividualSentenceTones(sentence)});
-  var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
-  return uniqueDetectedEmotions;
-}
-
-function mapIndividualSentenceTones(sentence){
-  var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
-  return indidivualEmotionsArry;
+    };
 }
 
 const mapStateToProps = (state) => {
 	return {
-		displayResults: state.displayResults
+		highlighted: state.highlighted,
+             displayResults: state.displayResults
 	};
 };
 
 export default connect(mapStateToProps, null)(SentenceResults);
+
+
+
+// const checkIfButtonPositive = (tone) => {
+//                  for (var i = 0; i < toneData.length; i++) {
+//                     var selectedTone = toneData[i];
+//                       if (tone === selectedTone.tone) {
+//                            if (selectedTone.positive) {
+//                               ButtonClass = "PositiveButton";
+//                            } else {
+//                               ButtonClass = "NegativeButton";
+//                            }
+//                           return ButtonClass;
+//                       }
+//                  }
+//               };

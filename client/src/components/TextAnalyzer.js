@@ -12,16 +12,16 @@ class TextAnalyzer extends Component {
 
   render() {
 
-    if (this.props.isLoading !== true && isEmpty(this.props.displayResults) ) {
+    if (this.props.loading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
           <Form onSubmit={this.props.addResults}/>
         </div>
       );
-    } else if (this.props.isLoading === true) {
+    } else if (this.props.loading === true) {
       return (
         <div className="App">
-          <Icon type="loader" />
+          Loading...
         </div>
       );
     } else {
@@ -40,7 +40,7 @@ const mapActionsToProps = {
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
+    loading: state.loading,
     displayResults: state.displayResults
   };
 };

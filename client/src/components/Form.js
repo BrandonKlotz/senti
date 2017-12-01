@@ -5,6 +5,7 @@ class Form extends Component {
 		super(props);
 		this.state = {
 			text: "",
+			loading: false
 		};
 	}
 
@@ -38,10 +39,12 @@ class Form extends Component {
 		if(this.state.text === "") {
 			return;
 		}
-
+		console.log(this.state.loading);
 		this.props.onSubmit({
-			text: this.state.text
+			text: this.state.text,
+			loading: !this.state.loading
 		});
+		console.log(this.state.loading);
 	}
 
 }

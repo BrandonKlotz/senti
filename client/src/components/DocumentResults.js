@@ -44,7 +44,7 @@ class DocumentResults extends Component {
                   </div>
                   <p>{selectedTone.text}</p>
             </div>
-        )
+        );
       }
     
       else {
