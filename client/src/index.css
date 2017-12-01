@@ -98,6 +98,11 @@ i {
   background-color: #777;
 }
 
+.AccordionHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
 .accordion.collapsed {
   height: 1.5em;
   overflow: hidden;
@@ -109,6 +114,14 @@ i {
 
 .accordion p {
   width: 90%;
+}
+
+i.fa-plus, i.fa-minus {
+  color: black;
+}
+
+i.hide {
+  display: none;
 }
 
 /* -- Sentence Results Styling -- */

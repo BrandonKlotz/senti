@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import { join, uniq, flatten } from 'lodash';
-
+import { join, uniq, flatten, without } from 'lodash';
+import toneData from '../ToneData';
 
 class SentenceResults extends Component {
 
@@ -21,9 +20,25 @@ class SentenceResults extends Component {
 
     });
 
-    const toneArray = mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone);
+    const toneArray = without(mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
 
     const buttons = toneArray.map(function(tone) {
+      var ButtonClass;
+
+      function checkIfButtonPositive(tone) {
+        for (var i = 0; i < toneData.length; i++) {
+          var selectedTone = toneData[i];
+          if (tone === selectedTone.tone) {
+
+            if (selectedTone.positive) {
+              ButtonClass = "PositiveButton";
+            } else {
+              ButtonClass = "NegativeButton";
+            }
+            return ButtonClass
+          }
+        }
+      }
       return (
             <div key={tone} className="toggleButton"><button onClick={() => toneToggle()}>{tone}</button></div>
       );
