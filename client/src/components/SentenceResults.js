@@ -13,13 +13,26 @@ class SentenceResults extends Component {
        }
 
       render() {
+        let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
-            return (
-                  <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
-                      return(tone.tone_id);
-                      }), " ")}>
+            debugger;
+            const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
+                if(tone.tone_name === this.state.highlighted) {
+                  isHighlighted = "highlighted ";
+                  return isHighlighted;
+                } else {
+                  isHighlighted = "";
+                  return isHighlighted;
+                };
+            })
 
-                      <span>{sentence.text}</span>
+            const classnames = isHighlighted + join(sentence.tones.map(tone => { return (tone.tone_id); })," ");
+            console.log(classnames);
+            const space = "&nbsp;";
+
+            return (
+                  <div key={sentence.sentence_id} className={classnames}>
+                      <span>{sentence.text}&nbsp;</span>
                   </div>
                 );
           });
@@ -28,7 +41,6 @@ class SentenceResults extends Component {
 
            const buttons = toneArray.map((tone) => {
               var ButtonClass;
-
 
              return (  <div key={tone}
                                     className={`toggleButton ${tone}`}
@@ -55,21 +67,40 @@ class SentenceResults extends Component {
     };
 
     mapIndividualSentenceTones = (sentence) => {
-        var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
-        return indidivualEmotionsArry;
+        var individualEmotionsArray = sentence.tones.map(tone => {return(tone.tone_name)});
+        return individualEmotionsArray;
     };
 
     toneToggle = (tone) => {
-        if  (tone === this.state.highlighted) {
+      // console.log(tone);
+
         this.setState({
-          highlighted: ""
-        })
-      } else {
-        this.setState({
-          highlighted: this.state.tone
-        })
-      }
+          highlighted: tone
+          });
+
+
+      console.log(this.state.highlighted);
     };
+
+
+
+    checkIfHighlighted = (tone) => {
+      var highlightedClass;
+         for (var i = 0; i < toneData.length; i++) {
+            var selectedTone = toneData[i];
+              if (tone === selectedTone.tone) {
+                   if (selectedTone.positive) {
+                      highlightedClass = "PositiveButton";
+                   } else {
+                      highlightedClass = "NegativeButton";
+                   }
+                  return highlightedClass;
+              }
+         }
+      };
+
+
+
 }
 
 const mapStateToProps = (state) => {
@@ -80,8 +111,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(SentenceResults);
-
-
 
 // const checkIfButtonPositive = (tone) => {
 //                  for (var i = 0; i < toneData.length; i++) {

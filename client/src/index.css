@@ -273,3 +273,27 @@ hr {
 .spash {
   min-width: 90%;
 }
+
+.highlighted.fear {
+  color: blue;
+}
+
+.highlighted.anger {
+  color: red;
+}
+
+.highlighted.sadness {
+  color: purple;
+}
+
+.highlighted.joy {
+  color: yellow;
+}
+
+.highlighted.confident {
+  color: gold;
+}
+
+.highlighted.analytical {
+  color: green;
+}
