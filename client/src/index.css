@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: #fefefe;
-  background-image: url("/public/img/scatter.png");
+  background: url('/img/scatter.png') repeat;
 }
 
 .App {
