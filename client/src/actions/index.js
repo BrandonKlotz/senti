@@ -1,6 +1,7 @@
 import $ from 'jquery-ajax';
+import { isEmpty } from 'lodash';
 
-//  Action handles receiving analysis from Watson and maps the results to props in reducer 
+//  Action handles receiving analysis from Watson and maps the results to props in reducer
 function receiveResults(displayResults){
   console.log('This is the output that was returned from Watson.');
   console.log(displayResults);
@@ -19,7 +20,7 @@ function requestResults() {
 
 //  Function called by submit button. Handles submission of information on UI to backend for analysis
 export function addResults(inputData) {
-  return function(dispatch) { 
+  return function(dispatch) {
     dispatch(requestResults());
     $.ajax({
       url:"/api/tone",

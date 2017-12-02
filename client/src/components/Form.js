@@ -33,9 +33,11 @@ class Form extends Component {
 	handleSubmit(event) {
 		event.preventDefault();
 
-		if(this.state.text === "") {
+		if(this.state.text === "" || this.state.text.length < 12) {
+			alert('Please enter at least 2 sentences'); // This should be a modal
 			return;
 		}
+
 		this.props.onSubmit({
 			text: this.state.text,
 		});

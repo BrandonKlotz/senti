@@ -34,6 +34,19 @@ class TextAnalyzer extends Component {
           <Loader />
         </div>
       );
+    } else if (isEmpty(this.props.displayResults.sentence_tones)) {
+      alert('no emotions were detected');
+      return (
+        <div className="App">
+          <div className="container">
+  					<div className="splash">
+  						<h2>The Professional Email Checker.</h2>
+  						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
+  					</div>
+  				</div>
+          <Form onSubmit={this.props.addResults}/>
+        </div>
+      )
     } else {
       return (
         <div className="App">
