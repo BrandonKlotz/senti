@@ -40,6 +40,12 @@ header {
   background-color: #fefefe;
 }
 
+#bodymovin {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+}
+
 header img {
   width: 50px;
 }
@@ -365,6 +371,15 @@ hr {
 	height: 62px;
   background-color: white;
   background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.loadingAnimation {
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  background-image: url(./img/loader.gif);
   background-position: center;
   background-size: cover;
 }
