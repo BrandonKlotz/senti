@@ -14,7 +14,6 @@ class SentenceResults extends Component {
 
       render() {
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
-            debugger;
             return (
                   <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
                       return(tone.tone_id);
