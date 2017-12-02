@@ -7,11 +7,11 @@ class Header extends Component {
   render() {
 
   	//Explanded header = Tablet and Larger, Dropdown = Mobile
-  	
+
     return(
    		<header>
-
-   			<img src='./img/logo.png' alt="Logo" />
+        <div className="logo">
+        </div>
 
    				<div className="ExpandedNavigation">
    					<a href="#">Home</a>

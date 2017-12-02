@@ -5,6 +5,7 @@ import { isEmpty } from 'lodash';
 import Icon from 'watson-react-components';
 
 import Form from './Form.js';
+import Loader from './Loading.js';
 import DocumentResults from './DocumentResults.js';
 import SentenceResults from './SentenceResults.js';
 
@@ -25,7 +26,7 @@ class TextAnalyzer extends Component {
     } else if (this.props.loading === true) {
       return (
         <div className="App">
-          Loading...
+          <Loader />
         </div>
       );
     } else {

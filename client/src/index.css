@@ -4,8 +4,12 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
+  width: 100%;
+  height: 100%;
   background-color: #fefefe;
-  background: url('/img/scatter.png') repeat;
+  background-image: url(./img/scatter.png);
+  background-position: center;
+  background-repeat: repeat;
 }
 
 .App {
@@ -276,7 +280,7 @@ hr {
 }
 
 @media only screen and (max-width: 460px) and (min-width:360px) {
-  
+
   .toggleButton {
     margin: 0 15px;
   }
@@ -338,4 +342,29 @@ hr {
 
 .highlighted.analytical {
   color: green;
+}
+
+/* Loader Component */
+
+.Loader {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 55px;
+	height: 62px;
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
 }
