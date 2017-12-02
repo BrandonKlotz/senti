@@ -19,7 +19,7 @@ function requestResults() {
 
 //  Function called by submit button. Handles submission of information on UI to backend for analysis
 export function addResults(inputData) {
-  return function(dispatch) {
+  return function(dispatch) { 
     dispatch(requestResults());
     $.ajax({
       url:"/api/tone",
