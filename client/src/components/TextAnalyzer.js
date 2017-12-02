@@ -11,7 +11,7 @@ import SentenceResults from './SentenceResults.js';
 class TextAnalyzer extends Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: false };
+    this.state = { loading: false };
   }
 
   render() {
