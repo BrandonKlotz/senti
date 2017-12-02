@@ -16,17 +16,17 @@ class SentenceResults extends Component {
         let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
 
-            const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
-                if(tone.tone_name === this.state.highlighted) {
-                  isHighlighted = "highlighted ";
-                  return isHighlighted;
-                } else {
-                  isHighlighted = "";
-                  return isHighlighted;
-                };
-            })
+            // const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
+            //     if(tone.tone_name === this.state.highlighted) {
+            //       isHighlighted = "highlighted ";
+            //       return isHighlighted;
+            //     } else {
+            //       isHighlighted = "";
+            //       return isHighlighted;
+            //     };
+            // })
 
-            const classnames = isHighlighted + join(sentence.tones.map(tone => { return (tone.tone_id); })," ");
+            const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
 
             return (
