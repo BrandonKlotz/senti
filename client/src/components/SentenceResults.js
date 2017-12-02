@@ -4,7 +4,6 @@ import { join, uniq, flatten, without } from 'lodash';
 import toneData from '../ToneData';
 
 class SentenceResults extends Component {
-
         constructor(props) {
           super(props);
           this.state = {
@@ -15,16 +14,6 @@ class SentenceResults extends Component {
       render() {
         let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
-
-            // const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
-            //     if(tone.tone_name === this.state.highlighted) {
-            //       isHighlighted = "highlighted ";
-            //       return isHighlighted;
-            //     } else {
-            //       isHighlighted = "";
-            //       return isHighlighted;
-            //     };
-            // })
 
             const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
@@ -60,47 +49,27 @@ class SentenceResults extends Component {
        }
 
   mapSentencesAndReturnEmotionsArray = (sentences) => {
-        var detectedEmotionsArray = sentences.map(sentence => {return this.mapIndividualSentenceTones(sentence)});
-        var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
-        return uniqueDetectedEmotions;
-    };
+    var detectedEmotionsArray = sentences.map(sentence => {return this.mapIndividualSentenceTones(sentence)});
+    var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
+    return uniqueDetectedEmotions;
+  };
 
-    mapIndividualSentenceTones = (sentence) => {
-        var individualEmotionsArray = sentence.tones.map(tone => {return(tone.tone_name)});
-        return individualEmotionsArray;
-    };
+  mapIndividualSentenceTones = (sentence) => {
+    var individualEmotionsArray = sentence.tones.map(tone => {return(tone.tone_name)});
+    return individualEmotionsArray;
+  };
 
-    toneToggle = (tone) => {
-        this.setState({
-          highlighted: tone
-          });
-      };
-
-
-
-    checkIfHighlighted = (tone) => {
-      var highlightedClass;
-         for (var i = 0; i < toneData.length; i++) {
-            var selectedTone = toneData[i];
-              if (tone === selectedTone.tone) {
-                   if (selectedTone.positive) {
-                      highlightedClass = "PositiveButton";
-                   } else {
-                      highlightedClass = "NegativeButton";
-                   }
-                  return highlightedClass;
-              }
-         }
-      };
-
-
-
+  toneToggle = (tone) => {
+    this.setState({
+      highlighted: tone
+    });
+  };
 }
 
 const mapStateToProps = (state) => {
 	return {
 		highlighted: state.highlighted,
-             displayResults: state.displayResults
+    displayResults: state.displayResults
 	};
 };
 
