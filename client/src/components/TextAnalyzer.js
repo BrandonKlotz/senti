@@ -33,7 +33,7 @@ class TextAnalyzer extends Component {
         <div className="App">
           <DocumentResults />
           <SentenceResults />
-          <Form onSubmit={this.props.addResults}/>
+          <Form value = {this.props.text} onSubmit={this.props.addResults}/>
         </div>
       );
     }
