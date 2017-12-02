@@ -21,10 +21,6 @@ body {
   align-items: center;
 }
 
-.form {
-  text-align: center;
-}
-
 h1, h2, p {
   color: #333;
 }
@@ -38,12 +34,16 @@ header {
   align-items: center;
   padding: 1.5em;
   background-color: #fefefe;
+  width: auto;
 }
 
-#bodymovin {
-    background-color: red;
-    height: 200px;
-    width: 200px;
+.logo {
+  width: 55px;
+	height: 62px;
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
 }
 
 header img {
@@ -223,16 +223,6 @@ textarea, .DocumentResults {
   flex-wrap: wrap;
 }
 
-/*.joy, .analytical, .confident {
-  background-color:  green;
-  border-radius: 5px;
-}
-
-.sadness, .fear, .anger {
-    background-color: red;
-      border-radius: 5px;
-}*/
-
 .Analytical, .Confident, .Joy {
   background-color: #7ED321;
   border-radius: 5px;
@@ -259,44 +249,6 @@ hr {
   border: none;
 }
 
-/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
-
-/* At tablet or bugger */
-@media only screen and (min-width: 768px) {
-  .accordion, .container {
-    width: 600px;
-  }
-
-  .dropdown {
-    display: none;
-  }
-
-  .ExpandedNavigation {
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .ExpandedNavigation a {
-    text-decoration: none;
-    color: #70E0D3;
-    font-weight: bold;
-  }
-}
-
-@media only screen and (max-width: 460px) and (min-width:360px) {
-
-  .toggleButton {
-    margin: 0 15px;
-  }
-
-  .toneToggleButtons {
-    display: flex;
-    justify-content: flex-start;
-  }
-}
-
 .toggleButton {
   width: 120px;
   height: 20px;
@@ -317,13 +269,11 @@ hr {
 }
 
 .form {
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.spash {
-  min-width: 90%;
+  background-color: #fefefe;
 }
 
 .highlighted.fear {
@@ -366,15 +316,6 @@ hr {
   align-items: center;
 }
 
-.logo {
-  width: 55px;
-	height: 62px;
-  background-color: white;
-  background-image: url(./img/logo.png);
-  background-position: center;
-  background-size: cover;
-}
-
 .loadingAnimation {
   background-color: white;
   height: 400px;
@@ -382,4 +323,42 @@ hr {
   background-image: url(./img/loader.gif);
   background-position: center;
   background-size: cover;
+}
+
+/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
+
+/* At tablet or bugger */
+@media only screen and (min-width: 768px) {
+  .accordion, .container {
+    width: 600px;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .ExpandedNavigation {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ExpandedNavigation a {
+    text-decoration: none;
+    color: #70E0D3;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 460px) and (min-width:360px) {
+
+  .toggleButton {
+    margin: .25em;
+  }
+
+  .toneToggleButtons {
+    display: flex;
+    justify-content: flex-start;
+  }
 }

@@ -11,15 +11,7 @@ class Form extends Component {
 	render() {
 
 		return (
-			<div>
-
-				<div className="container">
-					<div className="splash">
-						<h2>The Professional Email Checker.</h2>
-						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
-					</div>
-				</div>
-
+			<div className="container form">
 	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
 	          <textarea
 	            onChange={this.handleText.bind(this)}
