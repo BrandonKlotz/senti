@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: "",
+			text: this.props.text
 		};
 	}
 
@@ -24,7 +26,8 @@ class Form extends Component {
 	          <textarea
 	            onChange={this.handleText.bind(this)}
 	            value={this.state.text}
-	            placeholder="Enter a few sentences here to analyze.">
+	            placeholder="Enter a few sentences here to analyze."
+	            defaultValue={this.props.text}>
 	          </textarea>
 						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
 	      </form>
@@ -50,4 +53,10 @@ class Form extends Component {
 	}
 }
 
-export default Form;
+const mapStateToProps = (state) => {
+  return {
+    text: state.text
+  };
+};
+
+export default connect(mapStateToProps, null)(Form);
