@@ -13,17 +13,34 @@ class SentenceResults extends Component {
        }
 
       render() {
+        let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
+<<<<<<< HEAD
+=======
+
+            const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
+                if(tone.tone_name === this.state.highlighted) {
+                  isHighlighted = "highlighted ";
+                  return isHighlighted;
+                } else {
+                  isHighlighted = "";
+                  return isHighlighted;
+                };
+            })
+
+            const classnames = isHighlighted + join(sentence.tones.map(tone => { return (tone.tone_id); })," ");
+            console.log(classnames);
+
+>>>>>>> master
             return (
-                  <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
-                      return(tone.tone_id);
-                    }), " ")}>
-                      <span className={`${sentence.tone_name === this.state.highlighted?`${sentence.tone_name}`:""}`}>{sentence.text}</span>
+                  <div key={sentence.sentence_id} className={classnames}>
+                      <span>{sentence.text}&nbsp;</span>
                   </div>
                 );
           });
 
            const toneArray = without(this.mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
+
            const buttons = toneArray.map((tone) => {
               var ButtonClass;
 
@@ -52,20 +69,15 @@ class SentenceResults extends Component {
     };
 
     mapIndividualSentenceTones = (sentence) => {
-        var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
-        return indidivualEmotionsArry;
+        var individualEmotionsArray = sentence.tones.map(tone => {return(tone.tone_name)});
+        return individualEmotionsArray;
     };
 
     toneToggle = (tone) => {
-      // console.log(tone);
-
         this.setState({
           highlighted: tone
           });
-
-
-      console.log(this.state.highlighted);
-    };
+      };
 
 
 
@@ -96,17 +108,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(SentenceResults);
-
-// const checkIfButtonPositive = (tone) => {
-//                  for (var i = 0; i < toneData.length; i++) {
-//                     var selectedTone = toneData[i];
-//                       if (tone === selectedTone.tone) {
-//                            if (selectedTone.positive) {
-//                               ButtonClass = "PositiveButton";
-//                            } else {
-//                               ButtonClass = "NegativeButton";
-//                            }
-//                           return ButtonClass;
-//                       }
-//                  }
-//               };
