@@ -10,11 +10,17 @@ function receiveResults(displayResults){
   };
 }
 
+//  Dispatch request results before AJAX call is made to set loading to true
+function requestResults() {
+  return {
+    type: "REQUEST_RESULTS",
+  };
+}
+
 //  Function called by submit button. Handles submission of information on UI to backend for analysis
 export function addResults(inputData) {
   return function(dispatch) { 
-  // we need to call an action here that will tell the reducer to set loading state to be true
-  // and we should rename this function fetchResults
+    dispatch(requestResults());
     $.ajax({
       url:"/api/tone",
       method: "POST",

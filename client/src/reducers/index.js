@@ -10,6 +10,10 @@ export default (state = INITIAL_STATE, action) => {
                 loading: false,
                 displayResults: action.displayResults
             });
+        case "REQUEST_RESULTS":
+            return Object.assign({}, state, {
+                loading: true
+            });
         default:
             return state;
     }

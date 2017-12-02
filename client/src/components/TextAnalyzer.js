@@ -8,6 +8,10 @@ import DocumentResults from './DocumentResults.js';
 import SentenceResults from './SentenceResults.js';
 
 class TextAnalyzer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { loading: false };
+  }
 
   render() {
 
