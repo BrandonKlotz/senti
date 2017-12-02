@@ -15,8 +15,6 @@ class SentenceResults extends Component {
       render() {
         let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
-<<<<<<< HEAD
-=======
 
             const checkIfShouldBeHighlighted = sentence.tones.map(tone => {
                 if(tone.tone_name === this.state.highlighted) {
@@ -31,7 +29,6 @@ class SentenceResults extends Component {
             const classnames = isHighlighted + join(sentence.tones.map(tone => { return (tone.tone_id); })," ");
             console.log(classnames);
 
->>>>>>> master
             return (
                   <div key={sentence.sentence_id} className={classnames}>
                       <span>{sentence.text}&nbsp;</span>
