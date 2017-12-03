@@ -39,7 +39,7 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
-                <p>{selectedTone.text}</p>
+                <p>{selectedTone.value}</p>
               </div>
             );
           } else {
@@ -58,12 +58,12 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
-                <p>{selectedTone.text}</p>
+                <p>{selectedTone.value}</p>
               </div>
             )
           }
         }
-      } 
+      }
     });
 
     return (

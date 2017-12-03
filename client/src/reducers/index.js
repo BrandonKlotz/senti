@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
-               loading: false,
+    loading: false,
 	  displayResults: {},
-                text: ""
+    text: '',
+    value: '',
 	};
 
 export default (state = INITIAL_STATE, action) => {

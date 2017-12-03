@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 
 class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: this.props.text
+			value: this.props.value,
+			text: this.props.value
 		};
 	}
 
@@ -17,18 +19,29 @@ class Form extends Component {
 	      <form onSubmit={this.handleSubmit} className="form">
 	          <textarea
 	            onChange={this.handleText}
-	            value={this.state.text}
+	            value={this.state.value}
 	            placeholder="Enter a few sentences here to analyze."
-	            defaultValue={this.props.text}>
+	            defaultValue={this.props.value}>
 	          </textarea>
 						<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
 	      </form>
+
+				<div>
+	        <CopyToClipboard text={this.state.value}
+	          onCopy={() => this.setState({copied: true})}>
+	          <button>Copy to clipboard with button</button>
+	        </CopyToClipboard>
+	        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+      	</div>
 			</div>
 		);
 	}
 
 	handleText = (event) => {
+		({target: {value}}) => this.setState({value, copied: false})
+
 		this.setState({
+			value: event.target.value,
 			text: event.target.value
 		});
 	}
@@ -36,20 +49,21 @@ class Form extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 
-		if(this.state.text === "" || this.state.text.length < 12) {
+		if(this.state.value === "" || this.state.value.length < 12) {
 			alert('Please enter at least 2 sentences'); // This should be a modal
 			return;
 		}
 
 		this.props.onSubmit({
-			text: this.state.text,
+			text: this.state.value,
 		});
 	}
 }
 
 const mapStateToProps = (state) => {
   return {
-    text: state.text
+    value: state.value,
+		text: state.value
   };
 };
 
