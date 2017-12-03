@@ -6,6 +6,7 @@
     "jquery": "^3.2.1",
     "nodemon": "^1.12.1",
     "react-bodymovin": "^1.1.1",
+    "react-copy-to-clipboard": "^5.0.1",
     "watson-developer-cloud": "^2.42.0",
     "watson-react-components": "^0.6.12"
   },
