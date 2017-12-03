@@ -25,16 +25,16 @@ class Header extends Component {
    		<header>
         <div className="logo">
         </div>
-        <div className = "modalMenu">
+        <div className = "modalContainer">
           <Modal 
             className={"modalWindow"}
             show={this.state.isOpen}
             onClose={this.toggleModal}>
               <h3>Senti is a sentiment analysis app to assist you in writing professional emails.</h3>
-            </Modal>
-          </div>
-   				<div className="ExpandedNavigation">
-   					<a>Home</a>
+          </Modal>
+        </div>
+   			<div className="ExpandedNavigation">
+   				<a>Home</a>
 					<a onClick={this.toggleModal}>About</a>
 					<a>Contact</a>
 				</div>

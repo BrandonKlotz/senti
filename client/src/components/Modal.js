@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "font-awesome/css/font-awesome.css";
+
 
 class Modal extends React.Component {
   render() {
@@ -9,15 +11,14 @@ class Modal extends React.Component {
     }
 
     return (
-      <div className="backdrop">
-        <div className="modal">
+      <div className="modalBackground">
+        <div className="modalHeader" onClick={this.props.onClose}>
+          <h1> Senti
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </h1>
+        </div>
+        <div className="modalText">
           {this.props.children}
-
-          <div className="footer">
-            <button onClick={this.props.onClose}>
-              Close
-            </button>
-          </div>
         </div>
       </div>
     );

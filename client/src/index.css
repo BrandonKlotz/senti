@@ -407,23 +407,39 @@ hr {
 /* modal styles for modal-menu branch*/
 
 /* div for modal */
-  .modalMenu {
+  .modalContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
   }
-/* gray background for modal */
-  .backdrop {
+/* color background for modal */
+  .modalBackground {  
     position: fixed;
-    background-color: rgba(112, 224, 211, .5);
+    background-color: rgba(184, 233, 134, .7);
     padding: 50px;
   }
-    /* modal "window" */
-  .modal {
+  .modalHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #a9a9a9;
+    border-radius: 5px;
+    /*min-height: 1em;*/
+    margin: 0 auto;
+    padding: 5px 15px;
+  }
+ .modalHeader h1{
+    color: white;
+  }
+  .modalHeader i{
+    color: black;
+    display: inline-block;
+  }
+  .modalText {
     background-color: #fff;
     border-radius: 5px;
     max-width: 500px;
-    min-height: 300px;
+    min-height: 200px;
     margin: 0 auto;
     padding: 30px;
   }
