@@ -25,6 +25,7 @@ h1, h2, p {
   color: #333;
 }
 
+
 /* -- HEADER STYLING -- */
 
 header {
@@ -400,3 +401,30 @@ hr {
     margin: .25em;
   }
 }
+
+
+
+/* modal styles for modal-menu branch*/
+
+/* div for modal */
+  .modalMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+/* gray background for modal */
+  .backdrop {
+    position: fixed;
+    background-color: rgba(112, 224, 211, .5);
+    padding: 50px;
+  }
+    /* modal "window" */
+  .modal {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+

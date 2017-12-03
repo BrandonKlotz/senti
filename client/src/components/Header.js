@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Modal from './Modal';
 import "font-awesome/css/font-awesome.css";
+import Modal from './Modal';
 
 
 class Header extends Component {
@@ -25,11 +25,18 @@ class Header extends Component {
    		<header>
         <div className="logo">
         </div>
-
+        <div className = "modalMenu">
+          <Modal 
+            className={"modalWindow"}
+            show={this.state.isOpen}
+            onClose={this.toggleModal}>
+              <h3>Senti is a sentiment analysis app to assist you in writing professional emails.</h3>
+            </Modal>
+          </div>
    				<div className="ExpandedNavigation">
-   					<a href="#">Home</a>
-					<a href="#">About</a>
-					<a href="#">Contact</a>
+   					<a>Home</a>
+					<a onClick={this.toggleModal}>About</a>
+					<a>Contact</a>
 				</div>
 
 				<div className="dropdown">
@@ -39,15 +46,7 @@ class Header extends Component {
 					    <a>Home</a>
 					    <a onClick={this.toggleModal}>About</a>
 					    <a>Contact</a>
-
-
 					  </div>
-            <Modal 
-              className={"modalWindow"}
-              show={this.state.isOpen}
-              onClose={this.toggleModal}>
-              Senti is a sentiment analysis app to assist you in writing professional emails.
-            </Modal>
 				</div>
 
 	   	</header>
