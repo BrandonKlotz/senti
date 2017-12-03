@@ -41,15 +41,14 @@ h2 {
   font-style: italic;
   color: #606060;
   text-align: center;
+  margin: 10px 0;
 }
 
 p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: lighter;
-  font-size: 1.15em;
+  font-size: 1em;
   color: #606060;
-  text-align: center;
-
   margin: 10px 0;
 }
 
@@ -135,6 +134,11 @@ header img {
 
 /* -- Submission Form Styling -- */
 
+p#HomepageMessage {
+  font-size: 1.15em;
+  text-align: center;
+}
+
 form {
   box-sizing: border-box;
   max-width: 600px;
@@ -193,23 +197,27 @@ i {
 
 /* -- Document Results Styling -- */
 
+.DocumentResults {
+  min-width: 300px;
+  width: 90%;
+  max-width: 600px;
+}
+
 .AccordionContainer {
-  border-radius: 4px;
+  border-radius: 10px;
   overflow: hidden;
-  background-color: #eee;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 
 .accordion {
-  background-color: #dedede;
+  background-color: #eeeeee;
   border-radius: 0px;
   border-bottom: 1px solid #fefefe;
   padding: 1em;
-  color: #000;
 }
 
 .accordion:hover {
-  background-color: #777;
+  background-color: #D8D8D8;
 }
 
 .AccordionHeader {
@@ -234,6 +242,10 @@ i.fa-plus, i.fa-minus {
   color: black;
 }
 
+i.fa-plus:hover, i.fa-minus:hover {
+  color: #5FCBFF;
+}
+
 i.hide {
   display: none;
 }
@@ -255,10 +267,9 @@ i.hide {
   max-width: 600px;
   width: 90%;
   min-width: 320px;
-  padding: 0.5em;
 }
 
-textarea, .DocumentResults {
+textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,17 +310,15 @@ textarea, .DocumentResults {
   border-radius: 5px;
 }
 
-
 .SentenceResults {
-  max-width: 600px;
-  padding: 5px;
+  background-color: #eeeeee;
   border-radius: 10px;
+  padding: 1em;
   line-height: 1.5em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
-
 
 hr {
   border: none;
@@ -319,9 +328,6 @@ hr {
 
 /* At tablet or bugger */
 @media only screen and (min-width: 768px) {
-  .accordion, .container {
-    width: 600px;
-  }
 
   .dropdown {
     display: none;
@@ -341,7 +347,7 @@ hr {
   }
 }
 
-@media only screen and (max-width: 460px) and (min-width:360px) {
+@media only screen and (max-width: 510px) and (min-width:420px) {
 
   .toggleButton {
     margin: 0 15px;
@@ -349,18 +355,18 @@ hr {
 
   .toneToggleButtons {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
 
 .toggleButton {
-  width: 120px;
+  width: 110px;
   height: 20px;
   /*margin: .5em;*/
   text-align: center;
   padding: .5em;
   border-radius: 20px;
-  margin-top: 1em;
+  margin: 1em 0.5em 0 0.5em;
   /*border: 1px solid #70E0D3;*/
 }
 

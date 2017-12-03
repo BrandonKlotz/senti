@@ -68,8 +68,8 @@ class DocumentResults extends Component {
 
     return (
       <div className="DocumentResults">
+        <h2>Overall Tones:</h2>
         <div className="AccordionContainer">
-          <h2>Overall Tones</h2>
           {detectedDocThemes}
         </div>
       </div>
