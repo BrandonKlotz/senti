@@ -17,6 +17,11 @@ export default (state = INITIAL_STATE, action) => {
                 loading: true,
                 value: action.inputData.value
             });
+        case "HOME_SCREEN":
+            return Object.assign({}, state, {
+                displayResults: {},
+                value: ""
+            });
         default:
             return state;
     }

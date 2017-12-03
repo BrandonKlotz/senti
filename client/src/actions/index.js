@@ -33,3 +33,9 @@ export function addResults(inputData) {
     });
   };
 }
+
+export function goToHome() {
+  return {
+    type: "HOME_SCREEN",
+  };
+}

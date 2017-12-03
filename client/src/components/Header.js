@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import "font-awesome/css/font-awesome.css";
+import { goToHome } from '../actions';
+import { connect } from 'react-redux';
 
 
 class Header extends Component {
@@ -10,7 +12,7 @@ class Header extends Component {
 
     return(
    		<header>
-        <div className="logo">
+        <div className="logo" onClick={this.props.goToHome}>
         </div>
 
    				<div className="ExpandedNavigation">
@@ -39,6 +41,8 @@ class Header extends Component {
 };
 }
 
+const mapActionsToProps = {
+  goToHome
+};
 
-
-export default Header;
+export default connect(null, mapActionsToProps)(Header);
