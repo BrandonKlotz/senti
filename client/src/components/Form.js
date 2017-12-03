@@ -14,26 +14,26 @@ class Form extends Component {
 
 		return (
 			<div className="container form">
-	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
+	      <form onSubmit={this.handleSubmit} className="form">
 	          <textarea
-	            onChange={this.handleText.bind(this)}
+	            onChange={this.handleText}
 	            value={this.state.text}
 	            placeholder="Enter a few sentences here to analyze."
 	            defaultValue={this.props.text}>
 	          </textarea>
-						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
+						<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
 	      </form>
 			</div>
 		);
 	}
 
-	handleText(event) {
+	handleText = (event) => {
 		this.setState({
 			text: event.target.value
 		});
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault();
 
 		if(this.state.text === "" || this.state.text.length < 12) {

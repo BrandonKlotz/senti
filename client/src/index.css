@@ -256,12 +256,10 @@ hr {
 .toggleButton {
   width: 120px;
   height: 20px;
-  /*margin: .5em;*/
   text-align: center;
   padding: .5em;
   border-radius: 20px;
   margin-top: 1em;
-  /*border: 1px solid #70E0D3;*/
 }
 
 .PositiveButton {
