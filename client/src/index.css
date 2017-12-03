@@ -1,67 +1,128 @@
+/* -- OVERALL APP STYLING -- */
+
 body {
+  background-color: #fefefe;
+  background-image: url(./img/scatter.png);
+  background-position: center;
+  background-repeat: repeat;
+  font-family: sans-serif;
+  height: 100%;
   margin: 0 auto;
   padding: 0;
-  font-family: sans-serif;
-  background-color: #fefefe;
-  background: url('/img/scatter.png') repeat;
+  width: 100%;
 }
 
 .App {
-  margin: 0 auto;
-  width: auto;
-  min-height: 400px;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-.form {
-  text-align: center;
+  margin: 0 auto;
+  min-height: 400px;
+  width: auto;
 }
 
 h1, h2, p {
   color: #333;
 }
 
+/* -- HEADER STYLING -- */
+
 header {
+  align-items: center;
+  background-color: #fefefe;
+  border-bottom: 1px #70E0D3 solid;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px #70E0D3 solid;
-  align-items: center;
   padding: 1.5em;
-  background-color: #fefefe;
+  width: auto;
+}
+
+.logo {
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
+	height: 62px;
+  width: 55px;
 }
 
 header img {
   width: 50px;
 }
 
+.dropbtn {
+    background-color: #70E0D3;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 16px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #8EBDB2;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    background-color: #fefefe;
+    border: 1px solid #70E0D3;
+    display: none;
+    margin-top: 28px;
+    position: fixed;
+    right: 0;
+    width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    display: block;
+    padding: 16px 16px;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+  background-color: #70E0D3;
+}
+
+.show {
+  display:block;
+}
+
+.ExpandedNavigation {
+  display: none;
+}
+
+/* -- Submission Form Styling -- */
+
 textarea {
-  min-width: 310px;
-  min-height: 400px;
-  border: none;
-  font-size: 1.25em;
-  background-color: #fafafa;
-  border-radius: 0;
-  padding: .5em;
-  margin-bottom: 1em;
   border: 1px solid #70E0D3;
   border-radius: 4px;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  min-height: 400px;
+  min-width: 310px;
+  padding: .5em;
   resize: none;
 }
+
 textarea:focus {
-  outline:none;
+  outline: none;
 }
 
-
 .Button {
-  height: 40px;
-  width: 50%;
   background-color: #70E0D3;
-  color: #fff;
-  font-size: 1.25em;
   border: none;
   border-radius: 25px;
+  color: #fff;
+  font-size: 1.25em;
+  height: 40px;
+  width: 50%;
 }
 
 .Button:focus {
@@ -72,6 +133,13 @@ textarea:focus {
   background-color: #8EBDB2;
 }
 
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
 i {
   color: #ccc;
 }
@@ -79,18 +147,18 @@ i {
 /* -- Document Results Styling -- */
 
 .AccordionContainer {
-  border-radius: 4px;
-  overflow: hidden;
   background-color: #eee;
+  border-radius: 4px;
   margin-bottom: 2em;
+  overflow: hidden;
 }
 
 .accordion {
   background-color: #dedede;
-  border-radius: 0px;
   border-bottom: 1px solid #fefefe;
-  padding: 1em;
+  border-radius: 0px;
   color: #000;
+  padding: 1em;
 }
 
 .accordion:hover {
@@ -116,26 +184,36 @@ i {
 }
 
 i.fa-plus, i.fa-minus {
-  color: black;
+  color: #000;
 }
 
 i.hide {
   display: none;
 }
 
+.fa-flag {
+  color: tomato;
+  margin-right: 1em;
+}
+
+.fa-check {
+  color: #7ED321;
+  margin-right: 1em;
+}
+
 /* -- Sentence Results Styling -- */
 
 .container {
-  padding: 1em;
   background-color: #fafafa;
-  border-radius: 0px;
+  border-radius: 0;
   margin-bottom: 2em;
+  padding: 1em;
 }
 
-textarea, .DocumentResults {
+.DocumentResults, textarea {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-width: 80%;
 }
 
@@ -191,86 +269,134 @@ textarea, .DocumentResults {
 .toneToggleButtons {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
-/*.joy, .analytical, .confident {
-  background-color:  green;
-  border-radius: 5px;
+.toneToggleButtons:hover {
+  cursor: pointer;
 }
-
-.sadness, .fear, .anger {
-    background-color: red;
-      border-radius: 5px;
-}*/
 
 .Analytical, .Confident, .Joy {
   background-color: #7ED321;
   border-radius: 5px;
 }
 
-.Fear, .Anger, .Sadness {
+.Anger, .Fear, .Sadness {
   background-color: tomato;
   border-radius: 5px;
 }
 
-
-.SentenceResults {
-  max-width: 600px;
-  padding: 5px;
-  border-radius: 10px;
-  line-height: 1.5em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+/* Sentence Results Highlight Color */
+.highlighted.analytical {
+  color: green;
 }
 
-
-.fa-flag {
-  color: tomato;
-  margin-right: 1em;
+.highlighted.confident {
+  color: gold;
 }
 
-.fa-check {
-  color: #7ED321;
-  margin-right: 1em;
+.highlighted.anger {
+  color: red;
+}
+
+.highlighted.fear {
+  color: blue;
+}
+
+.highlighted.joy {
+  color: yellow;
+}
+
+.highlighted.sadness {
+  color: purple;
 }
 
 hr {
   border: none;
 }
 
-@media only screen and (min-width: 770px) {
-  .accordion, .container {
-    width: 600px;
-  }
+.SentenceResults {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 1.5em;
+  max-width: 600px;
+  padding: 5px;
 }
 
 .toggleButton {
-  width: 20%;
-  height: 20px;
-  /*margin: .5em;*/
-  text-align: center;
-  padding: .5em;
   border-radius: 20px;
+  height: 20px;
   margin-top: 1em;
-  /*border: 1px solid #70E0D3;*/
+  padding: .5em;
+  text-align: center;
+  width: 120px;
 }
 
-.PositiveButton {
-  background-color: #C2E691;
-}
+/* Loader Component */
 
-.NegativeButton {
-  background-color: tomato;
-}
-
-.form {
+.Loader {
+  align-items: center;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
 }
 
-.spash {
-  min-width: 90%;
+.loadingAnimation {
+  background-color: white;
+  background-image: url(./img/loader.gif);
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  width: 400px;
+}
+
+.sequence {
+  text-align: center;
+}
+
+/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
+
+/* At tablet or burger */
+@media only screen and (min-width: 768px) {
+  .accordion, .container {
+    width: 600px;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .ExpandedNavigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 200px;
+  }
+
+  .ExpandedNavigation a {
+    color: #70E0D3;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+@media only screen and (max-width: 460px) and (min-width:360px) {
+  .toneToggleButtons {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .toggleButton {
+    margin: .25em;
+  }
 }

@@ -1,59 +1,71 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 
 class Form extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			text: "",
-			loading: false
+			value: this.props.value,
+			text: this.props.value
 		};
 	}
 
 	render() {
 
 		return (
-			<div>
-
-				<div className="container">
-					<div className="splash">
-						<h2>The Professional Email Checker.</h2>
-						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
-					</div>
-				</div>
-
-	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
+			<div className="container form">
+	      <form onSubmit={this.handleSubmit} className="form">
 	          <textarea
-	            onChange={this.handleText.bind(this)}
-	            value={this.state.text}
-	            placeholder="Enter a few sentences here to analyze.">
+	            onChange={this.handleText}
+	            value={this.state.value}
+	            placeholder="Enter a few sentences here to analyze."
+	            defaultValue={this.props.value}>
 	          </textarea>
-						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
+						<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
 	      </form>
+
+				<div>
+	        <CopyToClipboard text={this.state.value}
+	          onCopy={() => this.setState({copied: true})}>
+	          <input type="button" value="Copy to clipboard with button" className="Button" />
+	        </CopyToClipboard>
+	        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+      	</div>
 			</div>
 		);
 	}
 
-	handleText(event) {
+	handleText = (event) => {
+		({target: {value}}) => this.setState({value, copied: false})
+
 		this.setState({
+			value: event.target.value,
 			text: event.target.value
 		});
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault();
 
-		if(this.state.text === "") {
+		if(this.state.value === "" || this.state.value.length < 12) {
+			alert('Please enter at least 2 sentences'); // This should be a modal
 			return;
 		}
-		console.log(this.state.loading);
-		this.props.onSubmit({
-			text: this.state.text,
-			loading: !this.state.loading
-		});
-		console.log(this.state.loading);
-	}
 
+		this.props.onSubmit({
+			text: this.state.value,
+			value: this.state.value
+		});
+	}
 }
 
+const mapStateToProps = (state) => {
+  return {
+    		value: state.value,
+		text: state.value
+  };
+};
 
-export default Form;
+export default connect(mapStateToProps, null)(Form);

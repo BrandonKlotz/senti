@@ -4,7 +4,6 @@ import { join, uniq, flatten, without } from 'lodash';
 import toneData from '../ToneData';
 
 class SentenceResults extends Component {
-
         constructor(props) {
           super(props);
           this.state = {
@@ -13,13 +12,15 @@ class SentenceResults extends Component {
        }
 
       render() {
+        let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
-            return (
-                  <div key={sentence.sentence_id} className={join(sentence.tones.map(tone => {
-                      return(tone.tone_id);
-                      }), " ")}>
 
-                      <span>{sentence.text}</span>
+            const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
+            console.log(classnames);
+
+            return (
+                  <div key={sentence.sentence_id} className={classnames}>
+                      <span>{sentence.text}&nbsp;</span>
                   </div>
                 );
           });
@@ -28,7 +29,6 @@ class SentenceResults extends Component {
 
            const buttons = toneArray.map((tone) => {
               var ButtonClass;
-
 
              return (  <div key={tone}
                                     className={`toggleButton ${tone}`}
@@ -49,50 +49,28 @@ class SentenceResults extends Component {
        }
 
   mapSentencesAndReturnEmotionsArray = (sentences) => {
-        var detectedEmotionsArray = sentences.map(sentence => {return this.mapIndividualSentenceTones(sentence)});
-        var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
-        return uniqueDetectedEmotions;
-    };
+    var detectedEmotionsArray = sentences.map(sentence => {return this.mapIndividualSentenceTones(sentence)});
+    var uniqueDetectedEmotions = uniq(flatten(detectedEmotionsArray));
+    return uniqueDetectedEmotions;
+  };
 
-    mapIndividualSentenceTones = (sentence) => {
-        var indidivualEmotionsArry = sentence.tones.map(tone => {return(tone.tone_name)});
-        return indidivualEmotionsArry;
-    };
+  mapIndividualSentenceTones = (sentence) => {
+    var individualEmotionsArray = sentence.tones.map(tone => {return(tone.tone_name)});
+    return individualEmotionsArray;
+  };
 
-    toneToggle = (tone) => {
-        if  (tone === this.state.highlighted) {
-        this.setState({
-          highlighted: ""
-        })
-      } else {
-        this.setState({
-          highlighted: this.state.tone
-        })
-      }
-    };
+  toneToggle = (tone) => {
+    this.setState({
+      highlighted: tone
+    });
+  };
 }
 
 const mapStateToProps = (state) => {
 	return {
 		highlighted: state.highlighted,
-             displayResults: state.displayResults
+    displayResults: state.displayResults
 	};
 };
 
 export default connect(mapStateToProps, null)(SentenceResults);
-
-
-
-// const checkIfButtonPositive = (tone) => {
-//                  for (var i = 0; i < toneData.length; i++) {
-//                     var selectedTone = toneData[i];
-//                       if (tone === selectedTone.tone) {
-//                            if (selectedTone.positive) {
-//                               ButtonClass = "PositiveButton";
-//                            } else {
-//                               ButtonClass = "NegativeButton";
-//                            }
-//                           return ButtonClass;
-//                       }
-//                  }
-//               };
