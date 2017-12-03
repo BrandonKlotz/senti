@@ -29,7 +29,7 @@ class Form extends Component {
 				<div>
 	        <CopyToClipboard text={this.state.value}
 	          onCopy={() => this.setState({copied: true})}>
-	          <button>Copy to clipboard with button</button>
+	          <input type="button" value="Copy to clipboard with button" className="Button" />
 	        </CopyToClipboard>
 	        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
       	</div>
@@ -55,7 +55,7 @@ class Form extends Component {
 		}
 
 		this.props.onSubmit({
-			text: this.state.value,
+			text: this.state.value
 		});
 	}
 }
