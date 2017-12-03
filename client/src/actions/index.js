@@ -12,16 +12,17 @@ function receiveResults(displayResults){
 }
 
 //  Dispatch request results before AJAX call is made to set loading to true
-function requestResults() {
+function requestResults(inputData) {
   return {
     type: "REQUEST_RESULTS",
+    inputData
   };
 }
 
 //  Function called by submit button. Handles submission of information on UI to backend for analysis
 export function addResults(inputData) {
   return function(dispatch) {
-    dispatch(requestResults());
+    dispatch(requestResults(inputData));
     $.ajax({
       url:"/api/tone",
       method: "POST",

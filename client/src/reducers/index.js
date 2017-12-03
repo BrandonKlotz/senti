@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
                loading: false,
-	  displayResults: {}
+	  displayResults: {},
+                text: ""
 	};
 
 export default (state = INITIAL_STATE, action) => {
@@ -8,11 +9,12 @@ export default (state = INITIAL_STATE, action) => {
         case "RECEIVE_RESULTS":
             return Object.assign({}, state, {
                 loading: false,
-                displayResults: action.displayResults
+                displayResults: action.displayResults,
             });
         case "REQUEST_RESULTS":
             return Object.assign({}, state, {
-                loading: true
+                loading: true,
+                text: action.inputData.text
             });
         default:
             return state;

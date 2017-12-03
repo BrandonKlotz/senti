@@ -223,6 +223,20 @@ textarea, .DocumentResults {
   flex-wrap: wrap;
 }
 
+.toneToggleButtons:hover {
+  cursor: pointer;
+}
+
+/*.joy, .analytical, .confident {
+  background-color:  green;
+  border-radius: 5px;
+}
+
+.sadness, .fear, .anger {
+    background-color: red;
+      border-radius: 5px;
+}*/
+
 .Analytical, .Confident, .Joy {
   background-color: #7ED321;
   border-radius: 5px;
