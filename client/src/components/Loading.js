@@ -6,6 +6,7 @@ class Loader extends Component {
             <div className="Loader">
                 <div className="sequence">
                     <div className="loadingAnimation"></div>
+                    <div><h1>Analyzing..</h1></div>
                 </div>
             </div>
         );
