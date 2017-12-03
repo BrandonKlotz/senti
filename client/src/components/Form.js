@@ -13,40 +13,34 @@ class Form extends Component {
 	render() {
 
 		return (
-			<div>
-
-				<div className="container">
-					<div className="splash">
-						<h2>The Professional Email Checker.</h2>
-						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
-					</div>
-				</div>
-
-	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
+			<div className="container form">
+	      <form onSubmit={this.handleSubmit} className="form">
 	          <textarea
-	            onChange={this.handleText.bind(this)}
+	            onChange={this.handleText}
 	            value={this.state.text}
 	            placeholder="Enter a few sentences here to analyze."
 	            defaultValue={this.props.text}>
 	          </textarea>
-						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
+						<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
 	      </form>
 			</div>
 		);
 	}
 
-	handleText(event) {
+	handleText = (event) => {
 		this.setState({
 			text: event.target.value
 		});
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault();
 
-		if(this.state.text === "") {
+		if(this.state.text === "" || this.state.text.length < 12) {
+			alert('Please enter at least 2 sentences'); // This should be a modal
 			return;
 		}
+
 		this.props.onSubmit({
 			text: this.state.text,
 		});
