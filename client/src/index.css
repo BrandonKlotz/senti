@@ -210,7 +210,7 @@ i.hide {
   padding: 1em;
 }
 
-.DocumentResults, textarea, {
+.DocumentResults, textarea {
   align-items: center;
   display: flex;
   flex-direction: column;
