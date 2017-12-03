@@ -37,7 +37,7 @@ class SentenceResults extends Component {
 
            return (
             <div className="container">
-                <h2>Sentence-By-Sentence Tones</h2>
+                <h2>Sentence Tones</h2>
                 <div className="SentenceResults">
                   {sentences}
                 </div>

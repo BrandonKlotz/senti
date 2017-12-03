@@ -68,13 +68,8 @@ class DocumentResults extends Component {
 
     return (
       <div className="DocumentResults">
-        <div className="container">
-					<h2>Overall Tones</h2>
-					<p><i className="fa fa-flag" aria-hidden="true"></i>- We've detected tones that could be negatively impacting your message.</p>
-          <p><i className="fa fa-check" aria-hidden="true"></i>- We think you effectively used this tone.</p>
-				</div>
-
         <div className="AccordionContainer">
+          <h2>Overall Tones</h2>
           {detectedDocThemes}
         </div>
       </div>

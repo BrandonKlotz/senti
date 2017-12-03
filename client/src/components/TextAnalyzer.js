@@ -19,6 +19,12 @@ class TextAnalyzer extends Component {
     if (this.props.loading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
+          <div className="container">
+            <div className="splash">
+              <h1>The professional email analyzer.</h1>
+              <p>We analyze messages sentence-by-sentence for overall tone and suggestions on where to make positive changes.</p>
+            </div>
+          </div>
           <Form onSubmit={this.props.addResults}/>
         </div>
       );
@@ -31,6 +37,7 @@ class TextAnalyzer extends Component {
     } else {
       return (
         <div className="App">
+          <h1>Your Results</h1>
           <DocumentResults />
           <SentenceResults />
           <Form value = {this.props.text} onSubmit={this.props.addResults}/>

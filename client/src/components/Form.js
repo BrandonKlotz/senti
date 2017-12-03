@@ -15,22 +15,15 @@ class Form extends Component {
 		return (
 			<div>
 
-				<div className="container">
-					<div className="splash">
-						<h2>The Professional Email Checker.</h2>
-						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
-					</div>
-				</div>
-
-	      <form onSubmit={this.handleSubmit.bind(this)} className="form">
-	          <textarea
-	            onChange={this.handleText.bind(this)}
-	            value={this.state.text}
-	            placeholder="Enter a few sentences here to analyze."
-	            defaultValue={this.props.text}>
-	          </textarea>
-						<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
-	      </form>
+	      		<form onSubmit={this.handleSubmit.bind(this)} className="form">
+	          		<textarea
+	            		onChange={this.handleText.bind(this)}
+	            		value={this.state.text}
+	            		placeholder="Type or paste your email here…"
+	            		defaultValue={this.props.text}>
+	          		</textarea>
+					<input type="submit" value="Analyze" onClick={this.handleSubmit.bind(this)} className="Button" />
+	      		</form>
 			</div>
 		);
 	}
