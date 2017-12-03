@@ -55,14 +55,15 @@ class Form extends Component {
 		}
 
 		this.props.onSubmit({
-			text: this.state.value
+			text: this.state.value,
+			value: this.state.value
 		});
 	}
 }
 
 const mapStateToProps = (state) => {
   return {
-    value: state.value,
+    		value: state.value,
 		text: state.value
   };
 };

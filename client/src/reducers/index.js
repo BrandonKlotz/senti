@@ -15,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
         case "REQUEST_RESULTS":
             return Object.assign({}, state, {
                 loading: true,
-                text: action.inputData.text
+                value: action.inputData.value
             });
         default:
             return state;
