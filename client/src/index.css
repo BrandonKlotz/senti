@@ -30,6 +30,7 @@ h1 {
   line-height: 1.2em;
   text-align: center;
   margin: 1em 0;
+
 }
 
 h2 {
@@ -47,8 +48,9 @@ h4 {
   font-weight: lighter;
   font-size: 1em;
   color: #606060;
-  text-align: center;
-  margin: 10px 0;
+  text-align: left;
+  margin: 0 0 20px 0;
+  width: 100%
 }
 
 p, li {
@@ -82,15 +84,11 @@ header {
   background-color: #fefefe;
 }
 
-#bodymovin {
-    background-color: red;
-    height: 200px;
-    width: 200px;
-}
-
 header img {
   width: 50px;
 }
+
+
 
 .dropbtn {
     background-color: #7ED321;
@@ -102,7 +100,7 @@ header img {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #8EBDB2;
+    background-color: #7ED321;
 }
 
 .dropdown {
@@ -138,6 +136,18 @@ header img {
 
 .ExpandedNavigation {
   display: none;
+}
+
+/* -- Homepage Styling -- */
+.spash {
+  min-width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+p.splashText {
+  text-align: center;
+  font-size: 1.15em;
 }
 
 /* -- Submission Form Styling -- */
@@ -207,6 +217,62 @@ i {
   color: #ccc;
 }
 
+/* Loader Component */
+
+.Loader {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 55px;
+  height: 62px;
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+#logotype {
+  display: inline-block;
+  margin: 0;
+  font-family: 'Comfortaa';
+  font-size: 2.5em;
+  color: #7ED321;
+}
+
+.loadingAnimation {
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  background-image: url(./img/loader.gif);
+  background-position: center;
+  background-size: cover;
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+}
+
+h1#loadingTitle {
+  color: #eeeeee;
+  animation: fadeIn 1s infinite alternate;
+}
+
 /* -- Document Results Styling -- */
 
 .DocumentResults {
@@ -226,10 +292,12 @@ i {
   border-radius: 0px;
   border-bottom: 1px solid #fefefe;
   padding: 1em;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .accordion:hover {
-  background-color: #D8D8D8;
+  background-color: #DFDEDE;
 }
 
 span.emotionAccordionName {
@@ -245,12 +313,15 @@ span.emotionAccordionName {
 }
 
 .accordion.collapsed {
-  height: 1.5em;
-  overflow: hidden;
+  height: auto;
+  max-height: 50px;
+  transition: max-height 0.2s ease-in;
 }
 
 .accordion.open {
-  background-color: #fafafa;
+  height: auto;
+  max-height: 230px;
+  transition: max-height 0.2s ease-in;
 }
 
 .accordion p {
@@ -296,7 +367,6 @@ i.hide {
   max-width: 600px;
   width: 90%;
   min-width: 300px;
-
   margin-bottom: 2em;
 }
 
@@ -378,8 +448,8 @@ textarea {
   text-align: center;
   padding: .4em .5em .6em .5em;
   border-radius: 20px;
-  margin: 1em 0.5em 0 0.5em;
 
+  margin: 0 1em 1em 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
   color: #000000;
@@ -412,10 +482,32 @@ hr {
   border-style: solid;
   border-color: #606060;
   border-width: 1px 0 0 0;
-  margin: 5px 0;
+  margin: 1em 0;
 }
 
-/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
+.highlighted.fear span,
+.highlighted.anger span,
+.highlighted.sadness span
+{
+  color: white;
+  background-color: tomato;
+}
+
+
+.highlighted.joy span, 
+.highlighted.confident span,
+.highlighted.analytical span 
+{
+  color: black;
+  background-color: #7ed321;
+}
+
+  .modalContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
 
 /* At tablet or bigger */
 @media only screen and (min-width: 768px) {
@@ -428,102 +520,133 @@ hr {
   .ExpandedNavigation {
     width: 200px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
   }
 
   .ExpandedNavigation a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
     text-decoration: none;
     color: #7ED321;
     font-weight: bold;
+    text-transform: uppercase;
   }
 }
+
 
 /* -- Button Layout For Mid-Size Screens -- */
 @media only screen and (max-width: 510px) and (min-width:420px) {
 
   .toggleButton {
     border-radius: 20px;
-    margin: 10px 15px;
+    margin: 0 2em 1em 0;
   }
 
   .toneToggleButtons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 
+
 /* -- Button Layout for Small Mobile -- */
 @media only screen and (max-width: 360px) {
- .toggleButton {
-  width: 90px;
-  border-radius: 20px;
- }
+  .toggleButton {
+    width: 100px;
+    border-radius: 20px;
+  }
 }
 
-.spash {
-  min-width: 90%;
+/* -- Small Screen Text -- */
+@media only screen and (max-width: 425px) {
+
+  h1 {
+    font-size: 1.5em;
+    margin: 1em 0;
+  }
+
+  p.splashText {
+    font-size: 1em;
+  }
+
+  p, span.returnSentence {
+    font-size: 0.9em;
+  }
+
+  textarea {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: lighter;
+    font-size: 1em;
+    color: #606060;
+  }
 }
 
-.highlighted.fear span,
-.highlighted.anger span,
-.highlighted.sadness span
-{
-  color: white;
-  background-color: tomato;
+@media only screen and (min-width: 1024px) {
+  .SentenceResults {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  #buttonSeparater {
+    height: 400px;
+    width: 1px;
+    border-style: solid;
+    border-color: #606060;
+    border-width: 0 1px 0 0;
+    margin: 0 1em;
+  }
+
+  #SentenceReturn {
+    width: 400px;
+  }
 }
 
-
-.highlighted.joy span,
-.highlighted.confident span,
-.highlighted.analytical span
-{
-  color: black;
-  background-color: #7ed321;
+.scoreHide {
+  display: none;
 }
 
+.scoreShow {
+  display: inline;
+}
 
-/* Loader Component */
-
-.Loader {
+.scoreInfo {
+  display: none;
   position: absolute;
-  z-index: 20;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background-color: #fff;
+  height: 100px;
+  width: 200px;
+  border: 5px solid #7ED321 ;
+  outline: 3px solid #70E0D3 ;
+  background-color: black;
+  z-index: 2; 
+  left: 30px;
+}
+
+.sentenceText {
+  position: relative;
+}
+
+.sentenceText:hover {
+    cursor: pointer;
+}
+
+.sentenceText:active .scoreInfo {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column; 
+  padding-left: 100px;
+  line-height: 1.5em;
 }
 
-.logo {
-  width: 55px;
-  height: 62px;
-  background-color: white;
-  background-image: url(./img/logo.png);
-  background-position: center;
-  background-size: cover;
-  display: inline-block;
+
+.joyJoy, .confidentConfident, .analyticalAnalytical {
+  color: #7ed321 !important;
+  background-color: black !important;
 }
 
-#logotype {
-  display: inline-block;
-  margin: 0;
-  font-family: 'Comfortaa';
-  font-size: 2.5em;
-  color: #7ED321;
-}
-
-.loadingAnimation {
-  background-color: white;
-  height: 400px;
-  width: 400px;
-  background-image: url(./img/loader.gif);
-  background-position: center;
-  background-size: cover;
+.angerAnger , .fearFear, .sadnessSadness{
+  color: tomato !important;
+  background-color: black !important;
 }
 
 /* Modal Component */
@@ -578,54 +701,6 @@ hr {
     margin: 0 auto;
     padding: 30px;
   }
-
   .modalText a{
     text-decoration: none;
   }
-
-
-.scoreHide {
-  display: none;
-}
-
-.scoreShow {
-  display: inline;
-}
-
-.scoreInfo {
-  display: none;
-  position: absolute;
-  height: 100px;
-  width: 200px;
-  border: 5px solid #7ED321 ;
-  outline: 3px solid #70E0D3 ;
-  background-color: black;
-  z-index: 2; 
-  left: 30px;
-}
-
-.sentenceText {
-  position: relative;
-}
-
-.sentenceText:hover {
-    cursor: pointer;
-}
-
-.sentenceText:active .scoreInfo {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column; 
-  padding-left: 100px;
-  line-height: 1.5em;
-}
-
-
-.joyJoy, .confidentConfident, .analyticalAnalytical {
-  color: #7ed321;
-}
-
-.angerAnger , .fearFear, .sadnessSadness{
-  color: tomato;
-}
