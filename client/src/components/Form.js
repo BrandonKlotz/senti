@@ -16,23 +16,23 @@ class Form extends Component {
 
 		return (
 			<div className="container form">
-	      <form onSubmit={this.handleSubmit} className="form">
-	          <textarea
-	            onChange={this.handleText}
-	            value={this.state.value}
-	            placeholder="Enter a few sentences here to analyze."
-	            defaultValue={this.props.value}>
-	          </textarea>
-						<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
-	      </form>
+	      		<form onSubmit={this.handleSubmit} className="form">
+	          		<textarea
+	            		onChange={this.handleText}
+	            		value={this.state.value}
+	            		placeholder="Enter a few sentences here to analyze."
+	            		defaultValue={this.props.value}>
+	         		 </textarea>
+					<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
+	      		</form>
 
 				<div>
-	        <CopyToClipboard text={this.state.value}
-	          onCopy={() => this.setState({copied: true})}>
-	          <input type="button" value="Copy to clipboard with button" className="Button" />
-	        </CopyToClipboard>
-	        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
-      	</div>
+		        	<CopyToClipboard text={this.state.value}
+		          		onCopy={() => this.setState({copied: true})}>
+		          		<input type="button" value="Copy to clipboard with button" className="Button" />
+		        	</CopyToClipboard>
+		        		{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+	      		</div>
 			</div>
 		);
 	}

@@ -12,28 +12,31 @@ class Header extends Component {
 
     return(
    		<header>
-        <div className="logo" onClick={this.props.goToHome}>
-        </div>
+   			<div className="logoContainer">
+        		<div className="logo" onClick={this.props.goToHome}></div>
+        	</div>
 
-   				<div className="ExpandedNavigation">
-   					<a href="#">Home</a>
+
+        	<div id="logotype">Senti</div>
+
+			<div className="ExpandedNavigation">
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Contact</a>
+			</div>
+
+			<div className="dropdown">
+				<button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
+
+				<div id="myDropdown" className="dropdown-content">
+					<a href="#">Home</a>
 					<a href="#">About</a>
 					<a href="#">Contact</a>
 				</div>
-
-				<div className="dropdown">
-					<button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
-
-					  <div id="myDropdown" className="dropdown-content">
-					    <a href="#">Home</a>
-					    <a href="#">About</a>
-					    <a href="#">Contact</a>
-
-					  </div>
-				</div>
-
+			</div>
 	   	</header>
     );
+
   }
 
  myFunction(event) {

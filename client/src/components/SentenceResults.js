@@ -35,17 +35,17 @@ class SentenceResults extends Component {
                                     onClick={() => this.toneToggle(tone)}>{tone}</div>  );
            });
 
-           return (
+          return (
             <div className="container">
-                <h2>Sentence-By-Sentence Tones</h2>
-                <div className="SentenceResults">
-                  {sentences}
-                </div>
-                <div className="toneToggleButtons">
-                  {buttons}
-                </div>
-             </div>
-             );
+              <h2>Sentence Tones:</h2>
+              <div className="SentenceResults">
+                {sentences}
+                <div id="buttonSeparater"></div>
+                <h4>Click to toggle selected emotion:</h4>
+                <div className="toneToggleButtons">{buttons}</div>
+              </div>
+            </div>
+          );
        }
 
   mapSentencesAndReturnEmotionsArray = (sentences) => {
