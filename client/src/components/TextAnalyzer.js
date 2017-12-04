@@ -20,11 +20,11 @@ class TextAnalyzer extends Component {
       return (
         <div className="App">
           <div className="container">
-            <div className="splash">
-              <h1>The professional email analyzer.</h1>
-              <p id="HomepageMessage">We analyze messages sentence-by-sentence for overall tone and suggestions on where to make positive changes.</p>
-            </div>
-          </div>
+  					<div className="splash">
+  						<h1>The Professional Email Checker.</h1>
+  						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
+  					</div>
+  				</div>
           <Form onSubmit={this.props.addResults}/>
         </div>
       );
@@ -40,7 +40,12 @@ class TextAnalyzer extends Component {
           <h1>Your Results</h1>
           <DocumentResults />
           <SentenceResults />
-          <h2>Edit and reanalyze your message:</h2>
+          <div className="container">
+  					<div className="splash">
+  						<h2>Edit your current message.</h2>
+  						<p>Try to get rid of the red by editing your message and reanalyze it.</p>
+  					</div>
+  				</div>
           <Form value = {this.props.text} onSubmit={this.props.addResults}/>
         </div>
       );

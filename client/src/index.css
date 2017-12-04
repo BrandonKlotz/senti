@@ -28,7 +28,7 @@ h1 {
   font-size: 1.9em;
   line-height: 1.2em;
   text-align: center;
-  margin: 10px 0;
+  margin: 1em 0;
 }
 
 h2 {
@@ -418,29 +418,23 @@ hr {
   min-width: 90%;
 }
 
-.highlighted.fear {
-  color: blue;
-}
-
-.highlighted.anger {
-  color: red;
-}
-
-.highlighted.sadness {
-  color: purple;
-}
-
-.highlighted.joy {
-  color: yellow;
-}
-
-.highlighted.confident {
-  color: gold;
-}
-
-.highlighted.analytical {
+.highlighted.fear span,
+.highlighted.anger span,
+.highlighted.sadness span
+{
   color: white;
+  background-color: tomato;
 }
+
+
+.highlighted.joy span, 
+.highlighted.confident span,
+.highlighted.analytical span 
+{
+  color: black;
+  background-color: #7ed321;
+}
+
 
 /* Loader Component */
 
@@ -460,7 +454,7 @@ hr {
 
 .logo {
   width: 55px;
-	height: 62px;
+  height: 62px;
   background-color: white;
   background-image: url(./img/logo.png);
   background-position: center;

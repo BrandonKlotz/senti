@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
-               loading: false,
+    loading: false,
 	  displayResults: {},
-                text: ""
+    text: '',
+    value: '',
 	};
 
 export default (state = INITIAL_STATE, action) => {
@@ -14,7 +15,12 @@ export default (state = INITIAL_STATE, action) => {
         case "REQUEST_RESULTS":
             return Object.assign({}, state, {
                 loading: true,
-                text: action.inputData.text
+                value: action.inputData.value
+            });
+        case "HOME_SCREEN":
+            return Object.assign({}, state, {
+                displayResults: {},
+                value: ""
             });
         default:
             return state;
