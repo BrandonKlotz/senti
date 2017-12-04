@@ -50,7 +50,7 @@ h4 {
   margin: 10px 0;
 }
 
-p {
+p, li {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: lighter;
   font-size: 1em;

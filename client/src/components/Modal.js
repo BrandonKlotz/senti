@@ -19,7 +19,7 @@ class Modal extends React.Component {
               <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
             </div>
             <div className="modalText">
-              <h3>Senti is a sentiment analysis app to assist you in writing professional messages.</h3>  
+              <p><strong>Senti is a sentiment analysis app to assist you in writing professional messages.</strong></p>  
               <p>Paste or type your text into the free web app and hit the ANALYZE button.</p>
               <p>Senti uses the IBM Watson Tone Analyzer API to detect language and emotional tones in your email or text message.</p>
               <p>Watson was used last year to measure the emotional tones projected by each candidate in the series of presidential debates.</p>
@@ -40,15 +40,15 @@ class Modal extends React.Component {
               <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
             </div>
             <div className="modalText">
-              <h3>Senti is the React/Redux final group project for the Grand Circus Facebook<super>*</super> Bootcamp in Grand Rapids.</h3>
-              <h3>Group members participating on the Senti project:</h3>
+              <p><strong>Senti is the React/Redux final group project for the Grand Circus Facebook<super>*</super> Bootcamp in Grand Rapids.</strong></p>
+              <p><strong>Group members participating on the Senti project:</strong></p>
               <ul>
                 <li><a href="https://github.com/BrandonKlotz">Brandon Klotz</a></li>
                 <li><a href="https://github.com/HollyJHuber">Holly J. Huber</a></li>
                 <li><a href="https://github.com/josephrossparks">Joseph Parks</a></li>
                 <li><a href="https://github.com/keebarber">Keenan Barber</a></li>
               </ul>
-              <p><super>*</super> The Grand Circus Facebook Bootcamp is an intensive front-end developer coding bootcamp funded through a grant from Facebook.</p>
+              <p><super>*</super><em> The Grand Circus Facebook Bootcamp is an intensive front-end developer coding bootcamp funded through a grant from Facebook.</em></p>
             </div>
           </div>
         </div>
