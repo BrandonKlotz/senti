@@ -49,9 +49,11 @@ class SentenceResults extends Component {
               <h2>Sentence Tones:</h2>
               <div className="SentenceResults">
                 <div id="SentenceReturn">{sentences}</div>
-                <div id="buttonSeparater"></div>
-                <h4>Click to toggle selected emotion:</h4>
-                <div className="toneToggleButtons">{buttons}</div>
+                <div id="ToggleControlsAndLabels">
+                  <div id="buttonSeparater"></div>
+                  <h4>Click to toggle selected emotion:</h4>
+                  <div className="toneToggleButtons">{buttons}</div>
+                </div>
               </div>
             </div>
           );
