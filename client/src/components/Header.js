@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "font-awesome/css/font-awesome.css";
 import { goToHome, modalAbout, modalContact } from '../actions';
 import { connect } from 'react-redux';
- 
+
 class Header extends Component {
 
   render() {
@@ -11,11 +11,12 @@ class Header extends Component {
 
     return(
    		<header>
-        <div className="logo" onClick={this.props.goToHome}>
+        <div className="logoarea">
+          <div className="logo" onClick={this.props.goToHome}></div>
+          <div id="logotype">Senti</div>
         </div>
-        <div id="logotype">Senti</div>
+
    			<div className="ExpandedNavigation">
-   				<a onClick={this.props.goToHome}>Home</a>
 					<a onClick={this.props.modalAbout}>About</a>
 					<a onClick={this.props.modalContact}>Contact</a>
 				</div>
@@ -23,7 +24,6 @@ class Header extends Component {
         <div className="dropdown">
           <button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
           <div id="myDropdown" className="dropdown-content">
-          	<a onClick={this.props.goToHome}>Home</a>
           	<a onClick={this.props.modalAbout}>About</a>
           	<a onClick={this.props.modalContact}>Contact</a>
           </div>
