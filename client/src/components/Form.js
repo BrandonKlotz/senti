@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
+import { modalAlert } from '../actions';
+import Modal from './Modal';
 
 class Form extends Component {
 	constructor(props) {
@@ -50,8 +51,11 @@ class Form extends Component {
 		event.preventDefault();
 
 		if(this.state.value === "" || this.state.value.length < 12) {
-			alert('Please enter at least 2 sentences'); // This should be a modal
-			return;
+			return {
+				this.props.modalAlert
+			};
+			//alert('Please enter at least 2 sentences'); // This should be a modal
+			//return;
 		}
 
 		this.props.onSubmit({
@@ -61,11 +65,15 @@ class Form extends Component {
 	}
 }
 
+const mapActionsToProps = {
+  modalAlert
+};
+
 const mapStateToProps = (state) => {
   return {
-    		value: state.value,
+    value: state.value,
 		text: state.value
   };
 };
 
-export default connect(mapStateToProps, null)(Form);
+export default connect(mapStateToProps, mapActionsToProps)(Form);

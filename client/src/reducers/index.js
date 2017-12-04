@@ -38,6 +38,11 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 isModalOpen: false
             });
+        case "MODAL_ALERT":
+            return Object.assign({}, state, {
+                isModalOpen: true,
+                modal: "ALERT"
+            });
         default:
             return state;
     }

@@ -5,18 +5,6 @@ import { connect } from 'react-redux';
 import Modal from './Modal';
  
 class Header extends Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     isOpen: false
-  //   };
-  // }
-
-  // toggleModal = () => {
-  //   this.setState({
-  //     isOpen: !this.state.isOpen
-  //   });
-  // }
 
   render() {
 
