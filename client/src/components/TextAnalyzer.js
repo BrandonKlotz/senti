@@ -7,18 +7,21 @@ import Form from './Form.js';
 import Loader from './Loading.js';
 import DocumentResults from './DocumentResults.js';
 import SentenceResults from './SentenceResults.js';
+import Modal from './Modal';
 
 class TextAnalyzer extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: false };
+    this.state = { 
+      loading: false
+    };
   }
 
   render() {
-
     if (this.props.loading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
+          <Modal />
           <div className="container">
   					<div className="splash">
   						<h1>The Professional Email Checker.</h1>
@@ -37,6 +40,7 @@ class TextAnalyzer extends Component {
     } else {
       return (
         <div className="App">
+          <Modal />
           <h1>Your Results</h1>
           <DocumentResults />
           <SentenceResults />
@@ -59,7 +63,8 @@ const mapActionsToProps = {
 const mapStateToProps = (state) => {
   return {
     loading: state.loading,
-    displayResults: state.displayResults
+    displayResults: state.displayResults,
+    isModalOpen: state.isModalOpen
   };
 };
 

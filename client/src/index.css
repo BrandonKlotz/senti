@@ -51,7 +51,7 @@ h4 {
   margin: 10px 0;
 }
 
-p {
+p, li {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: lighter;
   font-size: 1em;
@@ -68,6 +68,7 @@ p {
   font-family: 'Comfortaa';
   src: url('./fonts/Comfortaa_Regular.ttf');
 }
+
 
 /* -- HEADER STYLING -- */
 
@@ -312,6 +313,52 @@ textarea {
   align-items: center;
 }
 
+.dropbtn {
+    background-color: #70E0D3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #8EBDB2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: #fefefe;
+    width: 200px;
+    border: 1px solid #70E0D3;
+    margin-top: 28px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 16px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+  background-color: #70E0D3;
+}
+
+.show {
+  display:block;
+}
+.modalWindow{
+  z-index: 100;
+}
 
 /* Begin styling for sentence results buttons */
 
@@ -479,3 +526,60 @@ hr {
   background-position: center;
   background-size: cover;
 }
+
+/* Modal Component */
+
+  .modalContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .modalBackground, .modalBackgroundAlert {  
+    position: fixed;
+    border-radius: 5px;
+    padding: 50px;
+  }
+
+  .modalBackground{
+    background-color: rgba(184, 233, 134, .7);
+  }
+  .modalBackgroundAlert {  
+    background-color: rgba(169, 169, 169, .7);
+  }
+
+  .modalHeader, .modalHeaderAlert {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 5px 15px;
+  }
+  .modalHeader{
+    background-color: #70E0D3;
+  }
+  .modalHeaderAlert {
+    background-color: tomato;
+  }
+
+ .modalHeader h1{
+    color: #fff;
+  }
+
+  .modalHeader i{
+    color: #a9a9a9;
+    padding: 5px 5px 0 0;
+  }
+
+  .modalText {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    min-height: 150px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .modalText a{
+    text-decoration: none;
+  }
+
