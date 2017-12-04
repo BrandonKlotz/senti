@@ -39,6 +39,7 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
+                <p id="positiveWarning">We've detected a high level of {tone.tone_name} tones.</p>
                 <p>{selectedTone.text}</p>
               </div>
             );
@@ -58,6 +59,7 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
+                <p id="negativeWarning">Warning: We've detected a high level of {tone.tone_name} tones!</p>
                 <p>{selectedTone.text}</p>
               </div>
             )

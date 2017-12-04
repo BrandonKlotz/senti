@@ -248,6 +248,16 @@ i {
   width: 90%;
 }
 
+p#positiveWarning {
+  font-weight: bold;
+  color: #7ED321;
+}
+
+p#negativeWarning {
+  font-weight: bold;
+  color: tomato;
+}
+
 i.fa-plus, i.fa-minus {
   color: black;
 }
