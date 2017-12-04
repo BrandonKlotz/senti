@@ -23,16 +23,16 @@ class Form extends Component {
 	            		placeholder="Enter a few sentences here to analyze."
 	            		defaultValue={this.props.value}>
 	         		 </textarea>
-					<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
+							 <input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
 	      		</form>
 
 				<div>
-		        	<CopyToClipboard text={this.state.value}
-		          		onCopy={() => this.setState({copied: true})}>
-		          		<input type="button" value="Copy to clipboard with button" className="Button" />
-		        	</CopyToClipboard>
-		        		{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
-	      		</div>
+					<CopyToClipboard text={this.state.value}
+							onCopy={() => this.setState({copied: true})}>
+							<input type="button" value="Copy to clipboard with button" className="Button" />
+					</CopyToClipboard>
+						{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+				</div>
 			</div>
 		);
 	}
