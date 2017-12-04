@@ -113,7 +113,7 @@ header img {
     right: 0;
     background-color: #fefefe;
     width: 200px;
-    border: 1px solid #7ED321;
+    border: 2px solid #7ED321;
     margin-top: 28px;
     z-index: 1;
 }
@@ -338,7 +338,7 @@ p#negativeWarning {
 }
 
 i.fa-plus, i.fa-minus {
-  color: black;
+  color: #606060;
 }
 
 i.fa-plus:hover, i.fa-minus:hover {
@@ -533,19 +533,24 @@ hr {
   .SentenceResults {
     display: flex;
     flex-direction: row-reverse;
-  }
-
-  #buttonSeparater {
-    height: 400px;
-    width: 1px;
-    border-style: solid;
-    border-color: #606060;
-    border-width: 0 1px 0 0;
-    margin: 0 1em;
+    justify-content: flex-end;
   }
 
   #SentenceReturn {
-    width: 400px;
+    width: 60%;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    border-color: #606060;
+    padding-left: 1em;
+  }
+
+  #ToggleControlsAndLabels {
+    width: 25%;
+    margin-right: 0.5em;
+  }
+
+  #buttonSeparater {
+    display: none;
   }
 }
 
