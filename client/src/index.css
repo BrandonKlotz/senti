@@ -534,22 +534,31 @@ hr {
     justify-content: center;
   }
 
-  .modalBackground {  
+  .modalBackground, .modalBackgroundAlert {  
     position: fixed;
-    background-color: rgba(184, 233, 134, .7);
     border-radius: 5px;
     padding: 50px;
-    box-shadow: 10px 10px 5px #a9a9a9;
   }
 
-  .modalHeader {
+  .modalBackground{
+    background-color: rgba(184, 233, 134, .7);
+  }
+  .modalBackgroundAlert {  
+    background-color: rgba(169, 169, 169, .7);
+  }
+
+  .modalHeader, .modalHeaderAlert {
     display: flex;
     justify-content: space-between;
-    background-color: #70E0D3;
     border-radius: 5px;
-    /*min-height: 1em;*/
     margin: 0 auto;
     padding: 5px 15px;
+  }
+  .modalHeader{
+    background-color: #70E0D3;
+  }
+  .modalHeaderAlert {
+    background-color: tomato;
   }
 
  .modalHeader h1{
@@ -565,7 +574,7 @@ hr {
     background-color: #fff;
     border-radius: 5px;
     max-width: 500px;
-    min-height: 200px;
+    min-height: 150px;
     margin: 0 auto;
     padding: 30px;
   }

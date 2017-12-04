@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeModal } from '../actions';
+import { closeModal, modalAlert } from '../actions';
 
 import "font-awesome/css/font-awesome.css";
 class Modal extends React.Component {
@@ -31,7 +31,7 @@ class Modal extends React.Component {
           </div>
         </div>
       );
-    } else {
+    } else if(this.props.modal === "CONTACT"){
       return (
         <div className = "modalContainer">
           <div className="modalBackground">
@@ -53,6 +53,21 @@ class Modal extends React.Component {
           </div>
         </div>
       );
+    } else{
+     return (
+        <div className = "modalContainer">
+          <div className="modalBackgroundAlert">
+            <div className="modalHeaderAlert" onClick={this.props.closeModal}>
+              <i class="fa fa-exclamation fa-2x" aria-hidden="true"></i><span><h1>ALERT</h1></span>
+              <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
+            </div>
+            <div className="modalText">
+              <p><strong>Please enter at least 2 sentences of text.</strong></p>
+            </div>
+          </div>
+        </div>
+      );
+
     }
   }
 }
