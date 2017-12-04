@@ -1,8 +1,10 @@
 const INITIAL_STATE = {
     loading: false,
-	  displayResults: {},
+    isModalOpen: false,
+	displayResults: {},
     text: '',
     value: '',
+    modal: ''
 	};
 
 export default (state = INITIAL_STATE, action) => {
@@ -21,6 +23,16 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 displayResults: {},
                 value: ""
+            });
+        case "MODAL_ABOUT":
+            return Object.assign({}, state, {
+                isModalOpen: true,
+                modal: "ABOUT"
+            });
+        case "MODAL_CONTACT":
+            return Object.assign({}, state, {
+                isModalOpen: true,
+                modal: "CONTACT"
             });
         default:
             return state;

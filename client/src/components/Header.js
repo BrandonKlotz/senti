@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import "font-awesome/css/font-awesome.css";
-import { goToHome } from '../actions';
+import { goToHome, modalAbout, modalContact } from '../actions';
 import { connect } from 'react-redux';
 import Modal from './Modal';
-
-
+ 
 class Header extends Component {
   constructor(props){
     super(props);
@@ -24,23 +23,13 @@ class Header extends Component {
   	//Explanded header = Tablet and Larger, Dropdown = Mobile
 
     return(
-
-
    		<header>
         <div className="logo" onClick={this.props.goToHome}>
         </div>
-        <div className = "modalContainer">
-          <Modal 
-            className={"modalWindow"}
-            show={this.state.isOpen}
-            onClose={this.toggleModal}>
-            <h3>Senti is a sentiment analysis app to assist you in writing professional messages.</h3>  
-          </Modal>
-        </div>
    			<div className="ExpandedNavigation">
    				<a>Home</a>
-					<a onClick={this.toggleModal}>About</a>
-					<a onClick={this.toggleModal}>Contact</a>
+					<a onClick={this.props.modalAbout}>About</a>
+					<a onClick={this.props.modalContact}>Contact</a>
 				</div>
 
 				<div className="dropdown">
@@ -57,13 +46,15 @@ class Header extends Component {
     );
   }
 
- myFunction(event) {
-    document.getElementById("myDropdown").classList.toggle("show");
-};
+  myFunction(event) {
+      document.getElementById("myDropdown").classList.toggle("show");
+  };
 }
 
 const mapActionsToProps = {
-  goToHome
+  goToHome,
+  modalAbout,
+  modalContact
 };
 
 export default connect(null, mapActionsToProps)(Header);

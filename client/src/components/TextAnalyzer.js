@@ -7,14 +7,31 @@ import Form from './Form.js';
 import Loader from './Loading.js';
 import DocumentResults from './DocumentResults.js';
 import SentenceResults from './SentenceResults.js';
+import Modal from './Modal';
 
 class TextAnalyzer extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: false };
+    this.state = { 
+      loading: false
+    };
   }
 
   render() {
+
+  if (this.props.isModalOpen) {
+    return(
+        <div className = "modalContainer">
+          <Modal 
+            className={"modalWindow"}
+            show={this.props.isModalOpen}
+            onClose={this.toggleModal}>
+            <h3>Senti is a sentiment analysis app to assist you in writing professional messages.</h3>  
+          </Modal>
+        </div>
+    );
+
+  } else {
 
     if (this.props.loading !== true && isEmpty(this.props.displayResults) ) {
       return (
@@ -50,6 +67,7 @@ class TextAnalyzer extends Component {
       );
     }
   }
+  }
 }
 const mapActionsToProps = {
   addResults
@@ -58,7 +76,8 @@ const mapActionsToProps = {
 const mapStateToProps = (state) => {
   return {
     loading: state.loading,
-    displayResults: state.displayResults
+    displayResults: state.displayResults,
+    isModalOpen: state.isModalOpen
   };
 };
 
