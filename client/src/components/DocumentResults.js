@@ -39,7 +39,7 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
-                <p>{selectedTone.value}</p>
+                <p>{selectedTone.text}</p>
               </div>
             );
           } else {
@@ -58,7 +58,7 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
-                <p>{selectedTone.value}</p>
+                <p>{selectedTone.text}</p>
               </div>
             )
           }
@@ -82,6 +82,7 @@ class DocumentResults extends Component {
   }
 
   toggleAccordion = (tone_name) => {
+    debugger;
     if (tone_name === this.state.open) {
       this.setState({
         open: ""
