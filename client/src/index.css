@@ -416,12 +416,12 @@ hr {
   .modalBackground {  
     position: fixed;
     background-color: rgba(184, 233, 134, .7);
+    border-radius: 5px;
     padding: 50px;
   }
   .modalHeader {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: #a9a9a9;
     border-radius: 5px;
     /*min-height: 1em;*/
@@ -433,7 +433,7 @@ hr {
   }
   .modalHeader i{
     color: black;
-    display: inline-block;
+    padding: 5px 5px 0 0;
   }
   .modalText {
     background-color: #fff;

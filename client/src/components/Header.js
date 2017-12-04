@@ -30,13 +30,13 @@ class Header extends Component {
             className={"modalWindow"}
             show={this.state.isOpen}
             onClose={this.toggleModal}>
-              <h3>Senti is a sentiment analysis app to assist you in writing professional emails.</h3>
+            <h3>Senti is a sentiment analysis app to assist you in writing professional messages.</h3>  
           </Modal>
         </div>
    			<div className="ExpandedNavigation">
    				<a>Home</a>
 					<a onClick={this.toggleModal}>About</a>
-					<a>Contact</a>
+					<a onClick={this.toggleModal}>Contact</a>
 				</div>
 
 				<div className="dropdown">

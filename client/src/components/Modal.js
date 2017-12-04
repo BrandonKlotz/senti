@@ -13,9 +13,8 @@ class Modal extends React.Component {
     return (
       <div className="modalBackground">
         <div className="modalHeader" onClick={this.props.onClose}>
-          <h1> Senti
-            <i className="fa fa-times" aria-hidden="true"></i>
-          </h1>
+          <span><h1> Senti</h1></span>
+          <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
         </div>
         <div className="modalText">
           {this.props.children}
