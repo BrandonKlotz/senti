@@ -470,9 +470,13 @@ hr {
   }
 
   .ExpandedNavigation a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1em;
     text-decoration: none;
-    color: #70E0D3;
+    color: #606060;
     font-weight: bold;
+    text-transform: uppercase;
+
   }
 }
 
