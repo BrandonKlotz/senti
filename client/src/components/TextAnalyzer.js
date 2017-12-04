@@ -40,6 +40,7 @@ class TextAnalyzer extends Component {
           <h1>Your Results</h1>
           <DocumentResults />
           <SentenceResults />
+          <h2>Edit and reanalyze your message:</h2>
           <Form value = {this.props.text} onSubmit={this.props.addResults}/>
         </div>
       );

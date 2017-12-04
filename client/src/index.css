@@ -21,10 +21,6 @@ body {
   align-items: center;
 }
 
-.form {
-  text-align: center;
-}
-
 h1 {
   font-family: 'Gotham', sans-serif;
   color: #606060;
@@ -151,13 +147,17 @@ p#HomepageMessage {
 
 form {
   box-sizing: border-box;
-  max-width: 600px;
-  width: 90%;
-  min-width: 320px;
-  padding: 0.5em;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 textarea {
+  box-sizing: border-box;
   width: 100%;
   height: 260px;
   background-color: #ffffff;
@@ -230,6 +230,13 @@ i {
   background-color: #D8D8D8;
 }
 
+span.emotionAccordionName {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  font-weight: bolder;
+  color: #606060;
+}
+
 .AccordionHeader {
   display: flex;
   justify-content: space-between;
@@ -287,6 +294,8 @@ i.hide {
   max-width: 600px;
   width: 90%;
   min-width: 300px;
+
+  margin-bottom: 2em;
 }
 
 .SentenceResults span {
@@ -300,7 +309,6 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 80%;
 }
 
 
@@ -420,13 +428,6 @@ hr {
   width: 90px;
   border-radius: 20px;
  }
-}
-
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .spash {

@@ -13,8 +13,7 @@ class Form extends Component {
 	render() {
 
 		return (
-			<div>
-
+			<div className= "container">
 	      		<form onSubmit={this.handleSubmit.bind(this)} className="form">
 	          		<textarea
 	            		onChange={this.handleText.bind(this)}

@@ -31,7 +31,7 @@ class DocumentResults extends Component {
                 <div className="AccordionHeader">
                   <span>
                     <i className="fa fa-check" aria-hidden="true"></i>
-                    {tone.tone_name}
+                    <span className="emotionAccordionName">{tone.tone_name}</span>
                   </span>
                   <span>
                     <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
@@ -51,7 +51,7 @@ class DocumentResults extends Component {
                 <div className="AccordionHeader">
                   <span>
                     <i className="fa fa-flag" aria-hidden="true"></i>
-                    {tone.tone_name}
+                    <span className="emotionAccordionName">{tone.tone_name}</span>
                   </span>
                   <span>
                     <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
