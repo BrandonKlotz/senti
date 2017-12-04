@@ -1,49 +1,91 @@
 /* -- OVERALL APP STYLING -- */
 
 body {
-  background-color: #fefefe;
-  background-image: url(./img/scatter.png);
-  background-position: center;
-  background-repeat: repeat;
-  font-family: sans-serif;
-  height: 100%;
   margin: 0 auto;
   padding: 0;
+  font-family: sans-serif;
   width: 100%;
+  height: 100%;
+  background-color: #fefefe;
+  position: absolute;
+  background-image: url(./img/scatter.gif);
+  background-position: center;
+  background-repeat: repeat;
 }
 
 .App {
-  align-items: center;
+  margin: 0 auto;
+  width: auto;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  min-height: 400px;
-  width: auto;
+  align-items: center;
 }
 
-h1, h2, p {
-  color: #333;
+h1 {
+  font-family: 'Gotham', sans-serif;
+  color: #606060;
+
+  font-size: 1.9em;
+  line-height: 1.2em;
+  text-align: center;
+  margin: 1em 0;
 }
+
+h2 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-style: italic;
+  color: #606060;
+  text-align: center;
+  margin: 10px 0;
+}
+
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1em;
+  color: #606060;
+  text-align: center;
+  margin: 10px 0;
+}
+
+p, li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  color: #606060;
+  margin: 10px 0;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('./fonts/Gotham-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('./fonts/Comfortaa_Regular.ttf');
+}
+
 
 /* -- HEADER STYLING -- */
 
 header {
-  align-items: center;
-  background-color: #fefefe;
-  border-bottom: 1px #70E0D3 solid;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  border-bottom: 2px #7ED321 solid;
+  align-items: center;
   padding: 1.5em;
-  width: auto;
+  background-color: #fefefe;
 }
 
-.logo {
-  background-color: white;
-  background-image: url(./img/logo.png);
-  background-position: center;
-  background-size: cover;
-	height: 62px;
-  width: 55px;
+#bodymovin {
+    background-color: red;
+    height: 200px;
+    width: 200px;
 }
 
 header img {
@@ -51,12 +93,12 @@ header img {
 }
 
 .dropbtn {
-    background-color: #70E0D3;
-    border: none;
+    background-color: #7ED321;
     color: white;
-    cursor: pointer;
-    font-size: 16px;
     padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -64,30 +106,30 @@ header img {
 }
 
 .dropdown {
-    display: inline-block;
     position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
-    background-color: #fefefe;
-    border: 1px solid #70E0D3;
     display: none;
-    margin-top: 28px;
     position: fixed;
     right: 0;
+    background-color: #fefefe;
     width: 200px;
+    border: 1px solid #7ED321;
+    margin-top: 28px;
     z-index: 1;
 }
 
 .dropdown-content a {
     color: black;
-    display: block;
     padding: 16px 16px;
     text-decoration: none;
+    display: block;
 }
 
 .dropdown a:hover {
-  background-color: #70E0D3;
+  background-color: #7ED321;
 }
 
 .show {
@@ -100,29 +142,57 @@ header img {
 
 /* -- Submission Form Styling -- */
 
+p#HomepageMessage {
+  font-size: 1.15em;
+  text-align: center;
+}
+
+form {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 textarea {
-  border: 1px solid #70E0D3;
-  border-radius: 4px;
-  font-size: 1.25em;
-  margin-bottom: 1em;
-  min-height: 400px;
-  min-width: 310px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 260px;
+  background-color: #ffffff;
   padding: .5em;
+  margin-bottom: 1em;
+  border: 2px solid #7ED321;
+  border-radius: 10px;
   resize: none;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 1.15em;
+  color: #606060;
+}
+
+textarea::placeholder {
+  color: #a5a5a5;
 }
 
 textarea:focus {
-  outline: none;
+  outline:none;
 }
 
+
 .Button {
-  background-color: #70E0D3;
-  border: none;
-  border-radius: 25px;
-  color: #fff;
-  font-size: 1.25em;
   height: 40px;
   width: 50%;
+  background-color: #7ED321;
+  color: #fff;
+  font-size: 1.25em;
+  font-family: 'Gotham';
+  border: none;
+  border-radius: 25px;
 }
 
 .Button:focus {
@@ -133,36 +203,40 @@ textarea:focus {
   background-color: #8EBDB2;
 }
 
-.form {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-}
-
 i {
   color: #ccc;
 }
 
 /* -- Document Results Styling -- */
 
+.DocumentResults {
+  min-width: 300px;
+  width: 90%;
+  max-width: 600px;
+}
+
 .AccordionContainer {
-  background-color: #eee;
-  border-radius: 4px;
-  margin-bottom: 2em;
+  border-radius: 10px;
   overflow: hidden;
+  margin-bottom: 1em;
 }
 
 .accordion {
-  background-color: #dedede;
-  border-bottom: 1px solid #fefefe;
+  background-color: #eeeeee;
   border-radius: 0px;
-  color: #000;
+  border-bottom: 1px solid #fefefe;
   padding: 1em;
 }
 
 .accordion:hover {
-  background-color: #777;
+  background-color: #D8D8D8;
+}
+
+span.emotionAccordionName {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  font-weight: bolder;
+  color: #606060;
 }
 
 .AccordionHeader {
@@ -183,8 +257,22 @@ i {
   width: 90%;
 }
 
+p#positiveWarning {
+  font-weight: bold;
+  color: #7ed321;
+}
+
+p#negativeWarning {
+  font-weight: bold;
+  color: tomato;
+}
+
 i.fa-plus, i.fa-minus {
-  color: #000;
+  color: black;
+}
+
+i.fa-plus:hover, i.fa-minus:hover {
+  color: #5FCBFF;
 }
 
 i.hide {
@@ -197,163 +285,303 @@ i.hide {
 }
 
 .fa-check {
-  color: #7ED321;
+  color: #7ed321;
   margin-right: 1em;
 }
 
 /* -- Sentence Results Styling -- */
 
 .container {
-  background-color: #fafafa;
-  border-radius: 0;
+  box-sizing: border-box;
+  max-width: 600px;
+  width: 90%;
+  min-width: 300px;
+
   margin-bottom: 2em;
-  padding: 1em;
 }
 
-.DocumentResults, textarea {
-  align-items: center;
+.SentenceResults span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+}
+
+textarea {
   display: flex;
   flex-direction: column;
-  min-width: 80%;
+  align-items: center;
 }
 
+.dropbtn {
+    background-color: #70E0D3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #8EBDB2;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: #fefefe;
+    width: 200px;
+    border: 1px solid #70E0D3;
+    margin-top: 28px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 16px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+  background-color: #70E0D3;
+}
+
+.show {
+  display:block;
+}
+.modalWindow{
+  z-index: 100;
+}
 
 /* Begin styling for sentence results buttons */
 
 .toneToggleButtons {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .toneToggleButtons:hover {
   cursor: pointer;
 }
 
+.toggleButton {
+  width: 110px;
+  height: 20px;
+  text-align: center;
+  padding: .4em .5em .6em .5em;
+  border-radius: 20px;
+  margin: 1em 0.5em 0 0.5em;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bolder;
+  color: #000000;
+}
+
 .Analytical, .Confident, .Joy {
-  background-color: #7ED321;
-  border-radius: 5px;
+  background-color: #7ed321;
 }
 
-.Anger, .Fear, .Sadness {
+.Fear, .Anger, .Sadness {
   background-color: tomato;
-  border-radius: 5px;
 }
 
-/* Sentence Results Highlight Color */
-.highlighted.analytical {
-  color: green;
-}
-
-.highlighted.confident {
-  color: gold;
-}
-
-.highlighted.anger {
-  color: red;
-}
-
-.highlighted.fear {
-  color: blue;
-}
-
-.highlighted.joy {
-  color: yellow;
-}
-
-.highlighted.sadness {
-  color: purple;
+.SentenceResults {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  padding: 1em;
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 hr {
   border: none;
 }
 
-.SentenceResults {
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  line-height: 1.5em;
-  max-width: 600px;
-  padding: 5px;
-}
-
-.toggleButton {
-  border-radius: 20px;
-  height: 20px;
-  margin-top: 1em;
-  padding: .5em;
-  text-align: center;
-  width: 120px;
-}
-
-/* Loader Component */
-
-.Loader {
-  align-items: center;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: absolute;
-  top: 0;
+#buttonSeparater {
   width: 100%;
-  z-index: 20;
-}
-
-.loadingAnimation {
-  background-color: white;
-  background-image: url(./img/loader.gif);
-  background-position: center;
-  background-size: cover;
-  height: 400px;
-  width: 400px;
-}
-
-.sequence {
-  text-align: center;
+  border-style: solid;
+  border-color: #606060;
+  border-width: 1px 0 0 0;
+  margin: 5px 0;
 }
 
 /* -- MEDIA QUERIES FOR SCREEN SIZES -- */
 
-/* At tablet or burger */
+/* At tablet or bigger */
 @media only screen and (min-width: 768px) {
-  .accordion, .container {
-    width: 600px;
-  }
 
   .dropdown {
     display: none;
+    color: #606060;
   }
 
   .ExpandedNavigation {
+    width: 200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 200px;
   }
 
   .ExpandedNavigation a {
-    color: #70E0D3;
-    font-weight: bold;
     text-decoration: none;
+    color: #7ED321;
+    font-weight: bold;
   }
 }
 
-@media only screen and (max-width: 460px) and (min-width:360px) {
-  .toneToggleButtons {
-    display: flex;
-    justify-content: flex-start;
-  }
+/* -- Button Layout For Mid-Size Screens -- */
+@media only screen and (max-width: 510px) and (min-width:420px) {
 
   .toggleButton {
-    margin: .25em;
+    border-radius: 20px;
+    margin: 10px 15px;
+  }
+
+  .toneToggleButtons {
+    display: flex;
+    justify-content: center;
   }
 }
+
+/* -- Button Layout for Small Mobile -- */
+@media only screen and (max-width: 360px) {
+ .toggleButton {
+  width: 90px;
+  border-radius: 20px;
+ }
+}
+
+.spash {
+  min-width: 90%;
+}
+
+.highlighted.fear span,
+.highlighted.anger span,
+.highlighted.sadness span
+{
+  color: white;
+  background-color: tomato;
+}
+
+
+.highlighted.joy span,
+.highlighted.confident span,
+.highlighted.analytical span
+{
+  color: black;
+  background-color: #7ed321;
+}
+
+
+/* Loader Component */
+
+.Loader {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 55px;
+  height: 62px;
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+}
+
+#logotype {
+  display: inline-block;
+  margin: 0;
+  font-family: 'Comfortaa';
+  font-size: 2.5em;
+  color: #7ED321;
+}
+
+.loadingAnimation {
+  background-color: white;
+  height: 400px;
+  width: 400px;
+  background-image: url(./img/loader.gif);
+  background-position: center;
+  background-size: cover;
+}
+
+/* Modal Component */
+
+  .modalContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .modalBackground, .modalBackgroundAlert {  
+    position: fixed;
+    border-radius: 5px;
+    padding: 50px;
+  }
+
+  .modalBackground{
+    background-color: rgba(184, 233, 134, .7);
+  }
+  .modalBackgroundAlert {  
+    background-color: rgba(169, 169, 169, .7);
+  }
+
+  .modalHeader, .modalHeaderAlert {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 5px 15px;
+  }
+  .modalHeader{
+    background-color: #70E0D3;
+  }
+  .modalHeaderAlert {
+    background-color: tomato;
+  }
+
+ .modalHeader h1{
+    color: #fff;
+  }
+
+  .modalHeader i{
+    color: #a9a9a9;
+    padding: 5px 5px 0 0;
+  }
+
+  .modalText {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    min-height: 150px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+
+  .modalText a{
+    text-decoration: none;
+  }
 
 
 .scoreHide {
@@ -394,21 +622,10 @@ hr {
 }
 
 
-.joyjoy {
-  color: yellow;
+.joyJoy, .confidentConfident, .analyticalAnalytical {
+  color: #7ed321;
 }
-.confidentconfident {
-  color: gold;
-}
-.analyticalanalytical {
-  color: purple;
-}
-.angeranger {
-  color: red;
-}
-.fearfear {
-  color: green;
-}
-.sadnesssadness {
-  color: blue;
+
+.angerAnger , .fearFear, .sadnessSadness{
+  color: tomato;
 }

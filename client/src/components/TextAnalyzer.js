@@ -7,21 +7,24 @@ import Form from './Form.js';
 import Loader from './Loading.js';
 import DocumentResults from './DocumentResults.js';
 import SentenceResults from './SentenceResults.js';
+import Modal from './Modal';
 
 class TextAnalyzer extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: false };
+    this.state = { 
+      loading: false
+    };
   }
 
   render() {
-
     if (this.props.loading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
+          <Modal />
           <div className="container">
   					<div className="splash">
-  						<h2>The Professional Email Checker.</h2>
+  						<h1>The Professional Email Checker.</h1>
   						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
   					</div>
   				</div>
@@ -37,6 +40,8 @@ class TextAnalyzer extends Component {
     } else {
       return (
         <div className="App">
+          <Modal />
+          <h1>Your Results</h1>
           <DocumentResults />
           <SentenceResults />
           <div className="container">
@@ -45,7 +50,7 @@ class TextAnalyzer extends Component {
   						<p>Try to get rid of the red by editing your message and reanalyze it.</p>
   					</div>
   				</div>
-          <Form onSubmit={this.props.addResults}/>
+          <Form value = {this.props.text} onSubmit={this.props.addResults}/>
         </div>
       );
     }
@@ -58,7 +63,8 @@ const mapActionsToProps = {
 const mapStateToProps = (state) => {
   return {
     loading: state.loading,
-    displayResults: state.displayResults
+    displayResults: state.displayResults,
+    isModalOpen: state.isModalOpen
   };
 };
 

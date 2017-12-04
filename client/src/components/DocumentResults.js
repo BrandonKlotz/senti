@@ -31,7 +31,7 @@ class DocumentResults extends Component {
                 <div className="AccordionHeader">
                   <span>
                     <i className="fa fa-check" aria-hidden="true"></i>
-                    {tone.tone_name}
+                    <span className="emotionAccordionName">{tone.tone_name}</span>
                   </span>
                   <span>
                     <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
@@ -39,7 +39,8 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
-                <p>{selectedTone.value}</p>
+                <p id="positiveWarning">We've detected a high level of {tone.tone_name} tones.</p>
+                <p>{selectedTone.text}</p>
               </div>
             );
           } else {
@@ -50,7 +51,7 @@ class DocumentResults extends Component {
                 <div className="AccordionHeader">
                   <span>
                     <i className="fa fa-flag" aria-hidden="true"></i>
-                    {tone.tone_name}
+                    <span className="emotionAccordionName">{tone.tone_name}</span>
                   </span>
                   <span>
                     <i className={`fa fa-plus ${tone.tone_name === this.state.open?"hide":"show"}`} aria-hidden="true"></i>
@@ -58,7 +59,8 @@ class DocumentResults extends Component {
                     <hr />
                   </span>
                 </div>
-                <p>{selectedTone.value}</p>
+                <p id="negativeWarning">Warning: We've detected a high level of {tone.tone_name} tones!</p>
+                <p>{selectedTone.text}</p>
               </div>
             )
           }
@@ -68,12 +70,7 @@ class DocumentResults extends Component {
 
     return (
       <div className="DocumentResults">
-        <div className="container">
-					<h2>Overall Tones</h2>
-					<p><i className="fa fa-flag" aria-hidden="true"></i>- We've detected tones that could be negatively impacting your message.</p>
-          <p><i className="fa fa-check" aria-hidden="true"></i>- We think you effectively used this tone.</p>
-				</div>
-
+        <h2>Overall Tones:</h2>
         <div className="AccordionContainer">
           {detectedDocThemes}
         </div>
@@ -82,6 +79,7 @@ class DocumentResults extends Component {
   }
 
   toggleAccordion = (tone_name) => {
+    debugger;
     if (tone_name === this.state.open) {
       this.setState({
         open: ""

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
+import { modalAlert } from '../actions';
 
 class Form extends Component {
 	constructor(props) {
@@ -16,23 +16,23 @@ class Form extends Component {
 
 		return (
 			<div className="container form">
-	      <form onSubmit={this.handleSubmit} className="form">
-	          <textarea
-	            onChange={this.handleText}
-	            value={this.state.value}
-	            placeholder="Enter a few sentences here to analyze."
-	            defaultValue={this.props.value}>
-	          </textarea>
-						<input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
-	      </form>
+	      		<form onSubmit={this.handleSubmit} className="form">
+	          		<textarea
+	            		onChange={this.handleText}
+	            		value={this.state.value}
+	            		placeholder="Enter a few sentences here to analyze."
+	            		defaultValue={this.props.value}>
+	         		 </textarea>
+							 <input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
+	      		</form>
 
 				<div>
-	        <CopyToClipboard text={this.state.value}
-	          onCopy={() => this.setState({copied: true})}>
-	          <input type="button" value="Copy to clipboard with button" className="Button" />
-	        </CopyToClipboard>
-	        {this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
-      	</div>
+					<CopyToClipboard text={this.state.value}
+							onCopy={() => this.setState({copied: true})}>
+							<input type="button" value="Copy to clipboard with button" className="Button" />
+					</CopyToClipboard>
+						{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+				</div>
 			</div>
 		);
 	}
@@ -50,7 +50,9 @@ class Form extends Component {
 		event.preventDefault();
 
 		if(this.state.value === "" || this.state.value.length < 12) {
-			alert('Please enter at least 2 sentences'); // This should be a modal
+			console.log ("modal alert");
+				this.props.modalAlert();
+			//alert('Please enter at least 2 sentences'); // This should be a modal
 			return;
 		}
 
@@ -61,11 +63,15 @@ class Form extends Component {
 	}
 }
 
+const mapActionsToProps = {
+  modalAlert
+};
+
 const mapStateToProps = (state) => {
   return {
-    		value: state.value,
+    value: state.value,
 		text: state.value
   };
 };
 
-export default connect(mapStateToProps, null)(Form);
+export default connect(mapStateToProps, mapActionsToProps)(Form);

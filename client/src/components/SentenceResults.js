@@ -18,8 +18,9 @@ class SentenceResults extends Component {
             const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
 
-            const scores = without(sentence.tones.map(tone => { return (<span className={`${tone.tone_id+tone.tone_id}`}>
-                                                                                                                    {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>); }), "Tentative");
+            const scores = sentence.tones.map(tone => { return (<span className={`${tone.tone_id+tone.tone_name}`}>
+                                                                                                                    {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>); 
+                                                                                                                     });
 
             return (
                 <div key={sentence.sentence_id} className={classnames}>
@@ -29,7 +30,6 @@ class SentenceResults extends Component {
                          {scores}
                       </div>
                     </div>
-                    <br/>
                 </div>
                 );
           });
@@ -44,17 +44,17 @@ class SentenceResults extends Component {
                                     onClick={() => this.toneToggle(tone)}>{tone}</div>  );
            });
 
-           return (
+          return (
             <div className="container">
-                <h2>Sentence-By-Sentence Tones</h2>
-                <div className="SentenceResults">
-                  {sentences}
-                </div>
-                <div className="toneToggleButtons">
-                  {buttons}
-                </div>
-             </div>
-             );
+              <h2>Sentence Tones:</h2>
+              <div className="SentenceResults">
+                {sentences}
+                <div id="buttonSeparater"></div>
+                <h4>Click to toggle selected emotion:</h4>
+                <div className="toneToggleButtons">{buttons}</div>
+              </div>
+            </div>
+          );
        }
 
   mapSentencesAndReturnEmotionsArray = (sentences) => {
