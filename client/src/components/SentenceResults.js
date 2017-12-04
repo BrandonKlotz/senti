@@ -18,9 +18,20 @@ class SentenceResults extends Component {
             const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
 
+            const scores = without(sentence.tones.map(tone => { return (<span className={`${tone.tone_id+tone.tone_id}`}>{`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>); }), "Tentative7");
+
             return (
                   <div key={sentence.sentence_id} className={classnames}>
+                  <div className="sentenceText">
+
                       <span>{sentence.text}&nbsp;</span>
+                                        <div className="scoreInfo">
+                        {scores}
+                      </div>
+
+                   
+                      </div>
+                      <br/>
                   </div>
                 );
           });

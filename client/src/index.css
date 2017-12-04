@@ -354,3 +354,61 @@ hr {
     margin: .25em;
   }
 }
+
+
+.scoreHide {
+  display: none;
+}
+
+.scoreShow {
+  display: inline;
+}
+
+.scoreInfo {
+  display: none;
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  border: 5px solid #7ED321 ;
+  outline: 3px solid #70E0D3 ;
+  background-color: black;
+  z-index: 2; 
+  left: 30px;
+}
+
+.sentenceText {
+  position: relative;
+}
+
+.sentenceText:hover {
+    cursor: pointer;
+}
+
+.sentenceText:active .scoreInfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column; 
+  padding-left: 100px;
+  line-height: 1.5em;
+}
+
+
+.joyjoy {
+  color: yellow;
+}
+.confidentconfident {
+  color: gold;
+}
+.analyticalanalytical {
+  color: purple;
+}
+.angeranger {
+  color: red;
+}
+.fearfear {
+  color: green;
+}
+.sadnesssadness {
+  color: blue;
+}
