@@ -418,6 +418,7 @@ hr {
     background-color: rgba(184, 233, 134, .7);
     border-radius: 5px;
     padding: 50px;
+    box-shadow: 10px 10px 5px #a9a9a9;
   }
   .modalHeader {
     display: flex;
