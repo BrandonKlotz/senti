@@ -89,8 +89,13 @@ header {
     width: 200px;
 }
 
-header img {
-  width: 50px;
+header .logo {
+  margin-right: 2em;
+}
+
+header .logoarea {
+  display: flex;
+  align-items: center;
 }
 
 .dropbtn {
@@ -267,8 +272,8 @@ i {
   background-size: cover;
 }
 
-@keyframes fadeIn { 
-  from { opacity: 0; } 
+@keyframes fadeIn {
+  from { opacity: 0; }
 }
 
 h1#loadingTitle {
@@ -388,7 +393,7 @@ textarea {
 }
 
 .dropbtn {
-    background-color: #70E0D3;
+    background-color: #7ed321;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -411,7 +416,7 @@ textarea {
     right: 0;
     background-color: #fefefe;
     width: 200px;
-    border: 1px solid #70E0D3;
+    border: 2px solid #7ed321;
     margin-top: 28px;
     z-index: 1;
 }
@@ -429,9 +434,6 @@ textarea {
 
 .show {
   display:block;
-}
-.modalWindow{
-  z-index: 100;
 }
 
 /* Begin styling for sentence results buttons */
@@ -498,9 +500,9 @@ hr {
 }
 
 
-.highlighted.joy span, 
+.highlighted.joy span,
 .highlighted.confident span,
-.highlighted.analytical span 
+.highlighted.analytical span
 {
   color: black;
   background-color: #7ed321;
@@ -588,25 +590,31 @@ hr {
     justify-content: center;
   }
 
-  .modalBackground, .modalBackgroundAlert {  
+  .modalBackground, .modalBackgroundAlert {
     position: fixed;
-    border-radius: 5px;
-    padding: 50px;
+    padding-top: 10em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
   .modalBackground{
-    background-color: rgba(184, 233, 134, .7);
+    background-color: rgba(0, 0, 0, .6);
   }
-  .modalBackgroundAlert {  
-    background-color: rgba(169, 169, 169, .7);
+  .modalBackgroundAlert {
+    background-color: rgba(0, 0, 0, .6);
   }
 
   .modalHeader, .modalHeaderAlert {
     display: flex;
     justify-content: space-between;
-    border-radius: 5px;
-    margin: 0 auto;
-    padding: 5px 15px;
+    z-index: 40;
+    align-items: baseline;
+    padding: 1em;
+    border-radius: 8px 8px 0 0;
+
   }
   .modalHeader{
     background-color: #70E0D3;
@@ -615,24 +623,37 @@ hr {
     background-color: tomato;
   }
 
- .modalHeader h1{
+ .modalHeader h1, .modalHeaderAlert h1{
+    color: #fff;
+    margin: 0;
+  }
+
+  .modalHeader i, .modalHeaderAlert i{
     color: #fff;
   }
 
-  .modalHeader i{
-    color: #a9a9a9;
-    padding: 5px 5px 0 0;
+  .modalText {
+    z-index: 40;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    padding: 1em;
+    min-height: 40px;
+    text-align: center;
   }
 
-  .modalText {
-    background-color: #fff;
-    border-radius: 5px;
-    max-width: 500px;
-    min-height: 150px;
-    margin: 0 auto;
-    padding: 30px;
+  .modalText li {
+    list-style: none;
+  }
+
+  .modalText p:first-child {
+    margin: auto;
   }
   .modalText a{
     text-decoration: none;
   }
 
+  .border {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 620px;
+  }
