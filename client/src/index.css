@@ -75,7 +75,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px #70E0D3 solid;
+  border-bottom: 2px #7ED321 solid;
   align-items: center;
   padding: 1.5em;
   background-color: #fefefe;
@@ -92,7 +92,7 @@ header img {
 }
 
 .dropbtn {
-    background-color: #70E0D3;
+    background-color: #7ED321;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -115,7 +115,7 @@ header img {
     right: 0;
     background-color: #fefefe;
     width: 200px;
-    border: 1px solid #70E0D3;
+    border: 1px solid #7ED321;
     margin-top: 28px;
     z-index: 1;
 }
@@ -128,7 +128,7 @@ header img {
 }
 
 .dropdown a:hover {
-  background-color: #70E0D3;
+  background-color: #7ED321;
 }
 
 .show {
@@ -164,7 +164,7 @@ textarea {
   background-color: #ffffff;
   padding: .5em;
   margin-bottom: 1em;
-  border: 2px solid #70E0D3;
+  border: 2px solid #7ED321;
   border-radius: 10px;
   resize: none;
 
@@ -186,7 +186,7 @@ textarea:focus {
 .Button {
   height: 40px;
   width: 50%;
-  background-color: #70E0D3;
+  background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
   font-family: 'Gotham';
@@ -388,7 +388,7 @@ hr {
 
   .ExpandedNavigation a {
     text-decoration: none;
-    color: #70E0D3;
+    color: #7ED321;
     font-weight: bold;
   }
 }
@@ -468,7 +468,7 @@ hr {
   margin: 0;
   font-family: 'Comfortaa';
   font-size: 2.5em;
-  color: #70E0D3;
+  color: #7ED321;
 }
 
 .loadingAnimation {
