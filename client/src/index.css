@@ -83,15 +83,11 @@ header {
   background-color: #fefefe;
 }
 
-#bodymovin {
-    background-color: red;
-    height: 200px;
-    width: 200px;
-}
-
 header img {
   width: 50px;
 }
+
+
 
 .dropbtn {
     background-color: #7ED321;
@@ -103,7 +99,7 @@ header img {
 }
 
 .dropbtn:hover, .dropbtn:focus {
-    background-color: #8EBDB2;
+    background-color: #7ED321;
 }
 
 .dropdown {
@@ -255,7 +251,7 @@ i {
   margin: 0;
   font-family: 'Comfortaa';
   font-size: 2.5em;
-  color: #70E0D3;
+  color: #7ED321;
 }
 
 .loadingAnimation {
@@ -378,53 +374,6 @@ i.hide {
   font-weight: lighter;
   font-size: 1em;
   color: #606060;
-}
-
-
-textarea {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dropbtn {
-    background-color: #70E0D3;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-    background-color: #8EBDB2;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: fixed;
-    right: 0;
-    background-color: #fefefe;
-    width: 200px;
-    border: 1px solid #70E0D3;
-    margin-top: 28px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 16px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown a:hover {
-  background-color: #70E0D3;
 }
 
 .show {
@@ -577,6 +526,26 @@ hr {
     font-weight: lighter;
     font-size: 1em;
     color: #606060;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .SentenceResults {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  #buttonSeparater {
+    height: 400px;
+    width: 1px;
+    border-style: solid;
+    border-color: #606060;
+    border-width: 0 1px 0 0;
+    margin: 0 1em;
+  }
+
+  #SentenceReturn {
+    width: 400px;
   }
 }
 
