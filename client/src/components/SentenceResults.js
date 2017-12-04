@@ -18,10 +18,19 @@ class SentenceResults extends Component {
             const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
 
+            const scores = sentence.tones.map(tone => { return (<span className={`${tone.tone_id+tone.tone_name}`}>
+                                                                                                                    {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>); 
+                                                                                                                     });
+
             return (
-                  <div key={sentence.sentence_id} className={classnames}>
-                      <span className="returnSentence">{sentence.text}&nbsp;</span>
-                  </div>
+                <div key={sentence.sentence_id} className={classnames}>
+                   <div className="sentenceText">
+                      <span>{sentence.text}&nbsp;</span>
+                      <div className="scoreInfo">
+                         {scores}
+                      </div>
+                    </div>
+                </div>
                 );
           });
 
@@ -39,10 +48,12 @@ class SentenceResults extends Component {
             <div className="container">
               <h2>Sentence Tones:</h2>
               <div className="SentenceResults">
-                {sentences}
-                <div id="buttonSeparater"></div>
-                <h4>Click to toggle selected emotion:</h4>
-                <div className="toneToggleButtons">{buttons}</div>
+                <div id="SentenceReturn">{sentences}</div>
+                <div id="ToggleControlsAndLabels">
+                  <div id="buttonSeparater"></div>
+                  <h4>Click to toggle selected emotion:</h4>
+                  <div className="toneToggleButtons">{buttons}</div>
+                </div>
               </div>
             </div>
           );
