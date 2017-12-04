@@ -39,3 +39,26 @@ export function goToHome() {
     type: "HOME_SCREEN",
   };
 }
+
+export function modalAbout() {
+  return {
+    type: "MODAL_ABOUT",
+  };
+}
+
+export function modalContact() {
+  return {
+    type: "MODAL_CONTACT",
+  };
+}
+
+export function closeModal() {
+  return {
+    type: "MODAL_CLOSE",
+  };
+}
+export function modalAlert() {
+  return {
+    type: "MODAL_ALERT",
+  };
+}
