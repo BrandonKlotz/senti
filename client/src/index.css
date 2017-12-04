@@ -265,6 +265,15 @@ i {
   background-size: cover;
 }
 
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+}
+
+h1#loadingTitle {
+  color: #eeeeee;
+  animation: fadeIn 1s infinite alternate;
+}
+
 /* -- Document Results Styling -- */
 
 .DocumentResults {
