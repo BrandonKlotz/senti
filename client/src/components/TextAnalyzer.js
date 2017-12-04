@@ -24,7 +24,7 @@ class TextAnalyzer extends Component {
           <Modal />
           <div className="container">
   					<div className="splash">
-  						<h2>The Professional Email Checker.</h2>
+  						<h1>The Professional Email Checker.</h1>
   						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
   					</div>
   				</div>
@@ -41,6 +41,7 @@ class TextAnalyzer extends Component {
       return (
         <div className="App">
           <Modal />
+          <h1>Your Results</h1>
           <DocumentResults />
           <SentenceResults />
           <div className="container">
@@ -49,7 +50,7 @@ class TextAnalyzer extends Component {
   						<p>Try to get rid of the red by editing your message and reanalyze it.</p>
   					</div>
   				</div>
-          <Form onSubmit={this.props.addResults}/>
+          <Form value = {this.props.text} onSubmit={this.props.addResults}/>
         </div>
       );
     }
