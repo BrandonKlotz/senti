@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import "font-awesome/css/font-awesome.css";
 import Modal from './Modal';
 
-
 class Header extends Component {
   constructor(props){
     super(props);
@@ -22,6 +21,8 @@ class Header extends Component {
   	//Explanded header = Tablet and Larger, Dropdown = Mobile
 
     return(
+
+
    		<header>
         <div className="logo">
         </div>
@@ -44,7 +45,7 @@ class Header extends Component {
 
 					  <div id="myDropdown" className="dropdown-content">
 					    <a>Home</a>
-					    <a onClick={this.toggleModal}>About</a>
+					    <a>About</a>
 					    <a>Contact</a>
 					  </div>
 				</div>
