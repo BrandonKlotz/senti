@@ -22,7 +22,7 @@ class TextAnalyzer extends Component {
           <div className="container">
   					<div className="splash">
   						<h1>The Professional Email Checker.</h1>
-  						<p>Type or paste your email. We'll look for overall tones and give helpful suggestions on where to edit.</p>
+  						<p className="splashText">Type or paste your email. We'll look for overall tones, red flags, and give helpful suggestions on where to edit.</p>
   					</div>
   				</div>
           <Form onSubmit={this.props.addResults}/>
@@ -43,7 +43,7 @@ class TextAnalyzer extends Component {
           <div className="container">
   					<div className="splash">
   						<h2>Edit your current message.</h2>
-  						<p>Try to get rid of the red by editing your message and reanalyze it.</p>
+  						<p className="splashText">Try to get rid of the red by editing your message and reanalyze it.</p>
   					</div>
   				</div>
           <Form value = {this.props.text} onSubmit={this.props.addResults}/>

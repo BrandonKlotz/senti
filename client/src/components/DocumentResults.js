@@ -79,7 +79,6 @@ class DocumentResults extends Component {
   }
 
   toggleAccordion = (tone_name) => {
-    debugger;
     if (tone_name === this.state.open) {
       this.setState({
         open: ""

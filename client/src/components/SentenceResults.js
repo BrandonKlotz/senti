@@ -20,7 +20,7 @@ class SentenceResults extends Component {
 
             return (
                   <div key={sentence.sentence_id} className={classnames}>
-                      <span>{sentence.text}&nbsp;</span>
+                      <span className="returnSentence">{sentence.text}&nbsp;</span>
                   </div>
                 );
           });
