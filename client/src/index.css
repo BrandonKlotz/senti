@@ -44,6 +44,16 @@ h2 {
   margin: 10px 0;
 }
 
+h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1em;
+  color: #606060;
+  text-align: center;
+  margin: 10px 0;
+}
+
 p {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: lighter;
@@ -266,7 +276,14 @@ i.hide {
   box-sizing: border-box;
   max-width: 600px;
   width: 90%;
-  min-width: 320px;
+  min-width: 300px;
+}
+
+.SentenceResults span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  color: #606060;
 }
 
 textarea {
@@ -290,75 +307,6 @@ textarea {
   cursor: pointer;
 }
 
-/*.joy, .analytical, .confident {
-  background-color:  green;
-  border-radius: 5px;
-}
-
-.sadness, .fear, .anger {
-    background-color: red;
-      border-radius: 5px;
-}*/
-
-.Analytical, .Confident, .Joy {
-  background-color: #7ED321;
-  border-radius: 5px;
-}
-
-.Fear, .Anger, .Sadness {
-  background-color: tomato;
-  border-radius: 5px;
-}
-
-.SentenceResults {
-  background-color: #eeeeee;
-  border-radius: 10px;
-  padding: 1em;
-  line-height: 1.5em;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-hr {
-  border: none;
-}
-
-/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
-
-/* At tablet or bugger */
-@media only screen and (min-width: 768px) {
-
-  .dropdown {
-    display: none;
-  }
-
-  .ExpandedNavigation {
-    width: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .ExpandedNavigation a {
-    text-decoration: none;
-    color: #70E0D3;
-    font-weight: bold;
-  }
-}
-
-@media only screen and (max-width: 510px) and (min-width:420px) {
-
-  .toggleButton {
-    margin: 0 15px;
-  }
-
-  .toneToggleButtons {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .toggleButton {
   width: 110px;
   height: 20px;
@@ -377,6 +325,93 @@ hr {
 .NegativeButton {
   background-color: tomato;
 }
+
+/*.joy, .analytical, .confident {
+  background-color:  green;
+  border-radius: 5px;
+}
+
+.sadness, .fear, .anger {
+    background-color: red;
+      border-radius: 5px;
+}*/
+
+.Analytical, .Confident, .Joy {
+  background-color: #7ED321;
+}
+
+.Fear, .Anger, .Sadness {
+  background-color: tomato;
+}
+
+.SentenceResults {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  padding: 1em;
+  line-height: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+hr {
+  border: none;
+}
+
+#buttonSeparater {
+  width: 100%;
+  border-style: solid;
+  border-color: #606060;
+  border-width: 1px 0 0 0;
+  margin: 5px 0;
+}
+
+/* -- MEDIA QUERIES FOR SCREEN SIZES -- */
+
+/* At tablet or bigger */
+@media only screen and (min-width: 768px) {
+
+  .dropdown {
+    display: none;
+    color: #606060;
+  }
+
+  .ExpandedNavigation {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .ExpandedNavigation a {
+    text-decoration: none;
+    color: #70E0D3;
+    font-weight: bold;
+  }
+}
+
+/* -- Button Layout For Mid-Size Screens -- */
+@media only screen and (max-width: 510px) and (min-width:420px) {
+
+  .toggleButton {
+    border-radius: 20px;
+    margin: 10px 15px;
+  }
+
+  .toneToggleButtons {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* -- Button Layout for Small Mobile -- */
+@media only screen and (max-width: 360px) {
+ .toggleButton {
+  width: 90px;
+  border-radius: 20px;
+ }
+}
+
 
 .form {
   display: flex;
