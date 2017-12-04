@@ -18,24 +18,10 @@ class TextAnalyzer extends Component {
   }
 
   render() {
-
-  if (this.props.isModalOpen) {
-    return(
-        <div className = "modalContainer">
-          <Modal 
-            className={"modalWindow"}
-            show={this.props.isModalOpen}
-            onClose={this.toggleModal}>
-            <h3>Senti is a sentiment analysis app to assist you in writing professional messages.</h3>  
-          </Modal>
-        </div>
-    );
-
-  } else {
-
     if (this.props.loading !== true && isEmpty(this.props.displayResults) ) {
       return (
         <div className="App">
+          <Modal />
           <div className="container">
   					<div className="splash">
   						<h2>The Professional Email Checker.</h2>
@@ -54,6 +40,7 @@ class TextAnalyzer extends Component {
     } else {
       return (
         <div className="App">
+          <Modal />
           <DocumentResults />
           <SentenceResults />
           <div className="container">
@@ -66,7 +53,6 @@ class TextAnalyzer extends Component {
         </div>
       );
     }
-  }
   }
 }
 const mapActionsToProps = {
