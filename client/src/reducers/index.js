@@ -34,6 +34,10 @@ export default (state = INITIAL_STATE, action) => {
                 isModalOpen: true,
                 modal: "CONTACT"
             });
+        case "MODAL_CLOSE":
+            return Object.assign({}, state, {
+                isModalOpen: false
+            });
         default:
             return state;
     }

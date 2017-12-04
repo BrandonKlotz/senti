@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import "font-awesome/css/font-awesome.css";
+import { closeModal } from '../actions';
 
+import "font-awesome/css/font-awesome.css";
 class Modal extends React.Component {
   render() {
     // Render nothing if not true
@@ -13,7 +14,7 @@ class Modal extends React.Component {
       return (
         <div className = "modalContainer">
           <div className="modalBackground">
-            <div className="modalHeader" onClick={this.props.onClose}>
+            <div className="modalHeader" onClick={this.props.closeModal}>
               <span><h1>About Senti</h1></span>
               <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
             </div>
@@ -34,7 +35,7 @@ class Modal extends React.Component {
       return (
         <div className = "modalContainer">
           <div className="modalBackground">
-            <div className="modalHeader" onClick={this.props.onClose}>
+            <div className="modalHeader" onClick={this.props.closeModal}>
               <span><h1>Contact Us</h1></span>
               <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
             </div>
@@ -42,10 +43,10 @@ class Modal extends React.Component {
               <h3>Senti is the React/Redux final group project for the Grand Circus Facebook<super>*</super> Bootcamp in Grand Rapids.</h3>
               <h3>Group members participating on the Senti project:</h3>
               <ul>
-                <li>Brandon Klotz</li>
-                <li>Holly J. Huber</li>
-                <li>Joey Parks</li>
-                <li>Keenan Barber</li>
+                <li><a href="https://github.com/BrandonKlotz">Brandon Klotz</a></li>
+                <li><a href="https://github.com/HollyJHuber">Holly J. Huber</a></li>
+                <li><a href="https://github.com/josephrossparks">Joseph Parks</a></li>
+                <li><a href="https://github.com/keebarber">Keenan Barber</a></li>
               </ul>
               <p><super>*</super> The Grand Circus Facebook Bootcamp is an intensive front-end developer coding bootcamp funded through a grant from Facebook.</p>
             </div>
@@ -63,4 +64,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(Modal);
+const mapActionsToProps = {
+  closeModal
+};
+
+export default connect(mapStateToProps, mapActionsToProps)(Modal);

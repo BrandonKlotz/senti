@@ -422,17 +422,17 @@ hr {
   .modalHeader {
     display: flex;
     justify-content: space-between;
-    background-color: #a9a9a9;
+    background-color: #70E0D3;
     border-radius: 5px;
     /*min-height: 1em;*/
     margin: 0 auto;
     padding: 5px 15px;
   }
  .modalHeader h1{
-    color: white;
+    color: #fff;
   }
   .modalHeader i{
-    color: black;
+    color: #a9a9a9;
     padding: 5px 5px 0 0;
   }
   .modalText {
@@ -442,5 +442,8 @@ hr {
     min-height: 200px;
     margin: 0 auto;
     padding: 30px;
+  }
+  .modalText a{
+    text-decoration: none;
   }
 

@@ -51,3 +51,9 @@ export function modalContact() {
     type: "MODAL_CONTACT",
   };
 }
+
+export function closeModal() {
+  return {
+    type: "MODAL_CLOSE",
+  };
+}
