@@ -14,7 +14,7 @@ class DocumentResults extends Component {
   }
   render() {
 
-    //if active state = add open class to element
+    // if active state = add open class to element
 
     const detectedDocThemes = this.props.displayResults.document_tone.tones.map(tone => {
 
