@@ -25,6 +25,9 @@ export default (state = INITIAL_STATE, action) => {
                 displayResults: {},
                 value: ""
             });
+        // MODALS
+
+            
         case "MODAL_ABOUT":
             return Object.assign({}, state, {
                 isModalOpen: true,
