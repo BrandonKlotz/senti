@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 var delay = require('express-delay');
 
 // Delay all responses for 1 second
-app.use(delay(000));
+app.use(delay(1500));
 
 
 //  IBM BlueMix credentials
