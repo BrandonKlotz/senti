@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     loading: false,
     isModalOpen: false,
-	displayResults: {},
+	  displayResults: {},
     text: '',
     value: '',
     modal: ''
@@ -9,6 +9,7 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
+        // What calls this
         case "RECEIVE_RESULTS":
             return Object.assign({}, state, {
                 loading: false,
