@@ -33,9 +33,9 @@ class Form extends Component {
 				<div>
 					{this.state.isTextAnalyzed ?
 						<CopyToClipboard text={this.state.value} onCopy={() => this.setState({copied: true})}>
-						<input type="button" value="Copy to clipboard with button" className="Button" />
+						<input type="button" value="Copy to Clipboard" className="Button clipboard" />
 						</CopyToClipboard> : null}
-					{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+					{this.state.copied ? <div className="copyMessage"><span>Copied.</span></div> : null}
 				</div>
 			</div>
 		);

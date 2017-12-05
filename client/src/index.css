@@ -216,13 +216,14 @@ textarea:focus {
 
 .Button {
   height: 40px;
-  width: 50%;
+  width: 200px;
   background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
   font-family: 'Gotham';
   border: none;
   border-radius: 25px;
+  margin: .5em;
 }
 
 .Button:focus {
@@ -231,6 +232,11 @@ textarea:focus {
 
 .Button:hover {
   background-color: #8EBDB2;
+}
+
+.copyMessage {
+  color: #7ED321;
+  text-align: center;
 }
 
 i {
@@ -443,7 +449,6 @@ textarea {
   text-align: center;
   padding: .4em .5em .6em .5em;
   border-radius: 20px;
-
   margin: 0 1em 1em 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
