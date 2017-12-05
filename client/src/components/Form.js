@@ -21,7 +21,7 @@ class Form extends Component {
 	      		onChange={this.handleText}
 	      		value={this.state.value}
 	      		placeholder="Enter a few sentences here to analyze."
-	      		defaultValue={this.props.value}>
+						>
 	   		 </textarea>
 				 <input
 				 	type="submit"
