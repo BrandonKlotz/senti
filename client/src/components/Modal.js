@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeModal, modalAlert } from '../actions';
+import { closeModal } from '../actions';
 
 import "font-awesome/css/font-awesome.css";
 class Modal extends React.Component {

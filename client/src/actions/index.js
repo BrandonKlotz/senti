@@ -1,5 +1,4 @@
 import $ from 'jquery-ajax';
-import { isEmpty } from 'lodash';
 
 //  Action handles receiving analysis from Watson and maps the results to props in reducer
 function receiveResults(displayResults){

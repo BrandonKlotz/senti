@@ -42,11 +42,11 @@ class Form extends Component {
 	}
 
 	handleText = (event) => {
-		({target: {value}}) => this.setState({value, copied: false})
 
 		this.setState({
 			value: event.target.value,
-			text: event.target.value
+			text: event.target.value,
+			copied: false
 		});
 	}
 

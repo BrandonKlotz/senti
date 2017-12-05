@@ -23,7 +23,8 @@ export default (state = INITIAL_STATE, action) => {
         case "HOME_SCREEN":
             return Object.assign({}, state, {
                 displayResults: {},
-                value: ""
+                value: "",
+                isTextAnalyzed: false
             });
         case "MODAL_ABOUT":
             return Object.assign({}, state, {
