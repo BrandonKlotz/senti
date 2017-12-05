@@ -18,24 +18,23 @@ class Form extends Component {
 if (!this.props.stillNegative){
 		return (
 			<div className="container form">
-	  		<form onSubmit={this.handleSubmit} className="form">
-	    		<textarea
-	      		onChange={this.handleText}
-	      		value={this.state.value}
-	      		placeholder="Enter a few sentences here to analyze."
-						>
-	   		 </textarea>
-				 <input
-				 	type="submit"
-				 	value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
-				 	onClick={this.handleSubmit}
-				 	className="Button" />
-	  		</form>
+	  			<form onSubmit={this.handleSubmit} className="form">
+	    				<textarea
+	      					onChange={this.handleText}
+	      					value={this.state.value}
+	      					placeholder="Enter a few sentences here to analyze.">
+	   		 		</textarea>
+				 	<input
+				 		type="submit"
+				 		value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+				 		onClick={this.handleSubmit}
+				 		className="Button" />
+	  			</form>
 
 				<div>
 					{this.state.isTextAnalyzed ?
 						<CopyToClipboard text={this.state.value} onCopy={() => this.setState({copied: true})}>
-						<input type="button" value="Copy to Clipboard" className="Button clipboard" />
+							<input type="button" value="Copy to Clipboard" className="Button clipboard" />
 						</CopyToClipboard> : null}
 					{this.state.copied ? <div className="copyMessage"><span>Copied.</span></div> : null}
 				</div>
@@ -45,25 +44,24 @@ if (!this.props.stillNegative){
 } else {
 
 	return (
-	<div className="container form">
+		<div className="container form">
 	      		<form onSubmit={this.handleSubmit} className="form">
 	          		<textarea
-	            		onChange={this.handleText}
-	            		value={this.state.value}
-	            		placeholder="Enter a few sentences here to analyze."
-	            		>
+		            		onChange={this.handleText}
+		            		value={this.state.value}
+		            		placeholder="Enter a few sentences here to analyze.">
 	         		 </textarea>
-							 <input type="submit"
-								 			value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
-											onClick={this.handleSubmit}
-											className="Button" />
+				 <input
+			 		type="submit"
+		 			value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+					onClick={this.handleSubmit}
+					className="Button" />
 	      		</form>
 	      	</div>
 	      	);
-}
+	}
 }
 	handleText = (event) => {
-
 		this.setState({
 			value: event.target.value,
 			text: event.target.value,
@@ -73,13 +71,11 @@ if (!this.props.stillNegative){
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-
 		if(this.state.value === "" || this.state.value.length < 18) {
 			console.log ("modal alert");
 			this.props.modalAlert();
-			return
+			return;
 		}
-
 		this.props.onSubmit({
 			text: this.state.value,
 			value: this.state.value,
@@ -89,16 +85,16 @@ if (!this.props.stillNegative){
 }
 
 const mapActionsToProps = {
-  modalAlert
+  	modalAlert
 };
 
-const mapStateToProps = (state) => {
-  return {
-    value: state.value,
+const mapStateToProps = (state) => { 
+  	return {
+   		value: state.value,
 		text: state.value,
 		isTextAnalyzed: state.isTextAnalyzed,
 		stillNegative: state.stillNegative
-  };
+ 	 };
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Form);

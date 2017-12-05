@@ -6,7 +6,7 @@ import TextAnalyzer from './TextAnalyzer.js';
 class App extends Component {
 
   render() {
-    return(
+    return (
       <div>
         <Header />
         <TextAnalyzer />

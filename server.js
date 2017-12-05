@@ -7,7 +7,6 @@ var delay = require('express-delay');
 // Delay all responses for 1 second
 app.use(delay(1500));
 
-
 //  IBM BlueMix credentials
 require('dotenv').config();
 
@@ -23,16 +22,15 @@ const tone_analyzer = new ToneAnalyzerV3({
 });
 
 //  API POST utilizes tone analyzer methods to send data and receive JSON output
-//  Concatenation of variable required due to limitations of tone argument type
 //  Call tone analyzer method to analze data and return JSON output
 
-app.post('/api/tone/', (req, res, next) => {
-  const text = req.body;
-  tone_analyzer.tone(text, (err, data) => {
-    if (err) {
+app.post('/api/tone/', (request, response, next) => {
+  const text = request.body;
+  tone_analyzer.tone(text, (error, data) => {
+    if (error) {
       return next(err);
     }
-    return res.json(data);
+    return response.json(data);
   });
 });
 
