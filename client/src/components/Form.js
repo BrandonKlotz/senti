@@ -14,6 +14,8 @@ class Form extends Component {
 	}
 
 	render() {
+
+if (!this.props.stillNegative){
 		return (
 			<div className="container form">
 	  		<form onSubmit={this.handleSubmit} className="form">
@@ -39,8 +41,27 @@ class Form extends Component {
 				</div>
 			</div>
 		);
-	}
 
+} else {
+
+	return (
+	<div className="container form">
+	      		<form onSubmit={this.handleSubmit} className="form">
+	          		<textarea
+	            		onChange={this.handleText}
+	            		value={this.state.value}
+	            		placeholder="Enter a few sentences here to analyze."
+	            		>
+	         		 </textarea>
+							 <input type="submit"
+								 			value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+											onClick={this.handleSubmit}
+											className="Button" />
+	      		</form>
+	      	</div>
+	      	);
+}
+}
 	handleText = (event) => {
 
 		this.setState({
@@ -75,7 +96,8 @@ const mapStateToProps = (state) => {
   return {
     value: state.value,
 		text: state.value,
-		isTextAnalyzed: state.isTextAnalyzed
+		isTextAnalyzed: state.isTextAnalyzed,
+		stillNegative: state.stillNegative
   };
 };
 
