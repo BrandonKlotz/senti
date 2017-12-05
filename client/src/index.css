@@ -25,7 +25,6 @@ body {
 h1 {
   font-family: 'Gotham', sans-serif;
   color: #606060;
-
   font-size: 1.9em;
   line-height: 1.2em;
   text-align: center;
@@ -71,7 +70,6 @@ p, li {
   src: url('./fonts/Comfortaa_Regular.ttf');
 }
 
-
 /* -- HEADER STYLING -- */
 
 header {
@@ -84,11 +82,33 @@ header {
   background-color: #fefefe;
 }
 
-header img {
-  width: 50px;
+.logoarea {
+  display: flex;
+  align-items: center;
 }
 
+.logo {
+  width: 55px;
+  height: 62px;
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 1em;
+}
 
+.logo:hover {
+  cursor: pointer;
+}
+
+#logotype {
+  display: inline-block;
+  margin: 0;
+  font-family: 'Comfortaa';
+  font-size: 2.5em;
+  color: #7ED321;
+}
 
 .dropbtn {
     background-color: #7ED321;
@@ -231,28 +251,6 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.logo {
-  width: 55px;
-  height: 62px;
-  background-color: white;
-  background-image: url(./img/logo.png);
-  background-position: center;
-  background-size: cover;
-  display: inline-block;
-}
-
-.logo:hover {
-  cursor: pointer;
-}
-
-#logotype {
-  display: inline-block;
-  margin: 0;
-  font-family: 'Comfortaa';
-  font-size: 2.5em;
-  color: #7ED321;
 }
 
 .loadingAnimation {
@@ -523,7 +521,7 @@ hr {
   }
 
   .ExpandedNavigation {
-    width: 200px;
+    width: 140px;
     display: flex;
     justify-content: space-between;
   }
@@ -535,6 +533,11 @@ hr {
     color: #7ED321;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  .ExpandedNavigation a:hover {
+    color: #606060;
+    cursor: pointer;
   }
 }
 
@@ -639,7 +642,7 @@ hr {
   border: 5px solid #7ED321 ;
   outline: 3px solid #70E0D3 ;
   background-color: black;
-  z-index: 2; 
+  z-index: 2;
   left: 30px;
 }
 
@@ -655,7 +658,7 @@ hr {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-direction: column; 
+  flex-direction: column;
   padding-left: 100px;
   line-height: 1.5em;
 }
