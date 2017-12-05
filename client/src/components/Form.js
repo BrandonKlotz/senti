@@ -53,7 +53,10 @@ if (!this.props.stillNegative){
 	            		placeholder="Enter a few sentences here to analyze."
 	            		>
 	         		 </textarea>
-							 <input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
+							 <input type="submit"
+								 			value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+											onClick={this.handleSubmit}
+											className="Button" />
 	      		</form>
 	      	</div>
 	      	);
