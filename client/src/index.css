@@ -1,5 +1,4 @@
 /* -- OVERALL APP STYLING -- */
-
 body {
   margin: 0 auto;
   padding: 0;
@@ -71,7 +70,6 @@ p, li {
 }
 
 /* -- HEADER STYLING -- */
-
 header {
   display: flex;
   flex-direction: row;
@@ -159,14 +157,12 @@ header {
 }
 
 /* -- Homepage Styling -- */
-
 p.splashText {
   text-align: center;
   font-size: 1.15em;
 }
 
 /* -- Submission Form Styling -- */
-
 p#HomepageMessage {
   font-size: 1.15em;
   text-align: center;
@@ -256,7 +252,6 @@ i {
 }
 
 /* Loader Component */
-
 .Loader {
   position: absolute;
   z-index: 20;
@@ -290,7 +285,6 @@ h1#loadingTitle {
 }
 
 /* -- Document Results Styling -- */
-
 .DocumentResults {
   min-width: 300px;
   width: 90%;
@@ -377,7 +371,6 @@ i.hide {
 }
 
 /* -- Sentence Results Styling -- */
-
 .container {
   box-sizing: border-box;
   max-width: 600px;
@@ -443,7 +436,6 @@ textarea {
 }
 
 /* Begin styling for sentence results buttons */
-
 .toneToggleButtons {
   display: flex;
   flex-direction: row;
@@ -635,6 +627,7 @@ hr {
   box-shadow: 0 2px 1em #333;
 }
 
+/* Sentece Text on Click */
 .sentenceText {
   position: relative;
 }
@@ -668,75 +661,77 @@ hr {
 }
 
 /* Modal Component */
-  .modalContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
+.modalContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-  .modalBackground, .modalBackgroundAlert {
-    position: fixed;
-    padding-top: 10em;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
+.modalBackground, .modalBackgroundAlert {
+  position: fixed;
+  padding-top: 10em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-  .modalBackground {
-    background-color: rgba(0, 0, 0, .6);
-  }
-  .modalBackgroundAlert {
-    background-color: rgba(0, 0, 0, .6);
-  }
+.modalBackground {
+  background-color: rgba(0, 0, 0, .6);
+}
+.modalBackgroundAlert {
+  background-color: rgba(0, 0, 0, .6);
+}
 
-  .modalHeader, .modalHeaderAlert {
-    display: flex;
-    justify-content: space-between;
-    z-index: 40;
-    align-items: baseline;
-    padding: 1em;
-    border-radius: 8px 8px 0 0;
+.modalHeader, .modalHeaderAlert {
+  display: flex;
+  justify-content: space-between;
+  z-index: 40;
+  align-items: baseline;
+  padding: 1em;
+  border-radius: 8px 8px 0 0;
 
-  }
-  .modalHeader{
-    background-color: #70E0D3;
-  }
-  .modalHeaderAlert {
-    background-color: tomato;
-  }
+}
+.modalHeader{
+  background-color: #70E0D3;
+}
+.modalHeaderAlert {
+  background-color: tomato;
+}
 
- .modalHeader h1, .modalHeaderAlert h1 {
-    color: #fff;
-    margin: 0;
-  }
+.modalHeader h1, .modalHeaderAlert h1 {
+  color: #fff;
+  margin: 0;
+}
 
-  .modalHeader i, .modalHeaderAlert i {
-    color: #fff;
-  }
+.modalHeader i, .modalHeaderAlert i {
+  color: #fff;
+}
 
-  .modalText {
-    z-index: 40;
-    background-color: #fff;
-    border-radius: 0 0 8px 8px;
-    padding: 1em;
-    min-height: 40px;
-    text-align: center;
-  }
+.modalText {
+  z-index: 40;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  padding: 1em;
+  min-height: 40px;
+  text-align: center;
+}
 
-  .modalText li {
-    list-style: none;
-  }
+.modalText li {
+  list-style: none;
+}
 
-  .modalText p:first-child {
-    margin: auto;
-  }
-  .modalText a{
-    text-decoration: none;
-  }
-  .border {
-    margin: 0 auto;
-    width: 95%;
-    max-width: 620px;
-  }
+.modalText p:first-child {
+  margin: auto;
+}
+
+.modalText a{
+  text-decoration: none;
+}
+
+.border {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 620px;
+}
