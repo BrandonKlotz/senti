@@ -402,7 +402,7 @@ textarea {
     background-color: #7ed321;
     color: white;
     padding: 16px;
-    font-size: 16px;
+    font-size: 1em;
     border: none;
     cursor: pointer;
 }
