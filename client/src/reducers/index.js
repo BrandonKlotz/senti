@@ -1,12 +1,12 @@
 const INITIAL_STATE = {
     loading: false,
     isModalOpen: false,
-	displayResults: {},
+    displayResults: {},
     text: '',
     value: '',
     modal: '',
     stillNegative: true
-	};
+};
 
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
@@ -23,11 +23,8 @@ export default (state = INITIAL_STATE, action) => {
                 value: action.inputData.value
             });
         case "HOME_SCREEN":
-            return Object.assign({}, state, {
-                displayResults: {},
-                value: "",
-                isTextAnalyzed: false
-            });
+            return INITIAL_STATE;
+    
         case "MODAL_ABOUT":
             return Object.assign({}, state, {
                 isModalOpen: true,

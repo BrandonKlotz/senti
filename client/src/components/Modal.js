@@ -57,7 +57,7 @@ class Modal extends React.Component {
           <div className="modalBackgroundAlert">
             <div className="border">
               <div className="modalHeaderAlert" onClick={this.props.closeModal}>
-                <i class="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i><h1>ALERT</h1>
+                <i className="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i><h1>ALERT</h1>
                 <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
               </div>
               <div className="modalText">

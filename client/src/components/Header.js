@@ -8,26 +8,25 @@ class Header extends Component {
   render() {
 
   	//Explanded header = Tablet and Larger, Dropdown = Mobile
-
     return(
    		<header>
-        <div className="logoarea">
-          <div className="logo" onClick={this.props.goToHome}></div>
-          <div id="logotype">Senti</div>
-        </div>
+                <div className="logoarea">
+                    <div className="logo" onClick={this.props.goToHome}></div>
+                    <div id="logotype">Senti</div>
+                </div>
 
-   			<div className="ExpandedNavigation">
-					<a onClick={this.props.modalAbout}>About</a>
-					<a onClick={this.props.modalContact}>Contact</a>
-				</div>
+   		   <div className="ExpandedNavigation">
+			 <a onClick={this.props.modalAbout}>About</a>
+			 <a onClick={this.props.modalContact}>Contact</a>
+		    </div>
 
-        <div className="dropdown">
-          <button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
-          <div id="myDropdown" className="dropdown-content">
-          	<a onClick={this.props.modalAbout}>About</a>
-          	<a onClick={this.props.modalContact}>Contact</a>
-          </div>
-        </div>
+                  <div className="dropdown">
+                    <button onClick={this.myFunction.bind(this)} className="dropbtn fa fa-bars fa-lg"></button>
+                    <div id="myDropdown" className="dropdown-content">
+                    	<a onClick={this.props.modalAbout}>About</a>
+                    	<a onClick={this.props.modalContact}>Contact</a>
+                    </div>
+                  </div>
 	   	</header>
     );
   }

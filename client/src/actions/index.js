@@ -23,12 +23,12 @@ export function addResults(inputData) {
   return function(dispatch) {
     dispatch(requestResults(inputData));
     $.ajax({
-      url:"/api/tone",
-      method: "POST",
-      contentType:"application/json",
-      data: JSON.stringify(inputData)
+          url:"/api/tone",
+          method: "POST",
+          contentType:"application/json",
+          data: JSON.stringify(inputData)
     }).done(function(dataResult){
-      dispatch(receiveResults(dataResult));
+          dispatch(receiveResults(dataResult));
     });
   };
 }
