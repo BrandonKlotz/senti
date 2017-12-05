@@ -88,7 +88,7 @@ const mapActionsToProps = {
   	modalAlert
 };
 
-const mapStateToProps = (state) => { q
+const mapStateToProps = (state) => { 
   	return {
    		value: state.value,
 		text: state.value,
