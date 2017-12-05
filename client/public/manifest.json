@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Senti",
+  "name": "Senti: The Tone Analyzer",
   "icons": [
     {
       "src": "favicon.ico",

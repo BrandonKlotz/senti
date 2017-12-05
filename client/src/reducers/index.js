@@ -2,9 +2,9 @@ const INITIAL_STATE = {
     loading: false,
     isModalOpen: false,
     displayResults: {},
-    text: '',
-    value: '',
-    modal: '',
+    text: "",
+    value: "",
+    modal: "",
     stillNegative: true
 };
 
@@ -24,7 +24,7 @@ export default (state = INITIAL_STATE, action) => {
             });
         case "HOME_SCREEN":
             return INITIAL_STATE;
-    
+
         case "MODAL_ABOUT":
             return Object.assign({}, state, {
                 isModalOpen: true,
@@ -44,7 +44,7 @@ export default (state = INITIAL_STATE, action) => {
                 isModalOpen: true,
                 modal: "ALERT"
             });
-         case "STILL_NEGATIVE":
+        case "STILL_NEGATIVE":
             return Object.assign({}, state, {
                 stillNegative: true
             });
