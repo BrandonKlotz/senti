@@ -13,6 +13,7 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 loading: false,
                 displayResults: action.displayResults,
+                isTextAnalyzed: true
             });
         case "REQUEST_RESULTS":
             return Object.assign({}, state, {
