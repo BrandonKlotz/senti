@@ -38,7 +38,7 @@ class Modal extends React.Component {
                 <i className="fa fa-times fa-2x" aria-hidden="true"></i>
               </div>
               <div className="modalText">
-                <p><strong>Senti is the React/Redux final group project for the Grand Circus Facebook<super>*</super> Bootcamp in Grand Rapids.</strong></p>
+                <p><strong>Senti is the React/Redux final group project for the Grand Circus Facebook Bootcamp in Grand Rapids.</strong></p>
                 <p><strong>Group members participating on the Senti project:</strong></p>
                 <ul>
                   <li><a href="https://github.com/BrandonKlotz">Brandon Klotz</a></li>
