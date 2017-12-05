@@ -61,3 +61,9 @@ export function modalAlert() {
     type: "MODAL_ALERT",
   };
 }
+
+export function isStillNegative() {
+  return {
+    type: "STILL_NEGATIVE"
+  };
+}

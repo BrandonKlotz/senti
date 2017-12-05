@@ -214,6 +214,24 @@ textarea:focus {
   outline:none;
 }
 
+.Button-Clipboard {
+  height: 40px;
+  width: 100%;
+  background-color: #7ED321;
+  color: #fff;
+  font-size: 1.25em;
+  font-family: 'Gotham';
+  border: none;
+  border-radius: 25px;  width: 100%;
+}
+
+.Button-Clipboard:focus {
+  outline:none;
+}
+
+.Button-Clipboard:hover {
+  background-color: #8EBDB2;
+}
 
 .Button {
   height: 40px;
