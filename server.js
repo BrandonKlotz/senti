@@ -7,8 +7,9 @@ var delay = require('express-delay');
 // Delay all responses for 1 second
 app.use(delay(00));
 
-
 //  IBM BlueMix credentials
+// We have these .gitignored for security
+// This requires the package that allows us to use .env
 require('dotenv').config();
 
 app.use(bodyParser.json());
@@ -25,17 +26,18 @@ const tone_analyzer = new ToneAnalyzerV3({
 //  API POST utilizes tone analyzer methods to send data and receive JSON output
 //  Concatenation of variable required due to limitations of tone argument type
 //  Call tone analyzer method to analze data and return JSON output
-
 app.post('/api/tone/', (req, res, next) => {
   const text = req.body;
   tone_analyzer.tone(text, (err, data) => {
     if (err) {
       return next(err);
     }
+    // Returning JSON object
     return res.json(data);
   });
 });
 
+// Sets up our local environment to run our Express Server on Port 5001
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
   console.log('Express Server is running on ' + port);
