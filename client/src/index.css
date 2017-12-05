@@ -505,7 +505,6 @@ hr {
   background-color: tomato;
 }
 
-
 .highlighted.joy span,
 .highlighted.confident span,
 .highlighted.analytical span
@@ -513,21 +512,6 @@ hr {
   color: black;
   background-color: #7ed321;
 }
-
-  .modalContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-
-
-
-
-
-
-
-
 
 /* At tablet or bigger */
 @media only screen and (min-width: 768px) {
@@ -631,18 +615,7 @@ hr {
   }
 }
 
-
-
-
-
-
-
-
-
 /* Score pop-up styling */
-
-
-
 .scoreHide {
   display: none;
 }
@@ -684,8 +657,6 @@ hr {
   display: none;
 }
 
-.sentenceText
-
 .joyJoy, .confidentConfident, .analyticalAnalytical {
   color: #7ed321 !important;
   background-color: rgba(0, 0, 0, 0.9) !important;
@@ -697,7 +668,6 @@ hr {
 }
 
 /* Modal Component */
-
   .modalContainer {
     display: flex;
     flex-direction: row;
@@ -714,7 +684,7 @@ hr {
     z-index: 1;
   }
 
-  .modalBackground{
+  .modalBackground {
     background-color: rgba(0, 0, 0, .6);
   }
   .modalBackgroundAlert {
@@ -737,12 +707,12 @@ hr {
     background-color: tomato;
   }
 
- .modalHeader h1, .modalHeaderAlert h1{
+ .modalHeader h1, .modalHeaderAlert h1 {
     color: #fff;
     margin: 0;
   }
 
-  .modalHeader i, .modalHeaderAlert i{
+  .modalHeader i, .modalHeaderAlert i {
     color: #fff;
   }
 
