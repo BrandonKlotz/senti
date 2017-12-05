@@ -8,30 +8,34 @@ class Form extends Component {
 		super(props);
 		this.state = {
 			value: this.props.value,
-			text: this.props.value
+			text: this.props.value,
+			isTextAnalyzed: this.props.isTextAnalyzed
 		};
 	}
 
 	render() {
-
 		return (
 			<div className="container form">
-	      		<form onSubmit={this.handleSubmit} className="form">
-	          		<textarea
-	            		onChange={this.handleText}
-	            		value={this.state.value}
-	            		placeholder="Enter a few sentences here to analyze."
-	            		defaultValue={this.props.value}>
-	         		 </textarea>
-							 <input type="submit" value="Analyze" onClick={this.handleSubmit} className="Button" />
-	      		</form>
+	  		<form onSubmit={this.handleSubmit} className="form">
+	    		<textarea
+	      		onChange={this.handleText}
+	      		value={this.state.value}
+	      		placeholder="Enter a few sentences here to analyze."
+	      		defaultValue={this.props.value}>
+	   		 </textarea>
+				 <input 
+				 	type="submit" 
+				 	value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"} 
+				 	onClick={this.handleSubmit} 
+				 	className="Button" />
+	  		</form> 
 
 				<div>
-					<CopyToClipboard text={this.state.value}
-							onCopy={() => this.setState({copied: true})}>
-							<input type="button" value="Copy to clipboard with button" className="Button" />
-					</CopyToClipboard>
-						{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+					{this.state.isTextAnalyzed ? 
+						<CopyToClipboard text={this.state.value} onCopy={() => this.setState({copied: true})}>
+						<input type="button" value="Copy to clipboard with button" className="Button" />
+						</CopyToClipboard> : null}
+					{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
 				</div>
 			</div>
 		);
@@ -58,7 +62,8 @@ class Form extends Component {
 
 		this.props.onSubmit({
 			text: this.state.value,
-			value: this.state.value
+			value: this.state.value,
+			isTextAnalyzed: true
 		});
 	}
 }
@@ -70,7 +75,8 @@ const mapActionsToProps = {
 const mapStateToProps = (state) => {
   return {
     value: state.value,
-		text: state.value
+		text: state.value,
+		isTextAnalyzed: state.isTextAnalyzed
   };
 };
 
