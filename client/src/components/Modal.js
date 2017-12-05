@@ -61,7 +61,8 @@ class Modal extends React.Component {
                 <span><i className="fa fa-times fa-2x" aria-hidden="true"></i></span>
               </div>
               <div className="modalText">
-                <p><strong>Please enter at least 2 sentences of text.</strong></p>
+                <p><strong>Not enough information to analyze any emotions.
+                <br />Please provide at least 2 sentences.</strong></p>
               </div>
             </div>
           </div>
