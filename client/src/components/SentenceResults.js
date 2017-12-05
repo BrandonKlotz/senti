@@ -21,7 +21,7 @@ class SentenceResults extends Component {
             const scores = sentence.tones.map(tone => { return (<span className={`${tone.tone_id+tone.tone_name}`}>
                                                                                                                     {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>); 
                                                                                                                      });
-
+            
             return (
                 <div key={sentence.sentence_id} className={classnames}>
                    <div className="sentenceText">

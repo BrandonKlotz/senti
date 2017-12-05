@@ -4,7 +4,8 @@ const INITIAL_STATE = {
 	displayResults: {},
     text: '',
     value: '',
-    modal: ''
+    modal: '',
+    stillNegative: true
 	};
 
 export default (state = INITIAL_STATE, action) => {
@@ -13,6 +14,7 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 loading: false,
                 displayResults: action.displayResults,
+                stillNegative: false
             });
         case "REQUEST_RESULTS":
             return Object.assign({}, state, {
@@ -42,6 +44,10 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 isModalOpen: true,
                 modal: "ALERT"
+            });
+         case "STILL_NEGATIVE":
+            return Object.assign({}, state, {
+                stillNegative: true
             });
         default:
             return state;
