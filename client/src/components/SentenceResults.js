@@ -9,13 +9,10 @@ class SentenceResults extends Component {
             highlighted: ""
            };
        }
-
       render() {
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
-
             const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
-
             const scores = sentence.tones.map(tone => { return (<span key={tone.tone_id} className={`${tone.tone_id+tone.tone_name}`}>
                                                           {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>);
                                                            });
@@ -53,7 +50,7 @@ class SentenceResults extends Component {
               </div>
             </div>
           );
-       }
+      }
 
   mapSentencesAndReturnEmotionsArray = (sentences) => {
     var detectedEmotionsArray = sentences.map(sentence => {return this.mapIndividualSentenceTones(sentence)});
@@ -72,12 +69,10 @@ class SentenceResults extends Component {
     });
   };
 }
-
 const mapStateToProps = (state) => {
 	return {
 		highlighted: state.highlighted,
     displayResults: state.displayResults
 	};
 };
-
 export default connect(mapStateToProps, null)(SentenceResults);

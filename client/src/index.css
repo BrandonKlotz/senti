@@ -654,13 +654,12 @@ hr {
 .scoreInfo {
   display: none;
   position: absolute;
-  height: 100px;
-  width: 200px;
-  border: 5px solid #7ED321 ;
-  outline: 3px solid #70E0D3 ;
-  background-color: black;
-  z-index: 2;
-  left: 30px;
+  height: auto;
+  width: auto;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 10;
+  box-shadow: 0 2px 1em #333;
 }
 
 .sentenceText {
@@ -674,21 +673,27 @@ hr {
 .sentenceText:active .scoreInfo {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  padding-left: 100px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   line-height: 1.5em;
 }
 
+.tentativeTentative {
+  display: none;
+}
+
+.sentenceText
 
 .joyJoy, .confidentConfident, .analyticalAnalytical {
   color: #7ed321 !important;
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
 .angerAnger , .fearFear, .sadnessSadness{
   color: tomato !important;
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
 /* Modal Component */

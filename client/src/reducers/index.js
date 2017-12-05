@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     loading: false,
     isModalOpen: false,
-	displayResults: {},
+	  displayResults: {},
     text: '',
     value: '',
     modal: '',
