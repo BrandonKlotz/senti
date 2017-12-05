@@ -21,43 +21,42 @@ class Form extends Component {
 	      		onChange={this.handleText}
 	      		value={this.state.value}
 	      		placeholder="Enter a few sentences here to analyze."
-	      		defaultValue={this.props.value}>
+						>
 	   		 </textarea>
-				 <input 
-				 	type="submit" 
-				 	value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"} 
-				 	onClick={this.handleSubmit} 
+				 <input
+				 	type="submit"
+				 	value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+				 	onClick={this.handleSubmit}
 				 	className="Button" />
-	  		</form> 
+	  		</form>
 
 				<div>
-					{this.state.isTextAnalyzed ? 
+					{this.state.isTextAnalyzed ?
 						<CopyToClipboard text={this.state.value} onCopy={() => this.setState({copied: true})}>
-						<input type="button" value="Copy to clipboard with button" className="Button" />
+						<input type="button" value="Copy to Clipboard" className="Button clipboard" />
 						</CopyToClipboard> : null}
-					{this.state.copied ? <span style={{color: 'red'}}>Copied.</span> : null}
+					{this.state.copied ? <div className="copyMessage"><span>Copied.</span></div> : null}
 				</div>
 			</div>
 		);
 	}
 
 	handleText = (event) => {
-		({target: {value}}) => this.setState({value, copied: false})
 
 		this.setState({
 			value: event.target.value,
-			text: event.target.value
+			text: event.target.value,
+			copied: false
 		});
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
 
-		if(this.state.value === "" || this.state.value.length < 12) {
+		if(this.state.value === "" || this.state.value.length < 18) {
 			console.log ("modal alert");
-				this.props.modalAlert();
-			//alert('Please enter at least 2 sentences'); // This should be a modal
-			return;
+			this.props.modalAlert();
+			return
 		}
 
 		this.props.onSubmit({

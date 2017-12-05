@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { closeModal, modalAlert } from '../actions';
+import { closeModal } from '../actions';
 
 import "font-awesome/css/font-awesome.css";
 class Modal extends React.Component {
@@ -61,7 +61,8 @@ class Modal extends React.Component {
                 <i className="fa fa-times fa-2x" aria-hidden="true"></i>
               </div>
               <div className="modalText">
-                <p><strong>Please enter at least 2 sentences of text.</strong></p>
+                <p><strong>Not enough information to analyze any emotions.
+                <br />Please provide at least 2 sentences.</strong></p>
               </div>
             </div>
           </div>

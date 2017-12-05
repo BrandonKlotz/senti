@@ -20,12 +20,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 h1 {
   font-family: 'Gotham', sans-serif;
   color: #606060;
-
   font-size: 1.9em;
   line-height: 1.2em;
   text-align: center;
@@ -71,7 +71,6 @@ p, li {
   src: url('./fonts/Comfortaa_Regular.ttf');
 }
 
-
 /* -- HEADER STYLING -- */
 
 header {
@@ -84,11 +83,33 @@ header {
   background-color: #fefefe;
 }
 
-header img {
-  width: 50px;
+.logoarea {
+  display: flex;
+  align-items: center;
 }
 
+.logo {
+  width: 55px;
+  height: 62px;
+  background-color: white;
+  background-image: url(./img/logo.png);
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 1em;
+}
 
+.logo:hover {
+  cursor: pointer;
+}
+
+#logotype {
+  display: inline-block;
+  margin: 0;
+  font-family: 'Comfortaa';
+  font-size: 2.5em;
+  color: #7ED321;
+}
 
 .dropbtn {
     background-color: #7ED321;
@@ -195,13 +216,14 @@ textarea:focus {
 
 .Button {
   height: 40px;
-  width: 50%;
+  width: 200px;
   background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
   font-family: 'Gotham';
   border: none;
   border-radius: 25px;
+  margin: .5em;
 }
 
 .Button:focus {
@@ -210,6 +232,11 @@ textarea:focus {
 
 .Button:hover {
   background-color: #8EBDB2;
+}
+
+.copyMessage {
+  color: #7ED321;
+  text-align: center;
 }
 
 i {
@@ -230,28 +257,6 @@ i {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.logo {
-  width: 55px;
-  height: 62px;
-  background-color: white;
-  background-image: url(./img/logo.png);
-  background-position: center;
-  background-size: cover;
-  display: inline-block;
-}
-
-.logo:hover {
-  cursor: pointer;
-}
-
-#logotype {
-  display: inline-block;
-  margin: 0;
-  font-family: 'Comfortaa';
-  font-size: 2.5em;
-  color: #7ED321;
 }
 
 .loadingAnimation {
@@ -444,7 +449,6 @@ textarea {
   text-align: center;
   padding: .4em .5em .6em .5em;
   border-radius: 20px;
-
   margin: 0 1em 1em 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
@@ -522,7 +526,7 @@ hr {
   }
 
   .ExpandedNavigation {
-    width: 200px;
+    width: 140px;
     display: flex;
     justify-content: space-between;
   }
@@ -534,6 +538,11 @@ hr {
     color: #7ED321;
     font-weight: bold;
     text-transform: uppercase;
+  }
+
+  .ExpandedNavigation a:hover {
+    color: #606060;
+    cursor: pointer;
   }
 }
 

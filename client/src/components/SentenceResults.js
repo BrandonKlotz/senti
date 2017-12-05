@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { join, uniq, flatten, without } from 'lodash';
-import toneData from '../ToneData';
 
 class SentenceResults extends Component {
         constructor(props) {
@@ -12,15 +11,14 @@ class SentenceResults extends Component {
        }
 
       render() {
-        let isHighlighted = "";
           const sentences = this.props.displayResults.sentences_tone.map((sentence) => {
 
             const classnames = join(sentence.tones.map(tone => { return (`${tone.tone_name === this.state.highlighted?" highlighted " + tone.tone_id :""}`); })," ");
             console.log(classnames);
 
-            const scores = sentence.tones.map(tone => { return (<span className={`${tone.tone_id+tone.tone_name}`}>
-                                                                                                                    {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>); 
-                                                                                                                     });
+            const scores = sentence.tones.map(tone => { return (<span key={tone.tone_id} className={`${tone.tone_id+tone.tone_name}`}>
+                                                          {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/></span>);
+                                                           });
 
             return (
                 <div key={sentence.sentence_id} className={classnames}>
@@ -37,18 +35,16 @@ class SentenceResults extends Component {
            const toneArray = without(this.mapSentencesAndReturnEmotionsArray(this.props.displayResults.sentences_tone), "Tentative");
 
            const buttons = toneArray.map((tone) => {
-              var ButtonClass;
-
              return (  <div key={tone}
-                                    className={`toggleButton ${tone}`}
-                                    onClick={() => this.toneToggle(tone)}>{tone}</div>  );
+                            className={`toggleButton ${tone}`}
+                            onClick={() => this.toneToggle(tone)}>{tone}</div>  );
            });
 
           return (
             <div className="container">
               <h2>Sentence Tones:</h2>
               <div className="SentenceResults">
-                <div id="SentenceReturn">{sentences}</div>
+                <div id="SentenceReturn"><h4>Click sentences to see the value of emotion:</h4>{sentences}</div>
                 <div id="ToggleControlsAndLabels">
                   <div id="buttonSeparater"></div>
                   <h4>Click to toggle selected emotion:</h4>
