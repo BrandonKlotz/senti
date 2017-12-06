@@ -23,7 +23,7 @@ class SentenceResults extends Component {
                     return (
                         <div key={sentence.sentence_id} className={classnames}>
                                <div className="sentenceText">
-                                      <a><span>{sentence.text}&nbsp;</span></a>
+                                      <span onclick="">{sentence.text}&nbsp;</span>
                                       <div className="scoreInfo">
                                             {scores}
                                        </div>
