@@ -627,9 +627,10 @@ hr {
   box-shadow: 0 2px 1em #333;
 }
 
-/* Sentece Text on Click */
+/* Sentence Text on Click */
 .sentenceText {
   position: relative;
+  user-select: none;
 }
 
 .sentenceText:hover {
