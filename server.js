@@ -23,6 +23,7 @@ const tone_analyzer = new ToneAnalyzerV3({
 
 //  API POST utilizes tone analyzer methods to send data and receive JSON output
 //  Call tone analyzer method to analze data and return JSON output
+// Text { text : "string" }
 
 app.post("/api/tone/", (request, response, next) => {
     const text = request.body;

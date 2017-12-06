@@ -54,7 +54,7 @@ class Modal extends React.Component {
     } else{
      return (
         <div className = "modalContainer">
-            <div className="modalBackgroundAlert">
+            <div  className="modalBackgroundAlert">
                 <div className="border">
                     <div className="modalHeaderAlert" onClick={this.props.closeModal}>
                         <i className="fa fa-exclamation-triangle fa-2x" aria-hidden="true"></i><h1>ALERT</h1>

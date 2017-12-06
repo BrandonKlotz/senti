@@ -223,7 +223,7 @@ textarea:focus {
 }
 
 .Button {
-  height: 40px;
+  height: auto;
   width: 200px;
   background-color: #7ED321;
   color: #fff;
@@ -232,6 +232,8 @@ textarea:focus {
   border: none;
   border-radius: 25px;
   margin: .5em;
+  padding: .5em;
+  text-align: center;
 }
 
 .Button:focus {
@@ -389,6 +391,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  -webkit-appearance: none;
 }
 
 .dropbtn {
@@ -416,7 +419,7 @@ textarea {
     background-color: #fefefe;
     width: 200px;
     border: 2px solid #7ed321;
-    margin-top: 28px;
+    margin-top: 31px;
     z-index: 1;
 }
 
@@ -428,7 +431,7 @@ textarea {
 }
 
 .dropdown a:hover {
-  background-color: #70E0D3;
+  background-color: #eee;
 }
 
 .show {

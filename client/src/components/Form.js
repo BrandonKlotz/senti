@@ -24,17 +24,18 @@ if (!this.props.stillNegative){
 	      					value={this.state.value}
 	      					placeholder="Enter a few sentences here to analyze.">
 	   		 		</textarea>
-				 	<input
-				 		type="submit"
-				 		value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
-				 		onClick={this.handleSubmit}
-				 		className="Button" />
+            <div
+     					onClick={this.handleSubmit}
+     					className="Button">{this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+            </div>
 	  			</form>
 
 				<div>
 					{this.state.isTextAnalyzed ?
 						<CopyToClipboard text={this.state.value} onCopy={() => this.setState({copied: true})}>
-							<input type="button" value="Copy to Clipboard" className="Button clipboard" />
+              <div
+     					className="Button clipboard">Copy to Clipboard
+              </div>
 						</CopyToClipboard> : null}
 					{this.state.copied ? <div className="copyMessage"><span>Copied.</span></div> : null}
 				</div>
@@ -51,11 +52,10 @@ if (!this.props.stillNegative){
 		            		value={this.state.value}
 		            		placeholder="Enter a few sentences here to analyze.">
 	         		 </textarea>
-				 <input
-			 		type="submit"
-		 			value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
-					onClick={this.handleSubmit}
-					className="Button" />
+				  <div
+  					onClick={this.handleSubmit}
+  					className="Button">{this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
+          </div>
 	      		</form>
 	      	</div>
 	      	);
@@ -88,9 +88,9 @@ const mapActionsToProps = {
   	modalAlert
 };
 
-const mapStateToProps = (state) => { 
+const mapStateToProps = (state) => {
   	return {
-   		value: state.value,
+   	value: state.value,
 		text: state.value,
 		isTextAnalyzed: state.isTextAnalyzed,
 		stillNegative: state.stillNegative
