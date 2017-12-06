@@ -537,6 +537,18 @@ hr {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  #ToggleControlsAndLabels {
+    width: 100%;
+  }
+
+  .toneToggleButtons {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+}
+
 
 /* -- Button Layout For Mid-Size Screens -- */
 @media only screen and (max-width: 510px) and (min-width:420px) {
@@ -611,13 +623,7 @@ hr {
 }
 
 /* Score pop-up styling */
-.scoreHide {
-  display: none;
-}
 
-.scoreShow {
-  display: inline;
-}
 
 .scoreInfo {
   display: none;
