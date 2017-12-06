@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { modalAlert } from '../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { modalAlert } from "../actions";
 
 class Form extends Component {
 	constructor(props) {
@@ -14,87 +14,99 @@ class Form extends Component {
 	}
 
 	render() {
+		if (!this.props.stillNegative) {
+			return (
+				<div className="container form">
+					<form onSubmit={this.handleSubmit} className="form">
+						<textarea
+							onChange={this.handleText}
+							value={this.state.value}
+							placeholder="Enter a few sentences here to analyze."
+						/>
+						<input
+							type="submit"
+							value={this.state.isTextAnalyzed ? "Re-analyze" : "Analyze"}
+							onClick={this.handleSubmit}
+							className="Button"
+						/>
+					</form>
 
-if (!this.props.stillNegative){
-		return (
-			<div className="container form">
-	  			<form onSubmit={this.handleSubmit} className="form">
-	    				<textarea
-	      					onChange={this.handleText}
-	      					value={this.state.value}
-	      					placeholder="Enter a few sentences here to analyze.">
-	   		 		</textarea>
-				 	<input
-				 		type="submit"
-				 		value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
-				 		onClick={this.handleSubmit}
-				 		className="Button" />
-	  			</form>
-
-				<div>
-					{this.state.isTextAnalyzed ?
-						<CopyToClipboard text={this.state.value} onCopy={() => this.setState({copied: true})}>
-							<input type="button" value="Copy to Clipboard" className="Button clipboard" />
-						</CopyToClipboard> : null}
-					{this.state.copied ? <div className="copyMessage"><span>Copied.</span></div> : null}
+					<div>
+						{this.state.isTextAnalyzed ? (
+							<CopyToClipboard
+								text={this.state.value}
+								onCopy={() => this.setState({ copied: true })}
+							>
+								<input
+									type="button"
+									value="Copy to Clipboard"
+									className="Button clipboard"
+								/>
+							</CopyToClipboard>
+						) : null}
+						{this.state.copied ? (
+							<div className="copyMessage">
+								<span>Copied.</span>
+							</div>
+						) : null}
+					</div>
 				</div>
-			</div>
-		);
-
-} else {
-
-	return (
-		<div className="container form">
-	      		<form onSubmit={this.handleSubmit} className="form">
-	          		<textarea
-		            		onChange={this.handleText}
-		            		value={this.state.value}
-		            		placeholder="Enter a few sentences here to analyze.">
-	         		 </textarea>
-				 <input
-			 		type="submit"
-		 			value={this.state.isTextAnalyzed ? "Re-analyze": "Analyze"}
-					onClick={this.handleSubmit}
-					className="Button" />
-	      		</form>
-	      	</div>
-	      	);
+			);
+		} else {
+			return (
+				<div className="container form">
+					<form onSubmit={this.handleSubmit} className="form">
+						<textarea
+							onChange={this.handleText}
+							value={this.state.value}
+							placeholder="Enter a few sentences here to analyze."
+						/>
+						<input
+							type="submit"
+							value={this.state.isTextAnalyzed ? "Re-analyze" : "Analyze"}
+							onClick={this.handleSubmit}
+							className="Button"
+						/>
+					</form>
+				</div>
+			);
+		}
 	}
-}
-	handleText = (event) => {
+	handleText = event => {
 		this.setState({
 			value: event.target.value,
 			text: event.target.value,
 			copied: false
 		});
-	}
+	};
 
-	handleSubmit = (event) => {
+	handleSubmit = event => {
+
 		event.preventDefault();
-		if(this.state.value === "" || this.state.value.length < 18) {
-			console.log ("modal alert");
+
+		if (this.state.value === "" || this.state.value.length < 18) {
 			this.props.modalAlert();
 			return;
 		}
+
 		this.props.onSubmit({
 			text: this.state.value,
-			value: this.state.value,
-			isTextAnalyzed: true
+			value: this.state.value
 		});
-	}
+	};
 }
 
 const mapActionsToProps = {
-  	modalAlert
+	modalAlert
 };
 
-const mapStateToProps = (state) => { 
-  	return {
-   		value: state.value,
+const mapStateToProps = state => {
+	return {
+		value: state.value,
 		text: state.value,
 		isTextAnalyzed: state.isTextAnalyzed,
 		stillNegative: state.stillNegative
- 	 };
+	};
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Form);
