@@ -1,5 +1,4 @@
 import SampleMessage from "../SampleMessages";
-let messageToSelect;
 
 const INITIAL_STATE = {
     loading: false,
@@ -8,8 +7,7 @@ const INITIAL_STATE = {
     text: "",
     value: "",
     modal: "",
-    stillNegative: true,
-    sampleText: "Sample Text"
+    stillNegative: true
 };
 
 export default (state = INITIAL_STATE, action) => {

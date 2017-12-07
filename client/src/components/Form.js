@@ -48,7 +48,7 @@ class Form extends Component {
   	      		<form onSubmit={this.handleSubmit} className="form">
   	          		<textarea
   		            		onChange={this.handleText}
-  		            		value={this.state.value}
+                                value={`${this.state.value===""?this.props.value:this.state.value}`}
   		            		placeholder="Enter a few sentences here to analyze.">
   	         		 </textarea>
   				  <div
@@ -76,7 +76,7 @@ class Form extends Component {
 
   		event.preventDefault();
 
-  		if (this.state.value === "" || this.state.value.length < 18) {
+  		if ((this.state.value === "" && !this.props.value) || (this.state.value.length < 18 && !this.props.value)) {
   			this.props.modalAlert();
   			return;
   		}
