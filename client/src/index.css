@@ -173,6 +173,15 @@ form {
   align-items: center;
 }
 
+.form h2 {
+  margin-bottom: 20px;
+}
+
+.form h2:hover {
+  cursor: pointer;
+  color: #7ED321;
+}
+
 textarea {
   box-sizing: border-box;
   width: 100%;

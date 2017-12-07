@@ -46,6 +46,7 @@ class Form extends Component {
   	return (
   		<div className="container form">
   	      		<form onSubmit={this.handleSubmit} className="form">
+                        <h2 onClick={this.handleSampleText}>Test A Sample Message</h2>
   	          		<textarea
   		            		onChange={this.handleText}
   		            		value={this.state.value}
@@ -61,6 +62,13 @@ class Form extends Component {
 
           }
 
+        }
+
+        handleSampleText = (event) => {
+          this.setState({
+              value: "Times are hard ! Our numbers have been disappointing for the past three quarters. We are in a competitive industry but we do offer excellent services at reasonable rates. Unfortunately we are not doing a good job of selling our services, and this is really frustrating.We cannot blame the economy for our lack of execution. Our clients need our development and design services to change their current business outcomes. It is disheartening to see that we are failing at closing deals, in such a hungry market. I am confident that with concerted effort, we can improve our numbers next quarter.",
+              text: "Times are hard! Our numbers have been disappointing for the past three quarters. We are in a competitive industry but we do offer excellent services at reasonable rates. Unfortunately we are not doing a good job of selling our services, and this is really frustrating.We cannot blame the economy for our lack of execution. Our clients need our development and design services to change their current business outcomes. It is disheartening to see that we are failing at closing deals, in such a hungry market. I am confident that with concerted effort, we can improve our numbers next quarter."
+          })
         }
 
   	handleText = event => {
