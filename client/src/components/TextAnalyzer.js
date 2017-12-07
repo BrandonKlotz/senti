@@ -8,6 +8,7 @@ import Loader from "./Loading.js";
 import DocumentResults from "./DocumentResults.js";
 import SentenceResults from "./SentenceResults.js";
 import Modal from "./Modal";
+import AllPositiveMessage from "./AllPositiveMessage.js";
 
 class TextAnalyzer extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class TextAnalyzer extends Component {
         <div className="App">
           <Modal />
           <h1>Your Results</h1>
+          <AllPositiveMessage />
           <DocumentResults />
           <SentenceResults />
 
