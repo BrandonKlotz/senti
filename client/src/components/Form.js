@@ -96,7 +96,7 @@ const mapActionsToProps = {
 
 const mapStateToProps = (state) => {
   	return {
-   	value: state.value,
+   	      value: state.value,
 		text: state.value,
 		isTextAnalyzed: state.isTextAnalyzed,
 		stillNegative: state.stillNegative

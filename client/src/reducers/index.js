@@ -1,3 +1,6 @@
+import SampleMessage from "../SampleMessages";
+let messageToSelect;
+
 const INITIAL_STATE = {
     loading: false,
     isModalOpen: false,
@@ -5,7 +8,8 @@ const INITIAL_STATE = {
     text: "",
     value: "",
     modal: "",
-    stillNegative: true
+    stillNegative: true,
+    sampleText: "Sample Text"
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -48,6 +52,21 @@ export default (state = INITIAL_STATE, action) => {
             return Object.assign({}, state, {
                 stillNegative: true
             });
+        case "INSERT_SAMPLE_TEXT":
+            console.log(action.sampleTextValue);
+
+            for (var i = SampleMessage.length-1; i >=0; i--) {
+                var selectedMessage = SampleMessage[i];
+                if (action.sampleTextValue === selectedMessage.id) {
+                    let messageToSelect = selectedMessage.message;
+                    console.log(messageToSelect);  
+            return Object.assign({}, state, {
+                value: messageToSelect,
+                text: messageToSelect
+            });
+        }};
+        break;
+        
         default:
             return state;
     }

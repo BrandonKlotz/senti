@@ -67,3 +67,10 @@ export function isStillNegative() {
         type: "STILL_NEGATIVE"
     };
 }
+
+export function insertSampleText(sampleTextValue) {
+    return {
+        type: "INSERT_SAMPLE_TEXT",
+        sampleTextValue
+    };
+}

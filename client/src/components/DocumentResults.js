@@ -96,7 +96,8 @@ const mapActionsToProps = {
 
 const mapStateToProps = (state) => {
   return {
-    displayResults: state.displayResults
+    displayResults: state.displayResults,
+    sampleText: state.sampleText
   };
 }
 
