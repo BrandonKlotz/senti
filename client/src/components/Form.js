@@ -77,6 +77,14 @@ class Form extends Component {
         });
     };
 
+
+    handleNumberOfSentences = (stringToSplit, separator) => {
+        var arrayOfStrings = stringToSplit.split(separator);
+        return arrayOfStrings.length-1;
+
+    }
+
+
     handleText = event => {
         this.setState({
             value: event.target.value,
@@ -87,8 +95,15 @@ class Form extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        let period = this.handleNumberOfSentences(this.state.value, ".");
+        let exclamation = this.handleNumberOfSentences(this.state.value, "!");
+        let question = this.handleNumberOfSentences(this.state.value, "?");
 
-        if (this.state.value === "" || this.state.value.length < 18) {
+        console.log(period);
+        console.log(exclamation);
+        console.log(question);
+
+        if (period+exclamation+question < 2) {
             this.props.modalAlert();
             return;
         }
