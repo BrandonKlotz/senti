@@ -21,7 +21,7 @@ class SentenceResults extends Component {
       const scores = sentence.tones.map(tone => { return (<span key={tone.tone_id} className={`${tone.tone_id+tone.tone_name}`}>
                                                                                              {`${tone.score.toFixed(2) + ": " + tone.tone_name}`}<br/>
                                                                                              </span>);
-                                                                                    });
+                                                                                    });    
         //  Where we actually return the JSX to display sentences
         return (
           <div key={sentence.sentence_id} className={classnames}>
@@ -47,7 +47,7 @@ class SentenceResults extends Component {
                     <div className="container">
                           <h2>Sentence Tones:</h2>
                           <div className="SentenceResults">
-                                <div id="SentenceReturn"><h4>Click sentences to see the value of emotion:</h4>{sentences}</div>
+                                <div id="SentenceReturn"><h4>Click and hold sentences to see the value of emotion:</h4>{sentences}</div>
                                 <div id="ToggleControlsAndLabels">
                                       <div id="buttonSeparater"></div>
                                           <h4>Click to toggle selected emotion:</h4>
