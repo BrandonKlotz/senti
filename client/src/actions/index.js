@@ -56,6 +56,7 @@ export function closeModal() {
         type: "MODAL_CLOSE"
     };
 }
+
 export function modalAlert() {
     return {
         type: "MODAL_ALERT"

@@ -16,9 +16,9 @@ app.use(express.static("client/build"));
 //  Initializes instance of Bluemix using env login
 const ToneAnalyzerV3 = require("watson-developer-cloud/tone-analyzer/v3");
 const tone_analyzer = new ToneAnalyzerV3({
-  username: process.env.TONE_ANALYZER_USERNAME,
-  password: process.env.TONE_ANALYZER_PASSWORD,
-  version_date: "2017-11-28"
+    username: process.env.TONE_ANALYZER_USERNAME,
+    password: process.env.TONE_ANALYZER_PASSWORD,
+    version_date: "2017-11-28"
 });
 
 //  API POST utilizes tone analyzer methods to send data and receive JSON output
@@ -26,16 +26,16 @@ const tone_analyzer = new ToneAnalyzerV3({
 // Text { text : "string" }
 
 app.post("/api/tone/", (request, response, next) => {
-  const text = request.body;
-  tone_analyzer.tone(text, (error, data) => {
-    if (error) {
-      return next(err);
-    }
-    return response.json(data);
-  });
+    const text = request.body;
+    tone_analyzer.tone(text, (error, data) => {
+        if (error) {
+            return next(err);
+        }
+        return response.json(data);
+    });
 });
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
-  console.log("Express Server is running on " + port);
+    console.log("Express Server is running on " + port);
 });

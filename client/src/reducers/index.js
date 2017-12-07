@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     text: "",
     value: "",
     modal: "",
-    stillNegative: true,
+    stillNegative: true
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -52,5 +52,3 @@ export default (state = INITIAL_STATE, action) => {
             return state;
     }
 };
-
-
