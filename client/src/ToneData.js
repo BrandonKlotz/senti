@@ -26,7 +26,7 @@ export default [
   },
   {
     tone: "Fear",
-    text: "You seem to be responding to an impeding danger or negative outcome. Your reader may perceive you as unreasonable. See Sentence Tones to find where this can be reduced.",
+    text: "You seem to be responding to an impending danger or negative outcome. Your reader may perceive you as unreasonable. See Sentence Tones to find where this can be reduced.",
     positive: false
  
   } 
