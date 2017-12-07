@@ -22,9 +22,9 @@ body {
 }
 
 h1 {
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #606060;
-  font-size: 1.9em;
+  font-size: 2em;
   line-height: 1.2em;
   text-align: center;
   margin: 1em 0;
@@ -43,7 +43,6 @@ h2 {
 h4 {
   font-family: 'Source Sans Pro', sans-serif;
   font-style: italic;
-  font-weight: lighter;
   font-size: 1em;
   color: #606060;
   text-align: left;
@@ -57,11 +56,6 @@ p, li {
   font-size: 1em;
   color: #606060;
   margin: 10px 0;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('./fonts/Gotham-Medium.otf');
 }
 
 @font-face {
@@ -209,7 +203,7 @@ textarea:focus {
   background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
-  font-family: 'Gotham';
+  font-family: 'Montserrat', sans-serif;
   border: none;
   border-radius: 25px;  width: 100%;
 }
@@ -228,7 +222,7 @@ textarea:focus {
   background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
-  font-family: 'Gotham';
+  font-family: 'Montserrat', sans-serif;
   border: none;
   border-radius: 25px;
   margin: .5em;
@@ -309,7 +303,7 @@ h1#loadingTitle {
 }
 
 .accordion:hover {
-  background-color: #DFDEDE;
+  background-color: #e2e2e2;
 }
 
 span.emotionAccordionName {
@@ -468,6 +462,10 @@ textarea {
 
 .Fear, .Anger, .Sadness {
   background-color: tomato;
+}
+
+div.toggleButton:hover {
+  opacity: 0.75;
 }
 
 .SentenceResults {
@@ -744,4 +742,54 @@ hr {
   margin: 0 auto;
   width: 95%;
   max-width: 620px;
+}
+
+
+
+#AllPositiveMessage {
+  box-sizing: border-box;
+  min-width: 300px;
+  width: 90%;
+  max-width: 600px;
+
+  padding: 1em;
+  margin-bottom: 1.5em;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: #7ED321;
+  border-radius: 10px; 
+
+  background-color: #e4ffdb;
+}
+
+#AllPositiveMessage p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  color: green;
+}
+
+#StillNegativeMessage {
+  box-sizing: border-box;
+  min-width: 300px;
+  width: 90%;
+  max-width: 600px;
+
+  padding: 1em;
+  margin-bottom: 1.5em;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: tomato;
+  border-radius: 10px; 
+
+  background-color: #ffe0e0;
+}
+
+#StillNegativeMessage p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1em;
+  color: red;
 }

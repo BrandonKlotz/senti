@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "font-awesome/css/font-awesome.css";
 import toneData from '../ToneData';
-import { isStillNegative } from '../actions';1
+import { isStillNegative } from '../actions';
 
 
 class DocumentResults extends Component {
