@@ -22,9 +22,9 @@ body {
 }
 
 h1 {
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #606060;
-  font-size: 1.9em;
+  font-size: 2em;
   line-height: 1.2em;
   text-align: center;
   margin: 1em 0;
@@ -57,11 +57,6 @@ p, li {
   font-size: 1em;
   color: #606060;
   margin: 10px 0;
-}
-
-@font-face {
-  font-family: 'Gotham';
-  src: url('./fonts/Gotham-Medium.otf');
 }
 
 @font-face {
@@ -209,7 +204,7 @@ textarea:focus {
   background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
-  font-family: 'Gotham';
+  font-family: 'Montserrat', sans-serif;
   border: none;
   border-radius: 25px;  width: 100%;
 }
@@ -228,7 +223,7 @@ textarea:focus {
   background-color: #7ED321;
   color: #fff;
   font-size: 1.25em;
-  font-family: 'Gotham';
+  font-family: 'Montserrat', sans-serif;
   border: none;
   border-radius: 25px;
   margin: .5em;
