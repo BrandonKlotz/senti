@@ -1,5 +1,3 @@
-import SampleMessage from "../SampleMessages";
-
 const INITIAL_STATE = {
     loading: false,
     isModalOpen: false,
@@ -8,7 +6,6 @@ const INITIAL_STATE = {
     value: "",
     modal: "",
     stillNegative: true,
-    sampleText: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -18,8 +15,7 @@ export default (state = INITIAL_STATE, action) => {
                 loading: false,
                 displayResults: action.displayResults,
                 isTextAnalyzed: true,
-                stillNegative: false,
-                sampleText: false
+                stillNegative: false
             });
         case "REQUEST_RESULTS":
             return Object.assign({}, state, {
